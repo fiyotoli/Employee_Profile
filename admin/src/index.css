@@ -27,12 +27,10 @@ html, body {
     transition: all 0.3s ease;
   }
 .sidebar-link:hover {
-    background-color: #ffffff; /* Light gray hover */
+    background-color: #0d6efd; /* Light gray hover */
     border-radius: 5px;
-    color: rgb(0, 0, 0) !important;
+    color: rgb(255, 255, 255) !important;
     padding: 5px;
   }
-  .sidebar-icon{
-    color: red !important;
-  }
+  
   

@@ -63,7 +63,7 @@ function EmployeeList() {
   return (
     <div className="container mb-4 mt-5 pt-5">
       {/* Search bar */}
-      <div className="row justify-content-center mt-2 pt-5">
+      <div className="row justify-content-center mt-1 pt-5">
         <div className="col-md-8 col-lg-7 mb-4">
           <div className="input-group">
             <input
@@ -82,7 +82,7 @@ function EmployeeList() {
 
       <div className="row mt-3">
         {/* Filters */}
-        <div className="col-md-3 shadow-sm py-4">
+        <div className="col-md-3 shadow-sm bg-light py-4">
           <div className="mb-4">
            <h5 className="mb-3 lead d-flex align-items-center gap-2">
   <FiFilter className="text-primary" /> Filter
@@ -186,7 +186,7 @@ function EmployeeList() {
         {/* Products List */}
         <div className="col-md-9">
           <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-5 gap-3">
-            <div className="text-center my-4 display-block">
+            <div className="text-center mt-1 mb-0 display-block">
               <h2 className="d-inline-flex align-items-center justify-content-center gap-2">
   <FaUsers className="text-primary" />
   Employee Profiles
@@ -194,7 +194,7 @@ function EmployeeList() {
             </div>
           </div>
 
-          <div className="row g-4">
+          <div className="row g-4 ">
             {filterProducts.slice(0, visibleCount).map((item, index) => (
               <div key={index} className="col-md-6 col-lg-4">
                 <EmployeeCard

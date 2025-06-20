@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ShopContext } from '../context/ShopContext';
 import { Link } from 'react-router-dom';
-import { FaCheckCircle } from 'react-icons/fa';
+import { FaBriefcase } from 'react-icons/fa';
 
 const EmployeeCard = ({ id, image, name, description }) => {
   const { currency } = useContext(ShopContext);
@@ -54,11 +54,11 @@ const EmployeeCard = ({ id, image, name, description }) => {
           {/* Experience Section */}
          
           <div
-            className="d-inline-flex mt-2 text-nowrap justify-content-center align-items-center px-2 py-1 rounded mb-2 card-info"
+            className="d-inline-flex mt-2 bg-danger bg-opacity-10 text-nowrap justify-content-center text-danger align-items-center px-2 py-1 rounded mb-2 card-info"
             style={{ fontSize: '14px' }}
           >
-            <FaCheckCircle className="me-2 text-primary card-icon" />
-            <span className="card-info-text">TotalExperience: {experience}</span>
+            <FaBriefcase className="me-2 text-primary card-icon" />
+            <span className="card-info-text ">TotalExperience: {experience}</span>
           </div>
 {/* 
           <div

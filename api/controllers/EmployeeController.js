@@ -18,6 +18,26 @@ const AddEmployee = async (req, res) => {
       phoneNumber,
     } = req.body;
 
+    // Parse JSON strings to arrays if needed
+    let parsedAdditionalSkills = additionalSkills;
+    let parsedNeededJobType = neededJobType;
+
+    try {
+      if (typeof additionalSkills === "string") {
+        parsedAdditionalSkills = JSON.parse(additionalSkills);
+      }
+    } catch {
+      parsedAdditionalSkills = additionalSkills;
+    }
+
+    try {
+      if (typeof neededJobType === "string") {
+        parsedNeededJobType = JSON.parse(neededJobType);
+      }
+    } catch {
+      parsedNeededJobType = neededJobType;
+    }
+
     const image1 = req.files?.image1?.[0];
 
     let imagesUrl = [];
@@ -36,8 +56,8 @@ const AddEmployee = async (req, res) => {
       totalWorkExperience: Number(totalWorkExperience),
       workExperienceGovernment: Number(workExperienceGovernment),
       workExperienceSelf: Number(workExperienceSelf),
-      additionalSkills,
-      neededJobType,
+      additionalSkills: parsedAdditionalSkills,
+      neededJobType: parsedNeededJobType,
       email,
       phoneNumber,
       image: imagesUrl,
@@ -53,11 +73,16 @@ const AddEmployee = async (req, res) => {
   }
 };
 
-// 🆕 Edit Product Controller
 const EditEmployee = async (req, res) => {
   try {
+    // Helper to ensure field is always an array
+    function normalizeToArray(field) {
+      if (!field) return [];
+      return Array.isArray(field) ? field : [field];
+    }
+
     const {
-      id, // product id to update
+      id,
       firstName,
       lastName,
       address,
@@ -65,11 +90,13 @@ const EditEmployee = async (req, res) => {
       totalWorkExperience,
       workExperienceGovernment,
       workExperienceSelf,
-      additionalSkills,
-      neededJobType,
       email,
       phoneNumber,
     } = req.body;
+
+    // Normalize the potentially single-or-multi fields to arrays
+    const additionalSkills = normalizeToArray(req.body.additionalSkills);
+    const neededJobType = normalizeToArray(req.body.neededJobType);
 
     const image1 = req.files?.image1?.[0];
     let imagesUrl = [];
@@ -147,5 +174,5 @@ export {
   AddEmployee,
   RemoveEmployee,
   SingleEmployee,
-  EditEmployee, // <- export new function
+  EditEmployee,
 };
