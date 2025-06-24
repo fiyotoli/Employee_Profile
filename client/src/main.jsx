@@ -7,14 +7,14 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom';
-import ShopContextProvider from './context/ShopContext.jsx';
+import ProfileContextProvider from './context/ProfileContext.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-    <ShopContextProvider>
+    <ProfileContextProvider>
     <App />
-    </ShopContextProvider>
+    </ProfileContextProvider>
    
     </BrowserRouter>
   

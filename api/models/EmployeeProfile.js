@@ -13,11 +13,15 @@ const EmployeeProfileSchema = new mongoose.Schema({
   totalWorkExperience: { type: Number, required: true },
   workExperienceGovernment: { type: Number, required: true },
   workExperienceSelf: { type: Number, required: true },
-  additionalSkills: { type: [String], default: [] }, // <=== changed to array
-  neededJobType: { type: [String], required: true }, // <=== changed to array
+  additionalSkills: { type: [String], default: [] },
+  neededJobType: { type: [String], required: true },
   email: { type: String, required: true },
-  phoneNumber: { type: String, required: true }
+  phoneNumber: { type: String, required: true },
+  isFeatured: { type: Boolean, default: false },  // <-- added field here
+}, {
+  timestamps: true
 });
 
 const EmployeeProfile = mongoose.models.product || mongoose.model("product", EmployeeProfileSchema);
+
 export default EmployeeProfile;

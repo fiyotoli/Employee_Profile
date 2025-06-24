@@ -1,20 +1,11 @@
 import { React, useContext, useEffect } from 'react';
-import { assets } from '../assets/assets';
-import logo from '../assets/yegna.png';
+
+
 import { Link, NavLink } from 'react-router-dom';
-import { ShopContext } from '../context/ShopContext';
-import { FaBlog, FaPhone, FaInfoCircle } from "react-icons/fa";
 
 
 function Navbar() {
-  const { setShowSearch, getCartCount, setToken, token, navigate, setCartItems } = useContext(ShopContext);
-
-  const logout = () => {
-    navigate('/login');
-    localStorage.removeItem('token');
-    setToken('');
-    setCartItems({});
-  };
+ 
 
   useEffect(() => {
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
@@ -65,11 +56,11 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white shadow py-3 fixed-top ">
+    <nav className="navbar navbar-expand-lg py-3 navbar-light bg-white shadow-lg fixed-top ">
       <div className="container ">
         {/* Logo */}
         <Link className="navbar-brand" to="/">
-           <h3 className='fw-bold text-primary'>Logo</h3>
+         <h3 className='text-primary fw-bold'>LOGO</h3>
         </Link>
 
         {/* Navbar Toggler for Mobile */}
@@ -92,6 +83,19 @@ function Navbar() {
             <li className="nav-item">
               <NavLink
                 className="nav-link"
+                to="/profile"
+                style={({ isActive }) => ({
+                  fontWeight: isActive ? 'bold' : 'normal',
+                  color: isActive ? '#0d6efd' : 'inherit',
+                  transition: '0.3s'
+                })}
+              >
+                Profile
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                className="nav-link"
                 to="/blog"
                 style={({ isActive }) => ({
                   fontWeight: isActive ? 'bold' : 'normal',
@@ -105,20 +109,7 @@ function Navbar() {
             <li className="nav-item">
               <NavLink
                 className="nav-link"
-                to="/contact"
-                style={({ isActive }) => ({
-                  fontWeight: isActive ? 'bold' : 'normal',
-                  color: isActive ? '#0d6efd' : 'inherit',
-                  transition: '0.3s'
-                })}
-              >
-                Contact
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                to="/about1"
+                to="/about"
                 style={({ isActive }) => ({
                   fontWeight: isActive ? 'bold' : 'normal',
                   color: isActive ? '#0d6efd' : 'inherit',
@@ -134,10 +125,20 @@ function Navbar() {
           <div className="d-flex align-items-center justify-content-center mt-3 mt-lg-0">
            
 
-            {/* contact Button */}
-        <button className="btn btn-primary">
-          contact
-        </button>
+           
+            <div className="dropdown me-3">
+              
+                             {/* Right Button */}
+          <div className="d-flex align-items-center justify-content-center mt-3 mt-lg-0">
+            <Link to="/contact">
+              <button className="btn btn-primary">Contact</button>
+            </Link>
+          </div>
+                 
+            
+            </div>
+
+           
           </div>
         </div>
       </div>

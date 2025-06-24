@@ -2,20 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 
-import About from './pages/About';
+import AboutUs from './pages/About';
+import Contact from './pages/Contact';
 
-import Orders from './pages/Orders';
-import Login from './pages/login';
-import Product from './pages/Product';
-import Cart from './pages/Cart';
-import PlaceOrder from './pages/PlaceOrder';
+
+import ProfileDetail from './pages/ProfileDetail';
+
 import Navbar from './components/Navbar';
-import SearchBar from './components/SearchBar';
+
 import { ToastContainer, toast } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css';
-import Verify from './pages/Verify';
+
 import { FaArrowAltCircleUp } from 'react-icons/fa';
 import Footer from './components/Footer';
+import EmployeeList from './components/EmployeeList';
+import BlogList from './pages/BlogList';
+import SingleBlog from './pages/SingleBlog';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -59,14 +61,14 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             
-            <Route path='/about' element={<About />} />
-            
-            <Route path='/product/:productId' element={<Product />} />
-            <Route path='/cart' element={<Cart />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/place-order' element={<PlaceOrder />} />
-            <Route path='/orders' element={<Orders />} />
-            <Route path='/verify' element={<Verify />} />
+            <Route path='/about' element={<AboutUs />} />
+              <Route path='/profile' element={<EmployeeList/>} />
+              <Route path='/blog' element={<BlogList/>} />
+               <Route path='/contact' element={<Contact/>} />
+            <Route path='/profile/:profileId' element={<ProfileDetail />} />
+           <Route path="/blog/:id" element={<SingleBlog />} />
+          
+           
           </Routes>
 
           <button
@@ -81,7 +83,7 @@ function App() {
           >
             <FaArrowAltCircleUp />
           </button>
-          {/* <Footer/> */}
+          <Footer/>
         </>
       )}
     </div>

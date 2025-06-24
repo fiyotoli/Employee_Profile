@@ -60,8 +60,8 @@ const About = () => {
           </div>
 
           {/* CTA Button */}
-          <Link to="/collection" className="btn btn-primary mt-3">
-            Explore Our Collection
+          <Link to="/about" className="btn btn-primary mt-3">
+            Explore Our Team
           </Link>
         </div>
       </div>

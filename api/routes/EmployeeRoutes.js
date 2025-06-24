@@ -1,13 +1,33 @@
-import express from 'express'
-import { ListEmployee, AddEmployee, RemoveEmployee, SingleEmployee, EditEmployee } from '../controllers/EmployeeController.js'
+import express from 'express';
+import {
+  ListEmployee,
+  AddEmployee,
+  RemoveEmployee,
+  SingleEmployee,
+  EditEmployee,
+  getEmployeeStats,
+  ListFeaturedEmployees,  // <-- import new controller
+} from '../controllers/EmployeeController.js';
+
 import upload from '../middleware/multer.js';
 import adminAuth from '../middleware/adminAuth.js';
 import authUser from '../middleware/auth.js';
 
-const productRouter = express. Router();
-productRouter.post('/add',authUser,upload.fields([{name: 'image1',maxCount:1}]), AddEmployee); 
-productRouter.post('/edit', upload.fields([{ name: 'image1', maxCount: 1 }]), EditEmployee);
-productRouter.post('/remove',authUser, RemoveEmployee);
-productRouter.post('/single', SingleEmployee); 
-productRouter.get('/list', ListEmployee)
-export default productRouter
+const router = express.Router();
+
+router.post('/add', authUser, upload.fields([{ name: 'image1', maxCount: 1 }]), AddEmployee);
+
+router.post('/edit', upload.fields([{ name: 'image1', maxCount: 1 }]), EditEmployee);
+
+router.post('/remove', authUser, RemoveEmployee);
+
+router.post('/single', SingleEmployee);
+
+router.get('/list', ListEmployee);
+
+// New route to get featured employees
+router.get('/featured', ListFeaturedEmployees);
+
+router.get('/stats', getEmployeeStats);
+
+export default router;

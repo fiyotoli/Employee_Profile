@@ -1,86 +1,113 @@
 import React from 'react';
-import { FaCheckCircle } from 'react-icons/fa';
-import about from '../assets/ceo1.jpg';
-const About = () => {
+import { Container, Row, Col, Card } from 'react-bootstrap';
+import { FaUsers, FaBullseye, FaHandshake } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import aboutBanner from '../assets/about.jpg';
+import employee2 from '../assets/employee2.jpg';
+import employee3 from '../assets/employee3.jpg';
+import employee4 from '../assets/employee4.jpg';
+import './AboutUs.css';
+
+const AboutUs = () => {
   return (
-    <div className="container py-5 mt-5">
-      {/* Title */}
-      <div className="text-center mb-5">
-      <div className="text-center my-4">
-  <h2 className="d-inline-flex align-items-center justify-content-center">
-    <span className="bg-primary me-2" style={{  borderRadius: '50px',width: '30px', height: '3px', display: 'inline-block' }}></span>
-    About Us
-  </h2>
-</div>
-        <p className="text-muted mt-3">
-          Our mission is to bring convenience and variety to your fingertips, offering high-quality products from top brands. 
-          We believe in making shopping a seamless and enjoyable experience. 
-          With our diverse range of products, we cater to the needs of all our customers.
-        </p>
-        <p className="text-muted">
-          Since the inception of our company, we have strived to create an ecommerce platform that is both accessible and enjoyable for everyone. 
-          We aim to continuously innovate and adapt to the ever-changing world of online retail. 
-          Our vision is to be the go-to destination for all your shopping needs, with customer satisfaction at the forefront.
-        </p>
+    <>
+      {/* Hero Section with image left and text right */}
+      <div className="about-hero-section pt-5 mt-5 mt-lg-0">
+        <Container>
+          <Row className="align-items-center">
+            <Col md={6}>
+              <img
+                src={aboutBanner}
+                alt="About Us"
+                className="img-fluid rounded"
+              />
+            </Col>
+            <Col md={6} className="text-md-start mt-4 mt-md-0">
+              <h1 className="fw-bold display-5 text-primary">About Our Company</h1>
+              <p className="mt-3">
+                We connect top talent with opportunities to grow and succeed through a transparent employee profile system.
+              </p>
+              <p>
+                Our platform empowers individuals by showcasing their skills, experience, and aspirations — giving employers clear insight into what each candidate brings to the table.
+              </p>
+            </Col>
+          </Row>
+        </Container>
       </div>
 
-      {/* Bottom Section: Founder Card + Why Choose Us */}
-      <div className="row align-items-center">
-        {/* Left: Founder Card */}
-        <div className="col-md-6 mb-4 mb-md-0">
-          <div className="card shadow border-0">
-            <div className="row g-0 align-items-center">
-              <div className="col-md-12">
-                <img 
-                src={about}
-                  alt="Founder"
-                  className="img-fluid d-block mx-auto"
-                  style={{
-                    width: '50%',       // Set width to 100% of its container
-                    height: 'auto',      // Maintain the aspect ratio of the image
-                    borderRadius: '8px', // Rounded corners (you can also use Bootstrap's 'rounded' class for this)
-                     }}   />
-                <div className="card-body">
-                  <h5 className="card-title">Nardos Lemma</h5>
-                  <p className="card-text text-muted">
-                   Nardos Lemma started this journey with a vision to revolutionize the ecommerce industry with customer-centric solutions. 
-                    Their passion for innovation and dedication to providing the best service has been the driving force behind the company's success. 
-                    With years of experience in the retail industry, the founder continues to inspire the team to push boundaries.
-                  </p>
-                  <p className="card-text">
-                    <small className="text-muted">Founder & CEO</small>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      {/* Our Story - moved just below hero */}
+      <section className="bg-light OurStory py-5">
+        <Container>
+          <h2 className="text-center mb-4 text-primary">Our Story</h2>
+          <p className="lead text-center mx-auto" style={{ maxWidth: '800px' }}>
+            Born out of the need for clarity in talent management, our Employee Profile Platform helps organizations stay organized, build culture, and highlight the value every individual brings to the team.
+            Since our inception, we've helped businesses transform their HR processes, making employee data accessible, useful, and beautifully presented.
+          </p>
+        </Container>
+      </section>
 
-        {/* Right: Why Choose Us */}
-        <div className="col-md-6">
-          <h4 className="mb-4">Why Choose Us</h4>
-          <ul className="list-unstyled">
-            <li className="mb-3 d-flex align-items-start">
-              <FaCheckCircle className="text-primary me-2 mt-1" />
-              <span>Curated high-quality products</span>
-            </li>
-            <li className="mb-3 d-flex align-items-start">
-              <FaCheckCircle className="text-primary me-2 mt-1" />
-              <span>Timely and secure delivery</span>
-            </li>
-            <li className="mb-3 d-flex align-items-start">
-              <FaCheckCircle className="text-primary me-2 mt-1" />
-              <span>Responsive customer care</span>
-            </li>
-            <li className="mb-3 d-flex align-items-start">
-              <FaCheckCircle className="text-primary me-2 mt-1" />
-              <span>Trusted by thousands of customers</span>
-            </li>
-          </ul>
+      {/* Mission, Vision, Culture */}
+      <Container className="my-5">
+        <Row className="text-center mb-5">
+          <Col md={6} lg={4}>
+            <FaBullseye size={40} className="text-primary mb-3" />
+            <h4>Our Mission</h4>
+            <p>
+              To bridge the gap between talent and opportunity through clarity, visibility, and fairness.
+            </p>
+          </Col>
+          <Col md={6} lg={4}>
+            <FaHandshake size={40} className="text-primary mb-3" />
+            <h4>Our Vision</h4>
+            <p>
+              A world where every employee's skills and story are valued globally.
+            </p>
+          </Col>
+          <Col md={6} lg={4}>
+            <FaUsers size={40} className="text-primary mb-3" />
+            <h4>Our Culture</h4>
+            <p>
+              We foster innovation, collaboration, and authenticity in everything we do.
+            </p>
+          </Col>
+        </Row>
+
+        {/* Team Cards with names and titles */}
+        <Row className="mb-5">
+          {[ 
+            { img: employee3, name: 'Alice Johnson', title: 'Chief Executive Officer' },
+            { img: employee2, name: 'Michael Smith', title: 'Head of Development' },
+            { img: employee4, name: 'Sophia Lee', title: 'Lead Designer' },
+          ].map(({ img, name, title }, index) => (
+            <Col md={4} key={index} className="mb-4">
+              <Card className="shadow-sm h-100 text-center">
+                <Card.Img
+                  variant="top"
+                  src={img}
+                  alt={name}
+                  style={{ height: 'auto', objectFit: 'cover' }}
+                />
+                <Card.Body>
+                  <Card.Title className="fw-bold">{name}</Card.Title>
+                  <Card.Text className="text-muted">{title}</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+
+      {/* CTA Section */}
+      <div className="cta-section d-flex mb-3 align-items-center justify-content-center text-white text-center">
+        <div className='Container'>
+          <h2 className="mb-3">Ready to Explore Our Profiles?</h2>
+          <Link to="/profile" className="btn btn-light btn-lg">
+            View Employee Profiles
+          </Link>
         </div>
-      </div> 
-    </div>
+      </div>
+    </>
   );
 };
 
-export default About;
+export default AboutUs;

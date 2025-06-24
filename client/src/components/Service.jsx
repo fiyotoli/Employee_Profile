@@ -5,34 +5,34 @@ import 'aos/dist/aos.css';
 
 const services = [
   {
-    icon: 'bi-cart-fill',
-    title: 'Online Store',
-    description: 'Browse and shop products with ease from our online platform.',
+    icon: 'bi-person-badge',
+    title: 'Employee Profiles',
+    description: 'View detailed profiles of all team members across departments.',
   },
   {
-    icon: 'bi-truck',
-    title: 'Fast Delivery',
-    description: 'We ensure fast and secure delivery to your doorstep.',
+    icon: 'bi-search',
+    title: 'Skill Search',
+    description: 'Easily find employees based on their skills and expertise.',
   },
   {
-    icon: 'bi-shield-lock',
-    title: 'Secure Payment',
-    description: 'Make transactions with confidence using our secure system.',
+    icon: 'bi-calendar-check',
+    title: 'Attendance Records',
+    description: 'Track employee attendance and availability efficiently.',
   },
   {
-    icon: 'bi-tags-fill',
-    title: 'Great Deals',
-    description: 'Discover exciting deals and discounts every day.',
+    icon: 'bi-award',
+    title: 'Achievements',
+    description: 'Highlight employee awards, recognitions, and milestones.',
   },
   {
-    icon: 'bi-headset',
-    title: '24/7 Support',
-    description: 'We’re always available to assist with your needs.',
+    icon: 'bi-people',
+    title: 'Team Structure',
+    description: 'Understand the organization’s hierarchy and team roles.',
   },
   {
-    icon: 'bi-box-seam',
-    title: 'Easy Returns',
-    description: 'Return or exchange products with our simple process.',
+    icon: 'bi-envelope',
+    title: 'Contact Info',
+    description: 'Access direct contact information for internal communication.',
   },
 ];
 

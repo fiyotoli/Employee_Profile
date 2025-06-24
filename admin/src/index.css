@@ -10,7 +10,10 @@
     padding: 0;               /* Remove default padding */
     box-sizing: border-box;   /* Include padding and border in total width and height */
 }
-
+/* Optional - App.css or index.css */
+.table-responsive {
+  overflow-x: auto;
+}
 /* Ensure html and body fill the viewport */
 html, body {
     min-width: 100%;             /* Set width to 100% of the viewport */
@@ -33,4 +36,4 @@ html, body {
     padding: 5px;
   }
   
-  
+ 
