@@ -27,11 +27,21 @@ function EmployeeList() {
       filtered = filtered.filter(item => item.educationLevel === educationFilter);
     }
 
-    if (jobTypeSearch) {
-      filtered = filtered.filter(item =>
-        item.neededJobType?.toLowerCase().includes(jobTypeSearch.toLowerCase())
+   if (jobTypeSearch) {
+  filtered = filtered.filter(item => {
+    const jobTypes = item.neededJobType;
+
+    if (Array.isArray(jobTypes)) {
+      // Check if any job type includes the search string (case-insensitive)
+      return jobTypes.some(job =>
+        job.toLowerCase().includes(jobTypeSearch.toLowerCase())
       );
+    } else if (typeof jobTypes === 'string') {
+      return jobTypes.toLowerCase().includes(jobTypeSearch.toLowerCase());
     }
+    return false; // no match if undefined or other type
+  });
+}
 
     if (expRange) {
       if (expRange === "0-6") {
@@ -65,17 +75,18 @@ function EmployeeList() {
       <div className="row justify-content-center mt-1 pt-5">
         <div className="col-md-8 col-lg-7 mb-4">
           <div className="input-group">
-            <input
-              type="text"
-              className="form-control rounded-start-pill ps-4 py-2 shadow-sm bg-white"
-              placeholder="Search by name..."
-              value={search}
-              onChange={(e) => typeof setSearch === 'function' && setSearch(e.target.value)}
-            />
-            <span className="input-group-text text-white border-start-0 rounded-end-pill bg-primary">
-              <FiSearch />
-            </span>
-          </div>
+  <input
+    type="text"
+    className="form-control rounded-start-pill ps-4 py-2 shadow-sm bg-white"
+    placeholder="Search by Job Type..."
+    value={jobTypeSearch}
+    onChange={(e) => setJobTypeSearch(e.target.value)}
+  />
+  <span className="input-group-text text-white border-start-0 rounded-end-pill bg-primary">
+    <FiSearch />
+  </span>
+</div>
+
         </div>
       </div>
 
@@ -128,16 +139,7 @@ function EmployeeList() {
             </div>
 
             {/* Job Type */}
-            <div className="mb-3">
-              <label className="form-label fw-bold">Search by Job Type</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="e.g., Developer"
-                value={jobTypeSearch}
-                onChange={(e) => setJobTypeSearch(e.target.value)}
-              />
-            </div>
+            
           </div>
         </div>
 

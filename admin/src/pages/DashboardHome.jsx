@@ -104,7 +104,8 @@ const DashboardHome = ({ token }) => {
                     <th>#</th>
                     <th>Full Name</th>
                     <th>Email</th>
-                    <th>Address</th>
+                    <th>totalWorkExperience
+</th>
                     <th>Phone</th>
                     <th>Date</th>
                   </tr>
@@ -118,7 +119,8 @@ const DashboardHome = ({ token }) => {
                       <td>{i + 1}</td>
                       <td>{emp.firstName} {emp.lastName}</td>
                       <td>{emp.email}</td>
-                      <td>{emp.address}</td>
+                      <td>{emp.totalWorkExperience
+} yrs</td>
                       <td>{emp.phoneNumber}</td>
                       <td>{new Date(emp.createdAt).toLocaleDateString()}</td>
                     </tr>

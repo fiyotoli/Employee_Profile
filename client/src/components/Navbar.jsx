@@ -60,7 +60,7 @@ function Navbar() {
       <div className="container ">
         {/* Logo */}
         <Link className="navbar-brand" to="/">
-         <h3 className='text-primary fw-bold'>LOGO</h3>
+         <h5 className='fw-bold '> <span className='text-primary '>Tesfa</span>PRTC</h5>
         </Link>
 
         {/* Navbar Toggler for Mobile */}

@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="container">
         <div className="row text-left">
           {/* Column 1 */}
-          <div className="col-md-3 mb-3">
+          <div className="col-md-6 col-lg-4 mb-3">
             <Link className="navbar-brand" to="/">
               <h3 className='fw-bold text-primary'>Logo</h3>
             </Link>
@@ -36,7 +36,7 @@ const Footer = () => {
           </div>
 
           {/* Column 2 */}
-          <div className="col-md-3 mb-3">
+          <div className="col-md-6 col-lg-4 mb-3">
             <h5 className="mb-3">Departments</h5>
             <ul className="list-unstyled" style={{ listStyleType: 'none' }}>
               <li style={{ cursor: 'text' }}>Human Resources</li>
@@ -47,23 +47,18 @@ const Footer = () => {
           </div>
 
           {/* Column 3 */}
-          <div className="col-md-3 mb-3">
+          <div className="col-md-6 col-lg-4 mb-3">
             <h5 className="mb-3">Contact</h5> 
             <p className="mb-0"><FaMapMarkerAlt className="me-2" /> 4 Kilo, Addis Ababa, Ethiopia</p>
-            <p className="mb-0"><FaPhoneAlt className="me-2" /> +251 911 123 456</p>
-            <p className="mb-0 d-flex align-items-center">
-              <FaEnvelope className="me-2" size={20} />
-              info@companyprofile.com
+            <p className="mb-0"><FaPhoneAlt className="me-2" /> 0911440456</p>
+            <p className="mb-0 d-flex align-items-center text-wrap">
+              <FaEnvelope className="me-2 " size={20} />
+               tesfatraining2016@gmail.com
+           
             </p>
           </div>
 
-          {/* Column 4 */}
-          <div className="col-md-3 mb-3">
-            <h5 className="mb-3">Company Info</h5>
-            <p className="mb-0">
-              Learn more about our values, culture, and the people who make our company thrive.
-            </p>
-          </div>
+         
         </div>
 
         <hr className="my-4" />

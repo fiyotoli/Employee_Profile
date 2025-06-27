@@ -101,11 +101,11 @@ You can reach out to us through the contact form, phone, or email, and we’ll g
           <ul style={{ padding: 0, listStyle: 'none', fontSize: '16px' }}>
             <li className="mb-3">
               <FaEnvelope className="text-primary me-2" />
-              <span>hr@employeeportal.com</span>
+              <span>tesfatraining2016@gmail.com</span>
             </li>
             <li className="mb-3">
               <FaPhone className="text-primary me-2" />
-              <span>+251 987 654 321</span>
+              <span>0911440456</span>
             </li>
             <li className="mb-3">
               <FaMapMarkerAlt className="text-primary me-2" />

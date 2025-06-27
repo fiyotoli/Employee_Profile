@@ -98,10 +98,11 @@ const AboutUs = () => {
       </Container>
 
       {/* CTA Section */}
-      <div className="cta-section d-flex mb-3 align-items-center justify-content-center text-white text-center">
+      <div className="cta-section d-flex align-items-center justify-content-center text-white text-center">
         <div className='Container'>
-          <h2 className="mb-3">Ready to Explore Our Profiles?</h2>
-          <Link to="/profile" className="btn btn-light btn-lg">
+          <h2 className="mb-1">Ready to Explore Our Profiles?</h2>
+          <p className='mb-2'>Get to know our dedicated team members. View employee profiles, roles, and contact information.</p>
+          <Link to="/profile" className=" btn-profile btn btn-light btn-lg mt-2">
             View Employee Profiles
           </Link>
         </div>
