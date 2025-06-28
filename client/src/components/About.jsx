@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBullseye, FaLightbulb, FaHandshake } from 'react-icons/fa';
-import about from '../assets/about.jpg';
+import about from '../assets/about1.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -14,7 +14,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="container-fluid px-3 pt-5 pb-1 ">
+    <div className="container px-3 pt-5 pb-1 ">
       <div className="row align-items-center">
         {/* Image Section */}
         <div className="col-md-6 order-sm-1 order-2" data-aos="zoom-in">
@@ -32,7 +32,7 @@ const About = () => {
           {/* Mission */}
           <div className="mb-4">
             <h5 className="d-flex align-items-center">
-              <FaBullseye className="me-2 text-primary" /> Our Mission
+              <FaBullseye className="me-2 text-primary-custom" /> Our Mission
             </h5>
             <p className="text-muted mb-0">
               To provide exceptional e-commerce experiences by offering top-quality products, reliable service, and customer satisfaction.
@@ -42,7 +42,7 @@ const About = () => {
           {/* Vision */}
           <div className="mb-4">
             <h5 className="d-flex align-items-center">
-              <FaLightbulb className="me-2 text-primary" /> Our Vision
+              <FaLightbulb className="me-2 text-primary-custom" /> Our Vision
             </h5>
             <p className="text-muted mb-0">
               To become a leading online store known for innovation, trust, and excellence in service.
@@ -52,7 +52,7 @@ const About = () => {
           {/* Values */}
           <div className="mb-4">
             <h5 className="d-flex align-items-center">
-              <FaHandshake className="me-2 text-primary" /> Our Values
+              <FaHandshake className="me-2 text-primary-custom" /> Our Values
             </h5>
             <p className="text-muted mb-0">
               We value integrity, innovation, and building long-lasting relationships with our customers and partners.
@@ -60,7 +60,7 @@ const About = () => {
           </div>
 
           {/* CTA Button */}
-          <Link to="/about" className="btn btn-primary mt-3">
+          <Link to="/about" className="btn bg-primary-custom text-white mt-3">
             Explore Our Team
           </Link>
         </div>

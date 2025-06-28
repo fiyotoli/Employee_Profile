@@ -32,7 +32,7 @@ const FeaturedEmployeesSection = () => {
      <div className="text-center my-4" data-aos="fade-down">
           <h2 className="d-inline-flex align-items-center justify-content-center">
             <span
-              className="bg-primary me-2"
+              className="bg-primary-custom me-2"
               style={{
                 borderRadius: '50px',
                 width: '30px',

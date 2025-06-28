@@ -35,7 +35,7 @@ const NewsletterSubscribe = () => {
   return (
     <div className="container my-5">
       <div className="bg-light p-5 rounded shadow-sm text-center">
-        <h4 className="fw-bold mb-3 text-primary">Subscribe to Our Newsletter</h4>
+        <h4 className="fw-bold mb-3 text-primary-custom">Subscribe to Our Newsletter</h4>
         <p className="text-muted mb-4">Get the latest updates, offers, and news directly to your inbox.</p>
 
         <form
@@ -54,7 +54,7 @@ const NewsletterSubscribe = () => {
 
           <button
             type="submit"
-            className="btn btn-primary btn-lg"
+            className="btn bg-primary-custom btn-lg text-white"
             disabled={loading}
           >
             {loading ? "Subscribing..." : "Subscribe"}

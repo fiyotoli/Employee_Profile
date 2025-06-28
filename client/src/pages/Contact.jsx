@@ -30,7 +30,7 @@ const Contact = () => {
       <div className="text-center my-4">
         <h2 className="d-inline-flex align-items-center justify-content-center">
           <span
-            className="bg-primary me-2"
+            className="bg-primary-custom me-2"
             style={{ borderRadius: '50px', width: '30px', height: '3px', display: 'inline-block' }}
           ></span>
           Contact HR & Support
@@ -78,7 +78,7 @@ You can reach out to us through the contact form, phone, or email, and we’ll g
                 <Button
                   type="primary"
                   htmlType="submit"
-                  style={{ backgroundColor: '#0d6efd', borderColor: '#0d6efd' }}
+                  style={{ backgroundColor: '#2ca8a6', borderColor: '#2ca8a6' }}
                 >
                   Send Message
                 </Button>
@@ -89,7 +89,7 @@ You can reach out to us through the contact form, phone, or email, and we’ll g
 
         {/* Right: Contact Info */}
         <Col xs={24} md={12} className="d-flex flex-column justify-content-center">
-          <Title level={2} style={{ color: '#0d6efd' }}>HR & Support Contact</Title>
+          <Title level={2} style={{ color: '#2ca8a6' }}>HR & Support Contact</Title>
           <Text className="mb-4 text-muted" style={{ fontSize: '16px', lineHeight: '1.7' }}>
             If you need assistance with your employee profile, submitting new data, or general inquiries, we’re here to help.
             Our HR and technical teams are ready to support you.
@@ -100,15 +100,15 @@ You can reach out to us through the contact form, phone, or email, and we’ll g
 
           <ul style={{ padding: 0, listStyle: 'none', fontSize: '16px' }}>
             <li className="mb-3">
-              <FaEnvelope className="text-primary me-2" />
+              <FaEnvelope className="text-primary-custom me-2" />
               <span>tesfatraining2016@gmail.com</span>
             </li>
             <li className="mb-3">
-              <FaPhone className="text-primary me-2" />
+              <FaPhone className="text-primary-custom me-2" />
               <span>0911440456</span>
             </li>
             <li className="mb-3">
-              <FaMapMarkerAlt className="text-primary me-2" />
+              <FaMapMarkerAlt className="text-primary-custom me-2" />
               <span>Addis Ketema, Addis Ababa, Ethiopia</span>
             </li>
           </ul>

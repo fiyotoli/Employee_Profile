@@ -138,8 +138,8 @@ formData.append("currentLocation", JSON.stringify({ city, region, country }));
 
       {/* profile Upload */}
       <div className="mb-4 pt-2">
-        <h2 className="mb-4 text-primary d-flex align-items-center gap-2">
-          <FaUserPlus className="text-primary" /> Upload Employee Profile
+        <h2 className="mb-4 text-primary-custom d-flex align-items-center gap-2">
+          <FaUserPlus className="text-primary-custom" /> Upload Employee Profile
         </h2>
 
         <label
@@ -257,7 +257,7 @@ formData.append("currentLocation", JSON.stringify({ city, region, country }));
     ))}
     <button
       type="button"
-      className="btn btn-outline-primary btn-sm me-2"
+      className="btn custom-outline-primary  btn-sm me-2"
       onClick={() => {
         const updated = [...workExperienceList];
         updated[index].responsibilities.push("");
@@ -270,7 +270,7 @@ formData.append("currentLocation", JSON.stringify({ city, region, country }));
 ))}
 <button
   type="button"
-  className="btn btn-outline-success"
+  className="btn custom-outline-primary"
   onClick={() =>
     setWorkExperienceList([
       ...workExperienceList,
@@ -325,7 +325,7 @@ formData.append("currentLocation", JSON.stringify({ city, region, country }));
 ))}
 <button
   type="button"
-  className="btn btn-outline-success"
+  className="btn custom-outline-primary"
   onClick={() =>
     setProjectList([...projectList, { projectTitle: "", description: "", role: "" }])
   }
@@ -440,7 +440,7 @@ formData.append("currentLocation", JSON.stringify({ city, region, country }));
   ))}
   <button
     type="button"
-    className="btn btn-outline-primary mt-2"
+    className="btn custom-outline-primary  mt-2"
     onClick={() => setLanguages([...languages, { language: "", proficiency: "" }])}
   >
     + Add Language
@@ -615,7 +615,7 @@ formData.append("currentLocation", JSON.stringify({ city, region, country }));
   {/* Add Education button */}
   <button
     type="button"
-    className="btn btn-outline-primary mt-2"
+    className="btn custom-outline-primary  mt-2"
     onClick={() =>
       setEducation([...education, { institution: "", graduationYear: "" }])
     }
@@ -652,7 +652,7 @@ formData.append("currentLocation", JSON.stringify({ city, region, country }));
         ))}
         <button
           type="button"
-          className="btn btn-outline-primary mt-2"
+          className="btn custom-outline-primary  mt-2"
           onClick={addSkillField}
         >
           + Add More Skill
@@ -685,7 +685,7 @@ formData.append("currentLocation", JSON.stringify({ city, region, country }));
         ))}
         <button
           type="button"
-          className="btn btn-outline-primary mt-2"
+          className="btn custom-outline-primary  mt-2"
           onClick={addJobTypeField}
         >
           + Add Job Type
@@ -696,7 +696,7 @@ formData.append("currentLocation", JSON.stringify({ city, region, country }));
 
       </div>
 
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className="btn bg-primary-custom text-white">
         Submit Application
       </button>
     </form>

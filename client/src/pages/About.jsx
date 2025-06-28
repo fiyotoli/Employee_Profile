@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { FaUsers, FaBullseye, FaHandshake } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import aboutBanner from '../assets/about.jpg';
+import aboutBanner from '../assets/team.jpg';
 import employee2 from '../assets/employee2.jpg';
 import employee3 from '../assets/employee3.jpg';
 import employee4 from '../assets/employee4.jpg';
@@ -14,7 +14,7 @@ const AboutUs = () => {
       {/* Hero Section with image left and text right */}
       <div className="about-hero-section pt-5 mt-5 mt-lg-0">
         <Container>
-          <Row className="align-items-center">
+          <Row className="align-items-center mt-5">
             <Col md={6}>
               <img
                 src={aboutBanner}
@@ -23,7 +23,7 @@ const AboutUs = () => {
               />
             </Col>
             <Col md={6} className="text-md-start mt-4 mt-md-0">
-              <h1 className="fw-bold display-5 text-primary">About Our Company</h1>
+              <h1 className="fw-bold display-5 text-primary-custom">About Our Company</h1>
               <p className="mt-3">
                 We connect top talent with opportunities to grow and succeed through a transparent employee profile system.
               </p>
@@ -38,7 +38,7 @@ const AboutUs = () => {
       {/* Our Story - moved just below hero */}
       <section className="bg-light OurStory py-5">
         <Container>
-          <h2 className="text-center mb-4 text-primary">Our Story</h2>
+          <h2 className="text-center mb-4 text-primary-custom">Our Story</h2>
           <p className="lead text-center mx-auto" style={{ maxWidth: '800px' }}>
             Born out of the need for clarity in talent management, our Employee Profile Platform helps organizations stay organized, build culture, and highlight the value every individual brings to the team.
             Since our inception, we've helped businesses transform their HR processes, making employee data accessible, useful, and beautifully presented.
@@ -47,55 +47,43 @@ const AboutUs = () => {
       </section>
 
       {/* Mission, Vision, Culture */}
-      <Container className="my-5">
-        <Row className="text-center mb-5">
-          <Col md={6} lg={4}>
-            <FaBullseye size={40} className="text-primary mb-3" />
-            <h4>Our Mission</h4>
-            <p>
-              To bridge the gap between talent and opportunity through clarity, visibility, and fairness.
-            </p>
-          </Col>
-          <Col md={6} lg={4}>
-            <FaHandshake size={40} className="text-primary mb-3" />
-            <h4>Our Vision</h4>
-            <p>
-              A world where every employee's skills and story are valued globally.
-            </p>
-          </Col>
-          <Col md={6} lg={4}>
-            <FaUsers size={40} className="text-primary mb-3" />
-            <h4>Our Culture</h4>
-            <p>
-              We foster innovation, collaboration, and authenticity in everything we do.
-            </p>
-          </Col>
-        </Row>
+<Container className="my-5">
+  <Row className="text-center mb-5 g-4">
+    {/* Mission Card */}
+    <Col md={6} lg={4}>
+      <Card className="h-100 p-4">
+        <div className="mx-auto mb-3 d-flex justify-content-center align-items-center rounded-circle bg-primary-custom text-white" style={{ width: '60px', height: '60px' }}>
+          <FaBullseye size={30} />
+        </div>
+        <h4>Our Mission</h4>
+        <p>To bridge the gap between talent and opportunity through clarity, visibility, and fairness.</p>
+      </Card>
+    </Col>
 
-        {/* Team Cards with names and titles */}
-        <Row className="mb-5">
-          {[ 
-            { img: employee3, name: 'Alice Johnson', title: 'Chief Executive Officer' },
-            { img: employee2, name: 'Michael Smith', title: 'Head of Development' },
-            { img: employee4, name: 'Sophia Lee', title: 'Lead Designer' },
-          ].map(({ img, name, title }, index) => (
-            <Col md={4} key={index} className="mb-4">
-              <Card className="shadow-sm h-100 text-center">
-                <Card.Img
-                  variant="top"
-                  src={img}
-                  alt={name}
-                  style={{ height: 'auto', objectFit: 'cover' }}
-                />
-                <Card.Body>
-                  <Card.Title className="fw-bold">{name}</Card.Title>
-                  <Card.Text className="text-muted">{title}</Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </Container>
+    {/* Vision Card (Zoomed out with shadow) */}
+    <Col md={6} lg={4}>
+      <Card className="h-100 p-4 shadow-lg vision-card">
+        <div className="mx-auto mb-3 d-flex justify-content-center align-items-center rounded-circle bg-primary-custom text-white" style={{ width: '60px', height: '60px' }}>
+          <FaHandshake size={30} />
+        </div>
+        <h4>Our Vision</h4>
+        <p>A world where every employee's skills and story are valued globally.</p>
+      </Card>
+    </Col>
+
+    {/* Culture Card */}
+    <Col md={6} lg={4}>
+      <Card className="h-100 p-4">
+        <div className="mx-auto mb-3 d-flex justify-content-center align-items-center rounded-circle bg-primary-custom text-white" style={{ width: '60px', height: '60px' }}>
+          <FaUsers size={30} />
+        </div>
+        <h4>Our Culture</h4>
+        <p>We foster innovation, collaboration, and authenticity in everything we do.</p>
+      </Card>
+    </Col>
+  </Row>
+</Container>
+
 
       {/* CTA Section */}
       <div className="cta-section d-flex align-items-center justify-content-center text-white text-center">

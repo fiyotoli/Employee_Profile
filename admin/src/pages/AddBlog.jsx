@@ -56,8 +56,8 @@ const AddBlog = ({ token }) => {
     <form onSubmit={onSubmitHandler} className="container px-5 py-2 py-md-4  my-3">
       {/* Blog Upload Title */}
       <div className="mb-4 pt-2">
-        <h2 className="mb-4 text-primary d-flex align-items-center gap-2">
-          <FaUserPlus className="text-primary" /> Add New Blog
+        <h2 className="mb-4 text-primary-custom d-flex align-items-center gap-2">
+          <FaUserPlus className="text-primary-custom" /> Add New Blog
         </h2>
 
         <label
@@ -125,7 +125,7 @@ const AddBlog = ({ token }) => {
         />
       </div>
 
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className="btn bg-primary-custom text-white">
         Submit Blog
       </button>
     </form>

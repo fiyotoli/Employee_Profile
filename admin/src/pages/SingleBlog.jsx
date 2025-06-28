@@ -72,14 +72,14 @@ const SingleBlog = () => {
 
   return (
     <div className="container my-2">
-      <Link to="/blog_list" className="btn btn-primary mb-4">&larr; Back to Blogs</Link>
+      <Link to="/blog_list" className="btn bg-primary-custom mb-4">&larr; Back to Blogs</Link>
 
       {/* Blog Main Section */}
       <div className="row mb-5">
         {/* Left: Image and Link */}
         <div className="col-md-4">
           {blog.image && (
-            <div className="p-2 rounded mb-3" style={{ boxShadow: '0 0 20px rgba(13, 110, 253, 0.6)' }}>
+            <div className="p-2 rounded mb-3" style={{ boxShadow: '0 0 20px rgba(44, 168, 166,.6)' }}>
               <img
                 src={blog.image}
                 alt={blog.title}
@@ -98,9 +98,9 @@ const SingleBlog = () => {
                 href={blog.socialMediaLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-outline-primary mt-2 w-100"
+                className="btn custom-outline-primary mt-2 w-100"
               >
-                Social Media Link <FaExternalLinkAlt className="ms-2" />
+                Social Media Link <FaExternalLinkAlt className="ms-2 text-primary-custom" />
               </a>
             </div>
           )}
@@ -111,7 +111,7 @@ const SingleBlog = () => {
           <h2 className="fw-bold mb-3 text-capitalize">{blog.title}</h2>
 
           <div className="text-muted mb-4 d-flex align-items-center gap-2">
-            <FaCalendarAlt className="text-primary" />
+            <FaCalendarAlt className="text-primary-custom" />
             <small>{new Date(blog.date).toLocaleDateString()}</small>
           </div>
 
@@ -127,7 +127,7 @@ const SingleBlog = () => {
       <div className="row">
         <div className="col-md-12">
           <h5 className="fw-bold mb-3 d-flex align-items-center gap-2">
-            <FaBlog className="text-primary" />
+            <FaBlog className="text-primary-custom" />
             <span>Other Blogs</span>
           </h5>
           <div className="row">
@@ -152,7 +152,7 @@ const SingleBlog = () => {
                     </h6>
                     <button
                       onClick={() => handleExploreClick(item._id)}
-                      className="btn btn-sm btn-outline-primary w-100 mt-auto"
+                      className="btn btn-sm custom-outline-primary w-100 mt-auto"
                     >
                       Explore
                     </button>

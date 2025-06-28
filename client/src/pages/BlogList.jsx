@@ -36,7 +36,7 @@ const BlogList = () => {
 
   return (
     <div className="container my-5 pt-5">
-     <h2 className="text-center mb-2 text-primary d-flex justify-content-center align-items-center gap-2">
+     <h2 className="text-center mt-4 mb-2 text-primary-custom d-flex justify-content-center align-items-center gap-2">
   <FaBlog /> Latest Blogs
 </h2>
 <p className="text-center text-muted mb-4" style={{ maxWidth: '800px', margin: '0 auto' }}>
@@ -62,7 +62,7 @@ const BlogList = () => {
                 </h5>
                 <span className="border-bottom border-dark my-2"></span>
                 <p className="card-text flex-grow-1">
-                  <FaBookOpen className="me-2 text-primary" />
+                  <FaBookOpen className="me-2 text-primary-custom" />
                   {blog.content.length > 100
                     ? `${blog.content.substring(0, 100)}...`
                     : blog.content}
@@ -70,7 +70,7 @@ const BlogList = () => {
                 <div className="d-flex justify-content-between align-items-center mt-1">
                   <Link
                     to={`/blog/${blog._id}`}
-                    className="btn btn-primary btn-sm"
+                    className="btn bg-primary-custom text-white btn-sm"
                     style={{ transition: 'all 0.3s' }}
                   >
                     Read More

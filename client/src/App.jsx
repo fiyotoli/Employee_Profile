@@ -8,7 +8,7 @@ import Contact from './pages/Contact';
 
 import ProfileDetail from './pages/ProfileDetail';
 
-import Navbar from './components/Navbar';
+import NavbarComponent from './components/Navbar';
 
 import { ToastContainer, toast } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css';
@@ -37,20 +37,20 @@ function App() {
 
   return (
     <div>
-      <Navbar />
+      <NavbarComponent />
 
       {loading ? (
         <div className="d-flex justify-content-center align-items-center flex-column" style={{ height: '100vh' }}>
           <div className="d-flex justify-content-center gap-2">
             {/* First Spinner Button */}
-            <button className="btn btn-primary" type="button" disabled>
-              <span className="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
-              <span className="visually-hidden" role="status">Loading...</span>
+            <button className="btn bg-primary-custom text-white" type="button" disabled>
+              <span className="spinner-grow spinner-grow-sm text-white" aria-hidden="true"></span>
+              <span className="visually-hidden text-white" role="status">Loading...</span>
             </button>
             {/* Second Spinner Button */}
-            <button className="btn btn-primary" type="button" disabled>
-              <span className="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
-              <span role="status">Loading...</span>
+            <button className="btn bg-primary-custom text-white" type="button" disabled>
+              <span className="spinner-grow spinner-grow-sm text-white" aria-hidden="true"></span>
+              <span role="status text-white">Loading...</span>
             </button>
           </div>
         </div>
@@ -73,7 +73,7 @@ function App() {
 
           <button
             onClick={scrollToTop}
-            className="btn btn-primary"
+            className="btn bg-primary-custom"
             style={{
               position: 'fixed',
               bottom: '20px',
@@ -81,7 +81,7 @@ function App() {
               display: loading ? 'none' : 'block' // Hide when loading
             }}
           >
-            <FaArrowAltCircleUp />
+            <FaArrowAltCircleUp className='text-white' />
           </button>
           <Footer/>
         </>

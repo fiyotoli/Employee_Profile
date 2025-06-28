@@ -82,7 +82,7 @@ function EmployeeList() {
     value={jobTypeSearch}
     onChange={(e) => setJobTypeSearch(e.target.value)}
   />
-  <span className="input-group-text text-white border-start-0 rounded-end-pill bg-primary">
+  <span className="input-group-text text-white border-start-0 rounded-end-pill bg-primary-custom">
     <FiSearch />
   </span>
 </div>
@@ -95,7 +95,7 @@ function EmployeeList() {
         <div className="col-md-3 shadow-sm bg-light py-4">
           <div className="mb-4">
             <h5 className="mb-3 lead d-flex align-items-center gap-2">
-              <FiFilter className="text-primary" /> Filter
+              <FiFilter className="text-primary-custom" /> Filter
             </h5>
 
             {/* Education Level */}
@@ -116,27 +116,27 @@ function EmployeeList() {
             </div>
 
             {/* Work Experience Range */}
-            <div className="mb-3">
-              <label className="form-label fw-semibold">Work Experience</label>
-              <div className="d-flex flex-wrap gap-3">
-                {["", "0-6", "6-18", "18+"].map((range, i) => (
-                  <div className="form-check" key={range || 'all'}>
-                    <input
-                      className="form-check-input"
-                      type="radio"
-                      name="experience"
-                      value={range}
-                      id={`exp${i}`}
-                      checked={expRange === range}
-                      onChange={(e) => setExpRange(e.target.value)}
-                    />
-                    <label className="form-check-label" htmlFor={`exp${i}`}>
-                      {range === "" ? "All" : range === "0-6" ? "0–6 Yrs" : range === "6-18" ? "6–18 Yrs" : "18+ Yrs"}
-                    </label>
-                  </div>
-                ))}
-              </div>
-            </div>
+<div className="mb-3">
+  <label className="form-label fw-semibold">Work Experience</label>
+  <div className="d-flex flex-wrap gap-3">
+    {["", "0-6", "6-18", "18+"].map((range, i) => (
+      <div className="form-check" key={range || 'all'}>
+        <input
+          className="form-check-input"
+          type="radio"
+          name="experience"
+          value={range}
+          id={`exp${i}`}
+          checked={expRange === range}
+          onChange={(e) => setExpRange(e.target.value)}
+        />
+        <label className="form-check-label" htmlFor={`exp${i}`}>
+          {range === "" ? "All" : range === "0-6" ? "0–6 Yrs" : range === "6-18" ? "6–18 Yrs" : "18+ Yrs"}
+        </label>
+      </div>
+    ))}
+  </div>
+</div>
 
             {/* Job Type */}
             
@@ -148,7 +148,7 @@ function EmployeeList() {
           <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-5 gap-3">
             <div className="text-center mt-1 mb-0 display-block">
               <h2 className="d-inline-flex align-items-center justify-content-center gap-2">
-                <FaUsers className="text-primary" />
+                <FaUsers className="text-primary-custom" />
                 Employee Profiles
               </h2>
             </div>
@@ -174,7 +174,7 @@ function EmployeeList() {
 
           {visibleCount < filterProfiles.length && (
             <div className="text-center mt-4">
-              <button className="btn btn-primary" onClick={handleExploreMore}>
+              <button className="btn bg-primary-custom-custom" onClick={handleExploreMore}>
                 Explore More
               </button>
             </div>

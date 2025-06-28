@@ -47,12 +47,12 @@ const Service = () => {
   }, []);
 
   return (
-    <div id="services-container">
-      <div className="container ">
+    <div id="services-container ">
+      <div className="container mt-5 pt-3 ">
         <div className="text-center my-4" data-aos="fade-down">
           <h2 className="d-inline-flex align-items-center justify-content-center">
             <span
-              className="bg-primary me-2"
+              className="bg-primary-custom me-2"
               style={{
                 borderRadius: '50px',
                 width: '30px',
@@ -85,7 +85,7 @@ const Service = () => {
                   <div className="card-body text-center">
                     <i
                       className={`bi ${service.icon} ${
-                        isHovered ? 'text-white' : 'text-primary'
+                        isHovered ? 'text-white' : 'text-primary-custom'
                       }`}
                       style={{ fontSize: isHovered ? '50px' : '30px' }}
                     ></i>

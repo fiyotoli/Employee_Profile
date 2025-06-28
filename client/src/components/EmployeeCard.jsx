@@ -34,7 +34,7 @@ const EmployeeCard = ({ id, image, name, description }) => {
               width: '100px',
               height: '100px',
               objectFit: 'cover',
-              border: '3px solid #0d6efd',
+              border: '3px solid #2ca8a6',
               transition: 'border-color 0.3s ease',
             }}
           />
@@ -50,10 +50,10 @@ const EmployeeCard = ({ id, image, name, description }) => {
 {/* ✅ Experience */}
 <div className="d-flex justify-content-center">
   <div
-    className="d-inline-flex px-2 my-2 py-1 bg-danger bg-opacity-10 text-nowrap justify-content-center text-danger align-items-center text-center rounded mb-2 card-info"
+    className="d-inline-flex px-2 my-2 py-1 bg-yellow-custom-opacity exp-bg bg-opacity-10 text-nowrap justify-content-center text-danger align-items-center text-center rounded mb-2 card-info"
     style={{ fontSize: '13px', maxWidth: '100%' }}
   >
-    <FaBriefcase className="me-2 text-primary card-icon" />
+    <FaBriefcase className="me-2 text-primary-custom card-icon" />
     <span className="card-info-text">
       Total Experience: {experience || 'Unknown'}
     </span>
@@ -76,36 +76,43 @@ const EmployeeCard = ({ id, image, name, description }) => {
 
       {/* Hover Styles */}
       <style>
-        {`
-          .employee-card:hover {
-            background-color: #0d6efd;
-            transform: scale(1.02);
-          }
+  {`
+    .employee-card:hover {
+      background-color: #2ca8a6;
+      transform: scale(1.02);
+    }
 
-          .employee-card:hover .card-name,
-          .employee-card:hover .card-education,
-          .employee-card:hover .card-info-text {
-            color: #fff !important;
-          }
+    .employee-card:hover .card-name,
+    .employee-card:hover .card-education,
+    .employee-card:hover .card-info-text {
+      color: #fff !important;
+    }
 
-          .employee-card:hover .card-icon {
-            color: #fff !important;
-          }
+    .employee-card:hover .card-icon {
+      color: #fff !important;
+    }
 
-          .employee-card:hover .card-line {
-            background-color: #fff;
-          }
+    .employee-card:hover .card-line {
+      background-color: #fff;
+    }
 
-          .employee-card:hover .view-btn {
-            background-color: #fff !important;
-            color: #000 !important;
-          }
+    .employee-card:hover .view-btn {
+      background-color: #fff !important;
+      color: #000 !important;
+    }
 
-          .employee-card:hover .profile-img {
-            border-color: #fff !important;
-          }
-        `}
-      </style>
+    .employee-card:hover .profile-img {
+      border-color: #fff !important;
+    }
+
+    /* ✅ Add this for the Experience box */
+    .employee-card:hover .exp-bg {
+      background-color: #000 !important;
+      color: #fff !important;
+    }
+  `}
+</style>
+
     </div>
   );
 };

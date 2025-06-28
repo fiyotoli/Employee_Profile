@@ -12,7 +12,7 @@ import {
 } from 'react-icons/fa';
 
 const iconCircleStyle = {
-  backgroundColor: '#0d6efd',
+  backgroundColor: '#2ca8a6',
   borderRadius: '50%',
   color: 'white',
   borderColor:'white',
@@ -24,7 +24,7 @@ const iconCircleStyle = {
   alignItems: 'center',
 };
 const primaryIconCircleStyle = {
-  backgroundColor: '#0d6efd',
+  backgroundColor: '#2ca8a6',
   borderRadius: '50%',
   borderColor:'white',
    border: '1px solid white',  // added this line
@@ -53,7 +53,7 @@ const shadowRowStyle = {
 // You can alternate bg-primary and white cards using array index % 2, or manually:
 const cardPrimaryStyle = {
   ...cardShadowStyle,
-  backgroundColor: '#0d6efd', // Bootstrap primary
+  backgroundColor: '#2ca8a6', // Bootstrap primary
   color: 'white',
 };
 
@@ -123,7 +123,7 @@ const ProfileDetail = () => {
 
    return (
     <div className="container mt-5 pt-5">
-      <Link to="/profile" className="btn btn-primary mb-4 mt-2">&larr; Back to Profile</Link>
+      <Link to="/profile" className="btn bg-primary-custom text-white mb-4 mt-2">&larr; Back to Profile</Link>
 
       <div className="row align-items-start mb-5">
         <div className="col-md-3 text-center mt-3">
@@ -131,7 +131,7 @@ const ProfileDetail = () => {
            <div
         className="position-relative d-inline-block"
         style={{
-          boxShadow: '0 0 15px 4px rgba(13, 110, 253, 0.7)',
+          boxShadow: '0 0 15px 4px rgba(44, 168, 166,.7)',
           borderRadius: '8px',
           maxWidth: '100%',
         }}
@@ -150,7 +150,7 @@ const ProfileDetail = () => {
           }}
         />
       </div>
-      <hr style={{ borderTop: '2px solid #0d6efd', width: '80%', margin: '20px auto' }} />
+      <hr style={{ borderTop: '2px solid #2ca8a6', width: '80%', margin: '20px auto' }} />
       <h2 className="fw-bold text-capitalize">
         {profileData.firstName} {profileData.lastName}
       </h2>
@@ -205,64 +205,60 @@ const ProfileDetail = () => {
 
 {/* // Skills & Job Type (Primary Card) */}
 {renderCard((
-  <>
-    <div className="row">
-      <div className="col-md-6 mb-3 d-flex align-items-center gap-3">
-       
+  <div className="row">
+    {/* Skills Column */}
+    <div className="col-md-6 mb-3">
+      <div className="d-flex align-items-start gap-3">
+        <div style={primaryIconCircleStyle}><FaTools /></div>
         <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-  <div style={primaryIconCircleStyle}><FaTools /></div>
-  <h6 className="fw-bold mb-1">Skills</h6>
-</div>
-
+          <h6 className="fw-bold mb-1">Skills</h6>
           <ul className="mb-0">
-  {(() => {
-    try {
-      if (Array.isArray(profileData.additionalSkills) && profileData.additionalSkills.length === 1) {
-        const parsed = JSON.parse(profileData.additionalSkills[0]);
-        return parsed.map((skill, index) => <li key={index}>{skill}</li>);
-      }
-      if (Array.isArray(profileData.additionalSkills)) {
-        return profileData.additionalSkills.map((skill, index) => <li key={index}>{skill}</li>);
-      }
-      return <li>{profileData.additionalSkills || 'N/A'}</li>;
-    } catch {
-      return <li>{profileData.additionalSkills || 'N/A'}</li>;
-    }
-  })()}
-</ul>
-
-        </div>
-      </div>
-      <div className="col-md-6 mb-3 d-flex align-items-center gap-3">
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-  <div style={primaryIconCircleStyle}><FaSuitcase /></div>
-  <h6 className="fw-bold mb-1">Job Type</h6>
-</div>
-
-          <ul className="mb-0">
-  {(() => {
-    try {
-      if (Array.isArray(profileData.neededJobType) && profileData.neededJobType.length === 1) {
-        const parsed = JSON.parse(profileData.neededJobType[0]);
-        return parsed.map((job, index) => <li key={index}>{job}</li>);
-      }
-      if (Array.isArray(profileData.neededJobType)) {
-        return profileData.neededJobType.map((job, index) => <li key={index}>{job}</li>);
-      }
-      return <li>{profileData.neededJobType || 'N/A'}</li>;
-    } catch {
-      return <li>{profileData.neededJobType || 'N/A'}</li>;
-    }
-  })()}
-</ul>
-
+            {(() => {
+              try {
+                if (Array.isArray(profileData.additionalSkills) && profileData.additionalSkills.length === 1) {
+                  const parsed = JSON.parse(profileData.additionalSkills[0]);
+                  return parsed.map((skill, index) => <li key={index}>{skill}</li>);
+                }
+                if (Array.isArray(profileData.additionalSkills)) {
+                  return profileData.additionalSkills.map((skill, index) => <li key={index}>{skill}</li>);
+                }
+                return <li>{profileData.additionalSkills || 'N/A'}</li>;
+              } catch {
+                return <li>{profileData.additionalSkills || 'N/A'}</li>;
+              }
+            })()}
+          </ul>
         </div>
       </div>
     </div>
-  </>
-), 6, true)} 
+
+    {/* Job Type Column */}
+    <div className="col-md-6 mb-3">
+      <div className="d-flex align-items-start gap-3">
+        <div style={primaryIconCircleStyle}><FaSuitcase /></div>
+        <div>
+          <h6 className="fw-bold mb-1">Job Type</h6>
+          <ul className="mb-0">
+            {(() => {
+              try {
+                if (Array.isArray(profileData.neededJobType) && profileData.neededJobType.length === 1) {
+                  const parsed = JSON.parse(profileData.neededJobType[0]);
+                  return parsed.map((job, index) => <li key={index}>{job}</li>);
+                }
+                if (Array.isArray(profileData.neededJobType)) {
+                  return profileData.neededJobType.map((job, index) => <li key={index}>{job}</li>);
+                }
+                return <li>{profileData.neededJobType || 'N/A'}</li>;
+              } catch {
+                return <li>{profileData.neededJobType || 'N/A'}</li>;
+              }
+            })()}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+), 6, true)}
 
 
           {/* New styled cards */}
@@ -388,7 +384,7 @@ const ProfileDetail = () => {
           <div className="row">
             <div className="col-md-6 mb-3">
               <label htmlFor="email" className="form-label fw-bold">
-                <FaEnvelope className="me-2 text-primary" />
+                <FaEnvelope className="me-2 text-primary-custom" />
                 Email
               </label>
               <input
@@ -402,7 +398,7 @@ const ProfileDetail = () => {
 
             <div className="col-md-6 mb-3">
               <label htmlFor="phone" className="form-label fw-bold">
-                <FaPhone className="me-2 text-primary" />
+                <FaPhone className="me-2 text-primary-custom" />
                 Phone
               </label>
               <input

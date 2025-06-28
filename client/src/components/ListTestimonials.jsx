@@ -38,7 +38,7 @@ const TestimonialCarousel = () => {
       <div className="text-center mb-4" data-aos="fade-left">
         <h2 className="d-inline-flex align-items-center justify-content-center">
           <span
-            className="bg-primary me-2"
+            className="bg-primary-custom me-2"
             style={{
               borderRadius: '50px',
               width: '30px',
@@ -71,7 +71,7 @@ const TestimonialCarousel = () => {
                   >
                     <div className="card-body text-center d-flex flex-column justify-content-between">
                       <div>
-                        <FaQuoteLeft className="text-primary display-5 mb-3" />
+                        <FaQuoteLeft className="text-primary-custom display-5 mb-3" />
                         {/* Equal-height feedback section */}
                         <p
                           className="card-text mb-3 text-capitalize"
@@ -89,7 +89,7 @@ const TestimonialCarousel = () => {
                       </div>
 
                       <div>
-                        <hr className="border-primary" />
+                        <hr className="border-black" />
                         <img
                           src={getAvatar(testimonial.gender)}
                           alt={testimonial.name}
@@ -117,14 +117,14 @@ const TestimonialCarousel = () => {
       {/* Custom Carousel Controls */}
       <div className="d-flex justify-content-center mt-4" data-aos="fade-up">
         <button
-          className="btn btn-primary rounded shadow me-2"
+          className="btn bg-primary-custom rounded shadow me-2"
           style={{ width: '50px', height: '50px' }}
           onClick={() => carouselRef.current.prev()}
         >
           <i className="bi bi-box-arrow-left text-white" />
         </button>
         <button
-          className="btn btn-primary rounded shadow"
+          className="btn bg-primary-custom rounded shadow"
           style={{ width: '50px', height: '50px' }}
           onClick={() => carouselRef.current.next()}
         >

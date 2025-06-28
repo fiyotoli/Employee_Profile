@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Accordion, Container, Row, Col, Image } from 'react-bootstrap';
 import { FaQuestionCircle, FaPlus } from 'react-icons/fa';
-import faqImage from '../assets/faq.jpg';
+import faqImage from '../assets/faq1.jpg';
 import './Faq.css';
 
 // AOS
@@ -19,28 +19,29 @@ const Faq = () => {
     setActiveKey(activeKey === key ? null : key);
   };
 
- const faqItems = [
+const faqItems = [
   {
-    question: "How do I update my employee profile?",
-    answer: "Log in to your account and go to the 'Profile' section. From there, you can edit your personal and professional details.",
+    question: "How can I view employee profiles?",
+    answer: "Navigate to the 'Profiles' section from the main menu. You can browse or search by job title, skill, or department.",
     eventKey: "0",
   },
   {
-    question: "Who can view my profile?",
-    answer: "Your profile is visible to company administrators and HR. You can control visibility settings for specific fields in your account.",
+    question: "Can I filter employee profiles by department or skills?",
+    answer: "Yes, the platform allows you to filter profiles by department, skills, region, and other criteria for easier exploration.",
     eventKey: "1",
   },
   {
-    question: "How can I reset my password?",
-    answer: "Click on 'Forgot Password' at the login page. A reset link will be sent to your registered email.",
+    question: "Is the information in the employee profiles verified?",
+    answer: "Yes, all profile data is either submitted by the employee and approved by HR or directly managed by the HR department.",
     eventKey: "2",
   },
   {
-    question: "What should I do if my profile information is incorrect?",
-    answer: "Please contact the HR department or your manager to request a correction if you're unable to update it yourself.",
+    question: "Can I download or print an employee's profile?",
+    answer: "Currently, the platform supports viewing profiles online. For official use, please contact the HR department for downloadable versions.",
     eventKey: "3",
   },
 ];
+
 
 
   return (
@@ -56,7 +57,7 @@ const Faq = () => {
           <div className="text-left my-4">
             <h2 className="d-inline-flex align-items-center justify-content-center">
               <span
-                className="bg-primary me-2"
+                className="bg-primary-custom me-2"
                 style={{
                   borderRadius: '50px',
                   width: '30px',
@@ -77,9 +78,9 @@ const Faq = () => {
                 data-aos="zoom-in-up"
               >
                 <Accordion.Header onClick={() => handleToggle(eventKey)} style={{ borderBottom: '1px solid #ddd' }}>
-                  <FaQuestionCircle className="me-2 text-primary" size={20} />
+                  <FaQuestionCircle className="me-2 text-primary-custom" size={20} />
                   <span className="flex-grow-1 text-start">{question}</span>
-                  <FaPlus className="text-primary" size={20} />
+                  <FaPlus className="text-primary-custom" size={20} />
                 </Accordion.Header>
                 <Accordion.Body>{answer}</Accordion.Body>
               </Accordion.Item>

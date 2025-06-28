@@ -62,7 +62,7 @@ const DashboardHome = ({ token }) => {
 
   return (
     <div className="container my-4">
-      <h2 className="mb-4 text-primary d-flex align-items-center">
+      <h2 className="mb-4 text-primary-custom d-flex align-items-center">
         <MdDashboard size={30} className="me-2" />
         Dashboard Overview
       </h2>
@@ -73,12 +73,12 @@ const DashboardHome = ({ token }) => {
           <div key={key} className="col-6 col-md-4 col-lg-3 mb-3">
             <div
               className={`card text-center shadow-sm card-hover ${
-                activeCardIndex === index ? 'bg-primary text-white' : ''
+                activeCardIndex === index ? 'bg-primary-custom text-white' : ''
               }`}
               onMouseEnter={() => setActiveCardIndex(index)}
             >
               <div className="card-body d-flex flex-column align-items-center gap-2">
-                <div className={`icon-wrapper ${activeCardIndex === index ? 'text-white' : 'text-primary'}`}>
+                <div className={`icon-wrapper ${activeCardIndex === index ? 'text-white' : 'text-primary-custom'}`}>
                   {icon}
                 </div>
                 <p className="display-6 mb-1">{stats[key]}</p>
@@ -92,7 +92,7 @@ const DashboardHome = ({ token }) => {
       {/* Latest Employees Table */}
       {stats.latestEmployees.length > 0 && (
         <div className="card shadow-sm">
-          <div className="card-header bg-primary text-white d-flex align-items-center">
+          <div className="card-header bg-primary-custom text-white d-flex align-items-center">
             <MdPeople size={24} className="me-2" />
             Recently Added Employees
           </div>
@@ -140,7 +140,7 @@ const DashboardHome = ({ token }) => {
         }
 
         .card-hover:hover {
-          background-color: #0d6efd !important;
+          background-color: #2ca8a6 !important;
           color: white !important;
         }
 

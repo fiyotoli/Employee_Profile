@@ -35,4 +35,38 @@ html, body {
     color: rgb(255, 255, 255) !important;
     padding: 5px;
   }
- 
+  .text-primary-custom {
+  color: #2ca8a6 !important; /* your custom color */
+}
+  .bg-primary-custom {
+  background-color: #2ca8a6 !important; /* your custom color */
+}
+  .text-yellow-custom {
+  color: #fdcf31 !important; /* your custom color */
+}
+  .bg-yellow-custom {
+  background-color: #fdcf31 !important; /* your custom color */
+}
+  .bg-yellow-custom-opacity {
+  background-color: rgb(253, 207, 49,.4) !important; /* your custom color */
+}
+.exp-bg:hover{
+  background: rgb(0, 0, 0) !important;
+}
+.bg-primary-custom-opacity{
+   background-color: rgb(44, 168, 166,.1) !important; /* your custom color */
+}
+/* Change radio button color when checked */
+.form-check-input:checked {
+  background-color: #2ca8a6 !important;   /* Replace with your custom color */
+  border-color: #2ca8a6 important;
+}
+
+/* Optional: ensure the dot inside is also visible */
+.form-check-input:checked::before {
+  background-color: #2ca8a6 important;
+}
+.custom-outline-primary{
+ border: 1px solid #2ca8a6 !important;
+}
+

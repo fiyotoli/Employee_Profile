@@ -66,24 +66,28 @@ const ListEmployee = ({ token }) => {
     }
   };
 
-  const removeProduct = async (id) => {
-    try {
-      const response = await axios.post(
-        `${backendUrl}/api/profile/remove`,
-        { id },
-        { headers: { token } }
-      );
-      if (response.data.success) {
-        toast.success(response.data.message);
-        await fetchList();
-      } else {
-        toast.error(response.data.message);
-      }
-    } catch (error) {
-      console.error(error);
-      toast.error(error.message);
+ const removeProduct = async (id) => {
+  const confirmDelete = window.confirm("Are you sure you want to delete this item?");
+  if (!confirmDelete) return;
+
+  try {
+    const response = await axios.post(
+      `${backendUrl}/api/profile/remove`,
+      { id },
+      { headers: { token } }
+    );
+    if (response.data.success) {
+      toast.success(response.data.message);
+      await fetchList();
+    } else {
+      toast.error(response.data.message);
     }
-  };
+  } catch (error) {
+    console.error(error);
+    toast.error(error.message);
+  }
+};
+
 
   const handleEdit = (item) => {
     const editItem = { ...item };
@@ -208,8 +212,8 @@ const ListEmployee = ({ token }) => {
   return (
     <div className="container mt-3">
       <div className="text-center my-4 pt-4">
-        <h2 className="mb-4 text-primary d-flex align-items-center gap-2">
-          <FaUsers className="text-primary" /> List of Employee Profile
+        <h2 className="mb-4 text-primary-custom d-flex align-items-center gap-2">
+          <FaUsers className="text-primary-custom" /> List of Employee Profile
         </h2>
 
         {/* Filters and Sorting */}
@@ -485,7 +489,7 @@ const ListEmployee = ({ token }) => {
   <form onSubmit={handleEditSubmit}>
     <div className="modal-header border-0 d-flex align-items-center justify-content-between">
       <div className="d-flex align-items-center">
-        <FaEdit className="text-primary me-2 fs-5" />
+        <FaEdit className="text-primary-custom me-2 fs-5" />
         <h5 className="modal-title mb-0">Edit Profile</h5>
       </div>
       <button type="button" className="btn-close" onClick={() => setShowModal(false)}></button>
@@ -614,27 +618,59 @@ const ListEmployee = ({ token }) => {
       </div>
 
       {/* Location */}
-      <div className="mb-3">
-        <label className="form-label fw-bold">Current Location</label>
-        {["city", "region", "country"].map((loc, i) => (
-          <input
-            key={i}
-            type="text"
-            className="form-control mb-1"
-            placeholder={loc.charAt(0).toUpperCase() + loc.slice(1)}
-            value={editData.currentLocation?.[loc] || ""}
-            onChange={(e) =>
-              setEditData({
-                ...editData,
-                currentLocation: {
-                  ...editData.currentLocation,
-                  [loc]: e.target.value,
-                },
-              })
-            }
-          />
-        ))}
-      </div>
+<div className="mb-3">
+  <label className="form-label fw-bold">Current Location</label>
+  {["city", "region", "country"].map((loc, i) => (
+    loc === "region" ? (
+      <select
+        key={i}
+        className="form-select mb-1"
+        value={editData.currentLocation?.region || ""}
+        onChange={(e) =>
+          setEditData({
+            ...editData,
+            currentLocation: {
+              ...editData.currentLocation,
+              region: e.target.value,
+            },
+          })
+        }
+      >
+        <option value="">Select Region</option>
+        <option value="Addis Ababa">Addis Ababa</option>
+        <option value="Afar">Afar</option>
+        <option value="Amhara">Amhara</option>
+        <option value="Benishangul-Gumuz">Benishangul-Gumuz</option>
+        <option value="Dire Dawa">Dire Dawa</option>
+        <option value="Gambela">Gambela</option>
+        <option value="Harari">Harari</option>
+        <option value="Oromia">Oromia</option>
+        <option value="Sidama">Sidama</option>
+        <option value="Somali">Somali</option>
+        <option value="Southern Nations, Nationalities, and Peoples' Region">SNNPR</option>
+        <option value="Tigray">Tigray</option>
+      </select>
+    ) : (
+      <input
+        key={i}
+        type="text"
+        className="form-control mb-1"
+        placeholder={loc.charAt(0).toUpperCase() + loc.slice(1)}
+        value={editData.currentLocation?.[loc] || ""}
+        onChange={(e) =>
+          setEditData({
+            ...editData,
+            currentLocation: {
+              ...editData.currentLocation,
+              [loc]: e.target.value,
+            },
+          })
+        }
+      />
+    )
+  ))}
+</div>
+
 
       {/* Languages with Language + Proficiency Selection */}
       <div className="mb-3">
@@ -710,95 +746,114 @@ const ListEmployee = ({ token }) => {
       </div>
 
       {/* Work Experience */}
-      <div className="mb-3">
-        <label className="form-label fw-bold">Work Experience</label>
-        {editData.workExperience?.map((exp, i) => (
-          <div className="border p-2 mb-3 rounded" key={i}>
-            <input
-              type="text"
-              className="form-control mb-1"
-              placeholder="Company Name"
-              value={exp.companyName}
-              onChange={(e) => {
-                const updated = [...editData.workExperience];
-                updated[i].companyName = e.target.value;
-                setEditData({ ...editData, workExperience: updated });
-              }}
-            />
-            <input
-              type="text"
-              className="form-control mb-1"
-              placeholder="Job Title"
-              value={exp.jobTitle}
-              onChange={(e) => {
-                const updated = [...editData.workExperience];
-                updated[i].jobTitle = e.target.value;
-                setEditData({ ...editData, workExperience: updated });
-              }}
-            />
-            <input
-              type="date"
-              className="form-control mb-1"
-              value={exp.startDate?.slice(0, 10) || ""}
-              onChange={(e) => {
-                const updated = [...editData.workExperience];
-                updated[i].startDate = e.target.value;
-                setEditData({ ...editData, workExperience: updated });
-              }}
-            />
-            <input
-              type="date"
-              className="form-control mb-1"
-              value={exp.endDate?.slice(0, 10) || ""}
-              onChange={(e) => {
-                const updated = [...editData.workExperience];
-                updated[i].endDate = e.target.value;
-                setEditData({ ...editData, workExperience: updated });
-              }}
-            />
+<div className="mb-3">
+  <label className="form-label fw-bold">Work Experience</label>
+  {editData.workExperience?.map((exp, i) => (
+    <div className="border p-2 mb-3 rounded" key={i}>
+      <input
+        type="text"
+        className="form-control mb-1"
+        placeholder="Company Name"
+        value={exp.companyName}
+        onChange={(e) => {
+          const updated = [...editData.workExperience];
+          updated[i].companyName = e.target.value;
+          setEditData({ ...editData, workExperience: updated });
+        }}
+      />
+      <input
+        type="text"
+        className="form-control mb-1"
+        placeholder="Job Title"
+        value={exp.jobTitle}
+        onChange={(e) => {
+          const updated = [...editData.workExperience];
+          updated[i].jobTitle = e.target.value;
+          setEditData({ ...editData, workExperience: updated });
+        }}
+      />
+      <input
+        type="date"
+        className="form-control mb-1"
+        value={exp.startDate?.slice(0, 10) || ""}
+        onChange={(e) => {
+          const updated = [...editData.workExperience];
+          updated[i].startDate = e.target.value;
+          setEditData({ ...editData, workExperience: updated });
+        }}
+      />
+      <input
+        type="date"
+        className="form-control mb-1"
+        value={exp.endDate?.slice(0, 10) || ""}
+        onChange={(e) => {
+          const updated = [...editData.workExperience];
+          updated[i].endDate = e.target.value;
+          setEditData({ ...editData, workExperience: updated });
+        }}
+      />
 
-            <label className="form-label mt-2 fw-bold">Responsibilities</label>
-            {exp.responsibilities?.map((res, rIdx) => (
-              <div className="d-flex mb-1 gap-2 align-items-center" key={rIdx}>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder={`Responsibility ${rIdx + 1}`}
-                  value={res}
-                  onChange={(e) => {
-                    const updated = [...editData.workExperience];
-                    updated[i].responsibilities[rIdx] = e.target.value;
-                    setEditData({ ...editData, workExperience: updated });
-                  }}
-                />
-                <button
-                  type="button"
-                  className="btn btn-danger"
-                  onClick={() => {
-                    const updated = [...editData.workExperience];
-                    updated[i].responsibilities.splice(rIdx, 1);
-                    setEditData({ ...editData, workExperience: updated });
-                  }}
-                >
-                  −
-                </button>
-              </div>
-            ))}
-            <button
-              type="button"
-              className="btn btn-outline-primary btn-sm mt-1"
-              onClick={() => {
-                const updated = [...editData.workExperience];
-                if (!updated[i].responsibilities) updated[i].responsibilities = [];
-                updated[i].responsibilities.push("");
-                setEditData({ ...editData, workExperience: updated });
-              }}
-            >
-              + Add Responsibility
-            </button>
-          </div>
-        ))}
-      </div>
+      <label className="form-label mt-2 fw-bold">Responsibilities</label>
+      {exp.responsibilities?.map((res, rIdx) => (
+        <div className="d-flex mb-1 gap-2 align-items-center" key={rIdx}>
+          <input
+            type="text"
+            className="form-control"
+            placeholder={`Responsibility ${rIdx + 1}`}
+            value={res}
+            onChange={(e) => {
+              const updated = [...editData.workExperience];
+              updated[i].responsibilities[rIdx] = e.target.value;
+              setEditData({ ...editData, workExperience: updated });
+            }}
+          />
+          <button
+            type="button"
+            className="btn btn-danger"
+            onClick={() => {
+              const updated = [...editData.workExperience];
+              updated[i].responsibilities.splice(rIdx, 1);
+              setEditData({ ...editData, workExperience: updated });
+            }}
+          >
+            −
+          </button>
+        </div>
+      ))}
+      <button
+        type="button"
+        className="btn btn-outline-primary btn-sm mt-1"
+        onClick={() => {
+          const updated = [...editData.workExperience];
+          if (!updated[i].responsibilities) updated[i].responsibilities = [];
+          updated[i].responsibilities.push("");
+          setEditData({ ...editData, workExperience: updated });
+        }}
+      >
+        + Add Responsibility
+      </button>
+    </div>
+  ))}
+
+  {/* Add Another Work Experience Button */}
+  <button
+    type="button"
+    className="btn btn-success"
+    onClick={() => {
+      const updated = [...(editData.workExperience || [])];
+      updated.push({
+        companyName: "",
+        jobTitle: "",
+        startDate: "",
+        endDate: "",
+        responsibilities: [""],
+      });
+      setEditData({ ...editData, workExperience: updated });
+    }}
+  >
+    + Add Other Work Experience
+  </button>
+</div>
 
       {/* Projects */}
       <div className="mb-3">

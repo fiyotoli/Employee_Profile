@@ -10,6 +10,7 @@ import {
   MdListAlt,
   MdFeedback,
 } from 'react-icons/md';
+import logo from '../assets/logo.png';
 
 function Navbar({ setToken }) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -61,7 +62,8 @@ function Navbar({ setToken }) {
       {/* Top Navbar */}
       <div className="bg-white d-flex align-items-center justify-content-between py-3 px-5 fixed-top shadow-sm">
         <Link className="navbar-brand" to="/" onClick={handleLogoClick}>
-          <h3 className="fw-bold text-primary">Logo</h3>
+          {/* Replace text logo with image */}
+                   <img src={logo} alt="Tesfa PRTC Logo" style={{ height: '60px' }} />
         </Link>
         <button onClick={() => setToken('')} className="btn btn-danger">
           Logout
@@ -81,7 +83,8 @@ function Navbar({ setToken }) {
         {/* Header: logo and close icon in one row */}
         <div className="d-flex align-items-center justify-content-between mb-0">
           <Link to="/" className="text-decoration-none" onClick={() => onNavLinkClick('/')}>
-            <h4 className="fw-bold text-primary mb-0">LOGO</h4>
+             {/* Replace text logo with image */}
+                      <img src={logo} alt="Tesfa PRTC Logo" style={{ height: '60px' }} />
           </Link>
           <MdClose
             size={20}
@@ -91,7 +94,7 @@ function Navbar({ setToken }) {
         </div>
 
         {/* Dashboard label below header */}
-        <p className="text-muted small mb-3 text-start">Employee Dashboard</p>
+        <p className="text-muted small mb-3 text-start">Admin Dashboard</p>
         <hr className="border border-black opacity-100 my-3" />
 
         {/* Sidebar Links */}
@@ -178,12 +181,12 @@ function Navbar({ setToken }) {
         }
 
         .sidebar-icon {
-          color: #0d6efd;
+          color: #2ca8a6;
           transition: color 0.3s ease;
         }
 
         .sidebar-link:hover {
-          background-color: #0d6efd !important;
+          background-color: #2ca8a6 !important;
           color: white !important;
         }
 
@@ -192,7 +195,7 @@ function Navbar({ setToken }) {
         }
 
         .active-link {
-          background-color: #0d6efd !important;
+          background-color: #2ca8a6 !important;
           color: white !important;
         }
 

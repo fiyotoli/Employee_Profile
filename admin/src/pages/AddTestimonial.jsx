@@ -46,8 +46,8 @@ const AddTestimonial = ({ token }) => {
 
   return (
     <div className="container mt-5">
-      <h2 className="d-flex text-primary align-items-center mb-4">
-        <HiOutlineChatAlt2 className="text-primary me-2" />
+      <h2 className="d-flex text-primary-custom align-items-center mb-4">
+        <HiOutlineChatAlt2 className="text-primary-custom me-2" />
         Add Testimonial
       </h2>
       <form onSubmit={handleSubmit}>
@@ -81,29 +81,33 @@ const AddTestimonial = ({ token }) => {
         <small className="text-muted mb-3 d-block">
           {form.feedback.length} / {maxFeedbackLength} characters
         </small>
-        <div className="mb-3">
-          <label className="me-2">
-            <input
-              type="radio"
-              name="gender"
-              value="Male"
-              checked={form.gender === 'Male'}
-              onChange={handleChange}
-            />{' '}
-            Male
-          </label>
-          <label className="ms-3">
-            <input
-              type="radio"
-              name="gender"
-              value="Female"
-              checked={form.gender === 'Female'}
-              onChange={handleChange}
-            />{' '}
-            Female
-          </label>
-        </div>
-        <button className="btn btn-primary" type="submit">
+       <div className="mb-3 d-flex gap-4">
+  <label className="form-check-label gender-label">
+    <input
+      type="radio"
+      name="gender"
+      value="Male"
+      checked={form.gender === 'Male'}
+      onChange={handleChange}
+      className="form-check-input me-1"
+    />
+    Male
+  </label>
+
+  <label className="form-check-label gender-label">
+    <input
+      type="radio"
+      name="gender"
+      value="Female"
+      checked={form.gender === 'Female'}
+      onChange={handleChange}
+      className="form-check-input me-1"
+    />
+    Female
+  </label>
+</div>
+
+        <button className="btn bg-primary-custom text-white" type="submit">
           Submit
         </button>
       </form>

@@ -57,8 +57,8 @@ const AdminFeedbackList = ({ token }) => {
 
   return (
     <div className="container my-5">
-      <h2 className="mb-4 d-flex align-items-center text-primary">
-        <FaCommentDots className="me-2 text-primary" />
+      <h2 className="mb-4 d-flex align-items-center text-primary-custom">
+        <FaCommentDots className="me-2 text-primary-custom" />
         User Feedback
       </h2>
 

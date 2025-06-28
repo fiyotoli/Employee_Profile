@@ -1,149 +1,93 @@
-import { React, useContext, useEffect } from 'react';
-
-
+import React, { useState } from 'react';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 
+// Import your logo image from assets folder
+import logo from '../assets/logo.png';  // adjust path & filename as needed
 
-function Navbar() {
- 
+function NavbarComponent() {
+  const [expanded, setExpanded] = useState(false);
 
-  useEffect(() => {
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    const navbarCollapse = document.getElementById('navbarNav');
+  const handleToggle = () => {
+    setExpanded(prev => !prev);
+  };
 
-    navLinks.forEach((link) => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth < 992) {
-          const bsCollapse = new window.bootstrap.Collapse(navbarCollapse, {
-            toggle: false
-          });
-          bsCollapse.hide();
-        }
-      });
-    });
-
-    return () => {
-      navLinks.forEach((link) => {
-        link.removeEventListener('click', () => {});
-      });
-    };
-  }, []);
-
-  // Toggle between hamburger and close icon
-  useEffect(() => {
-    const toggler = document.querySelector('.navbar-toggler');
-    const menuIcon = toggler.querySelector('.navbar-toggler-icon');
-    const closeIcon = toggler.querySelector('.close-icon');
-
-    const toggleIcons = () => {
-      const isExpanded = toggler.getAttribute('aria-expanded') === 'true';
-      if (isExpanded) {
-        menuIcon.classList.add('d-none');
-        closeIcon.classList.remove('d-none');
-      } else {
-        menuIcon.classList.remove('d-none');
-        closeIcon.classList.add('d-none');
-      }
-    };
-
-    toggler.addEventListener('click', () => {
-      setTimeout(toggleIcons, 200); // wait for Bootstrap collapse
-    });
-
-    return () => {
-      toggler.removeEventListener('click', toggleIcons);
-    };
-  }, []);
+  const handleNavClick = () => {
+    if (window.innerWidth < 992) {
+      setExpanded(false);
+    }
+  };
 
   return (
-    <nav className="navbar navbar-expand-lg py-3 navbar-light bg-white shadow-lg fixed-top ">
-      <div className="container ">
+    <Navbar
+      expand="lg"
+      bg="white"
+      variant="light"
+      fixed="top"
+      expanded={expanded}
+      className="shadow-lg "
+    >
+      <Container>
         {/* Logo */}
-        <Link className="navbar-brand" to="/">
-         <h5 className='fw-bold '> <span className='text-primary '>Tesfa</span>PRTC</h5>
-        </Link>
+        <Navbar.Brand as={Link} to="/">
+          {/* Replace text logo with image */}
+          <img src={logo} alt="Tesfa PRTC Logo" style={{ height: '60px' }} />
+        </Navbar.Brand>
 
-        {/* Navbar Toggler for Mobile */}
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
+        {/* Toggler */}
+        <Navbar.Toggle
           aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          onClick={handleToggle}
         >
-          <span className="navbar-toggler-icon"></span>
-          <span className="close-icon d-none" style={{ fontSize: '1.5rem' }}>&times;</span>
-        </button>
+          {!expanded ? (
+            <span className="navbar-toggler-icon"></span>
+          ) : (
+            <span className="close-icon" style={{ fontSize: '1.5rem' }}>&times;</span>
+          )}
+        </Navbar.Toggle>
 
-        {/* Navbar Links */}
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav mx-auto text-center">
-            <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                to="/profile"
-                style={({ isActive }) => ({
-                  fontWeight: isActive ? 'bold' : 'normal',
-                  color: isActive ? '#0d6efd' : 'inherit',
-                  transition: '0.3s'
-                })}
-              >
-                Profile
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                to="/blog"
-                style={({ isActive }) => ({
-                  fontWeight: isActive ? 'bold' : 'normal',
-                  color: isActive ? '#0d6efd' : 'inherit',
-                  transition: '0.3s'
-                })}
-              >
-                Blog
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                to="/about"
-                style={({ isActive }) => ({
-                  fontWeight: isActive ? 'bold' : 'normal',
-                  color: isActive ? '#0d6efd' : 'inherit',
-                  transition: '0.3s'
-                })}
-              >
-                About
-              </NavLink>
-            </li>
-          </ul>
+        {/* Nav Links */}
+        <Navbar.Collapse id="navbarNav">
+          <Nav className="mx-auto text-center">
+            <NavLink
+              to="/profile"
+              onClick={handleNavClick}
+              className={({ isActive }) =>
+                `nav-link px-3 ${isActive ? 'fw-bold text-primary-custom' : ''}`
+              }
+            >
+              Profile
+            </NavLink>
+            <NavLink
+              to="/blog"
+              onClick={handleNavClick}
+              className={({ isActive }) =>
+                `nav-link px-3 ${isActive ? 'fw-bold text-primary-custom' : ''}`
+              }
+            >
+              Blog
+            </NavLink>
+            <NavLink
+              to="/about"
+              onClick={handleNavClick}
+              className={({ isActive }) =>
+                `nav-link px-3 ${isActive ? 'fw-bold text-primary-custom' : ''}`
+              }
+            >
+              About
+            </NavLink>
+          </Nav>
 
-          {/* Right Section */}
-          <div className="d-flex align-items-center justify-content-center mt-3 mt-lg-0">
-           
-
-           
-            <div className="dropdown me-3">
-              
-                             {/* Right Button */}
+          {/* Right-side Button */}
           <div className="d-flex align-items-center justify-content-center mt-3 mt-lg-0">
             <Link to="/contact">
-              <button className="btn btn-primary">Contact</button>
+              <button className="btn bg-primary-custom text-white">Contact</button>
             </Link>
           </div>
-                 
-            
-            </div>
-
-           
-          </div>
-        </div>
-      </div>
-    </nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 
-export default Navbar;
+export default NavbarComponent;

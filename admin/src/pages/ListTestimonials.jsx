@@ -93,8 +93,8 @@ const ListTestimonials = ({ token }) => {
 
   return (
     <div className="container my-5">
-      <h2 className="mb-4 text-center text-primary">
-        <HiOutlineChatAlt2 className="text-primary me-2" />
+      <h2 className="mb-4 text-center text-primary-custom">
+        <HiOutlineChatAlt2 className="text-primary-custom me-2" />
         What People Say
       </h2>
 
@@ -117,7 +117,7 @@ const ListTestimonials = ({ token }) => {
                 <p className="text-muted text-capitalize">{t.title}</p>
               </div>
 
-              <div className="position-absolute bottom-0 end-0 my-2 mt-4">
+              <div className="position-absolute bottom-0 end-0 my-2 me-2 mt-4">
                 <button
                   className="btn btn-sm btn-warning me-1"
                   onClick={() => handleEdit(t)}
@@ -164,7 +164,7 @@ const ListTestimonials = ({ token }) => {
               <form onSubmit={handleEditSubmit}>
                 <div className="modal-header border-0 d-flex align-items-center justify-content-between">
                   <div className="d-flex align-items-center">
-                    <HiOutlineChatAlt2 className="text-primary me-2 fs-4" />
+                    <HiOutlineChatAlt2 className="text-primary-custom me-2 fs-4" />
                     <h5 className="modal-title text-dark mb-0">Edit Testimonial</h5>
                   </div>
                   <button

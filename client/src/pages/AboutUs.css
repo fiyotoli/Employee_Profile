@@ -2,7 +2,7 @@
 
 
 .cta-section {
-  background: linear-gradient(to right, #007bff, #6610f2);
+  background: linear-gradient(to right, #2ca8a6, #fdcf31);
   height: 300px;
 }
 
@@ -11,4 +11,12 @@
    box-shadow: 0 0 8px 2px rgba(255, 255, 255, 1);
   transition: box-shadow 0.3s ease-in-out;
 }
+.vision-card {
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+.vision-card:hover {
+  transform: scale(1);
+}
+
 

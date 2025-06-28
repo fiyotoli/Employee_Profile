@@ -34,20 +34,24 @@ const BlogList = ({ token }) => {
   }, []);
 
   const handleDelete = async (id) => {
-    try {
-      const response = await axios.post(`${backendUrl}/api/blog/remove`, { id }, {
-        headers: { token }
-      });
-      if (response.data.success) {
-        toast.success("Blog deleted successfully");
-        fetchBlogs();
-      } else {
-        toast.error(response.data.message || "Failed to delete blog");
-      }
-    } catch (error) {
-      toast.error(error.message || "Error deleting blog");
+  const confirmDelete = window.confirm("Are you sure you want to delete this blog?");
+  if (!confirmDelete) return;
+
+  try {
+    const response = await axios.post(`${backendUrl}/api/blog/remove`, { id }, {
+      headers: { token }
+    });
+    if (response.data.success) {
+      toast.success("Blog deleted successfully");
+      fetchBlogs();
+    } else {
+      toast.error(response.data.message || "Failed to delete blog");
     }
-  };
+  } catch (error) {
+    toast.error(error.message || "Error deleting blog");
+  }
+};
+
 
   const handleEdit = (blog) => {
     setEditData({ ...blog });
@@ -88,7 +92,7 @@ const BlogList = ({ token }) => {
 
   return (
     <div className="container my-5">
-      <h2 className="mb-4 text-center text-primary d-flex justify-content-center align-items-center gap-2">
+      <h2 className="mb-4 text-center text-primary-custom d-flex justify-content-center align-items-center gap-2">
         <FaBlog /> List of Blogs
       </h2>
       <div className="row">
@@ -110,7 +114,7 @@ const BlogList = ({ token }) => {
                 </h5>
                 <span className='border-bottom border-dark my-2 '></span>
                 <p className="card-text flex-grow-1">
-                  <FaBookOpen className="me-2 text-primary" />
+                  <FaBookOpen className="me-2 text-primary-custom" />
                   {blog.content.length > 100
                     ? `${blog.content.substring(0, 100)}...`
                     : blog.content}
@@ -118,7 +122,7 @@ const BlogList = ({ token }) => {
                 <div className="d-flex justify-content-between align-items-center mt-1">
                   <Link
                     to={`/blog/${blog._id}`}
-                    className="btn btn-primary btn-sm"
+                    className="btn bg-primary-custom text-white btn-sm"
                     style={{ transition: 'all 0.3s' }}
                   >
                     Read More
@@ -161,7 +165,7 @@ const BlogList = ({ token }) => {
               <form onSubmit={handleEditSubmit}>
                 <div className="modal-header border-0 d-flex align-items-center justify-content-between">
   <div className="d-flex align-items-center">
-    <FaEdit className="text-primary me-2 fs-4" />
+    <FaEdit className="text-primary-custom me-2 fs-4" />
     <h5 className="modal-title text-dark mb-0">Edit Blog</h5>
   </div>
   <button
