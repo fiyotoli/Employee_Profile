@@ -8,7 +8,7 @@ import {
   MdDashboard,
 } from 'react-icons/md';
 
-const DashboardHome = ({ token }) => {
+const DashboardHome = () => {
   const [stats, setStats] = useState({
     blog: 0,
     employee: 0,
@@ -25,10 +25,10 @@ const DashboardHome = ({ token }) => {
     setLoading(true); // ✅ start loading
     try {
       const [blogRes, empRes, feedRes, testiRes] = await Promise.all([
-        axios.get(`${API_BASE_URL}/blog/stats`, { headers: { token } }),
-        axios.get(`${API_BASE_URL}/profile/stats`, { headers: { token } }),
-        axios.get(`${API_BASE_URL}/feedback/stats`, { headers: { token } }),
-        axios.get(`${API_BASE_URL}/testimonials/stats`, { headers: { token } }),
+        axios.get(`${API_BASE_URL}/blog/stats`),
+        axios.get(`${API_BASE_URL}/profile/stats`),
+        axios.get(`${API_BASE_URL}/feedback/stats`),
+        axios.get(`${API_BASE_URL}/testimonials/stats`),
       ]);
 
       setStats({

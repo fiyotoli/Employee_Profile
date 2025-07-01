@@ -42,7 +42,7 @@ function App() {
            
             <div style={{ flex: 1 }}>
               <Routes>
-                <Route path='/' element={<DashboardHome  token={token} />} /> */
+                <Route path='/' element={<DashboardHome  />} /> */
                 <Route path='/add' element={<AddEmployee  token={token} />} /> */
                 <Route path='/list' element={<ListEmployee token={token} />} />
                 <Route path='/list_testimonial' element={<ListTestimonials token={token} />} />
