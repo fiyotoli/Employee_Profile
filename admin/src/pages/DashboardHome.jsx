@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+
+
 import {
   MdArticle,
   MdPeople,
@@ -17,18 +19,21 @@ const DashboardHome = () => {
     latestEmployees: [],
   });
 
-  const [activeCardIndex, setActiveCardIndex] = useState(1); // Default active card
-  const [loading, setLoading] = useState(false); // ✅ added loading state
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000/api';
+  const [activeCardIndex, setActiveCardIndex] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const API_BASE_URL = import.meta.env.VITE_BACKEND_URL;
+
+  // Debug: Log the API base URL to verify env variable is loaded
+  console.log('API_BASE_URL:', API_BASE_URL);
 
   const fetchStats = async () => {
-    setLoading(true); // ✅ start loading
+    setLoading(true);
     try {
       const [blogRes, empRes, feedRes, testiRes] = await Promise.all([
-        axios.get(`${API_BASE_URL}/blog/stats`),
-        axios.get(`${API_BASE_URL}/profile/stats`),
-        axios.get(`${API_BASE_URL}/feedback/stats`),
-        axios.get(`${API_BASE_URL}/testimonials/stats`),
+        axios.get(`${API_BASE_URL}/api/blog/stats`),
+        axios.get(`${API_BASE_URL}/api/profile/stats`),
+        axios.get(`${API_BASE_URL}/api/feedback/stats`),
+        axios.get(`${API_BASE_URL}/api/testimonials/stats`),
       ]);
 
       setStats({
@@ -39,9 +44,18 @@ const DashboardHome = () => {
         latestEmployees: empRes.data.latest || [],
       });
     } catch (err) {
+      // Log detailed error info to console
       console.error("Error loading dashboard stats", err);
+      if (err.response) {
+        console.error('Response data:', err.response.data);
+        console.error('Response status:', err.response.status);
+      } else if (err.request) {
+        console.error('No response received:', err.request);
+      } else {
+        console.error('Error message:', err.message);
+      }
     } finally {
-      setLoading(false); // ✅ stop loading
+      setLoading(false);
     }
   };
 
@@ -57,7 +71,7 @@ const DashboardHome = () => {
   ];
 
   if (loading) {
-    return <p className="text-center my-5">Loading dashboard...</p>; // ✅ loading text
+    return <p className="text-center my-5">Loading dashboard...</p>;
   }
 
   return (
