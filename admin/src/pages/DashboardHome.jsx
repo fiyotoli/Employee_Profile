@@ -68,7 +68,7 @@ const DashboardHome = ({ token }) => {
       </h2>
 
       {/* Cards Row - flex-wrap is important for small screens */}
-      <div className="row flex-wrap mb-4">
+      <div className="row flex-wrap mb-3">
         {cardInfo.map(({ title, icon, key }, index) => (
           <div key={key} className="col-6 col-md-4 col-lg-3 mb-3">
             <div
