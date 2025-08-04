@@ -6,33 +6,33 @@ import 'aos/dist/aos.css';
 const services = [
   {
     icon: 'bi-person-badge',
-    title: 'Employee Profiles',
-    description: 'View detailed profiles of all team members across departments.',
+    title: 'የጡረታ የፋይናንስ እቅድ',
+    description: 'ቁጠባዎን፣ ኢንቨስትመንቶችዎን እና ወጪዎችዎን ለማስተዳደር እንዲችሉ ግላዊ የፋይናንስ እቅድ እንዲፈጥሩ እንረዳዎታለን፣ ይህም የተረጋጋና ምቹ ጡረታን ያረጋግጣል።',
   },
   {
     icon: 'bi-search',
-    title: 'Skill Search',
-    description: 'Easily find employees based on their skills and expertise.',
+    title: 'የሥራ ሽግግር መመሪያ',
+    description: 'ጡረታ ከወጡ በኋላ ከችሎታዎ እና ከፍላጎቶችዎ ጋር የሚጣጣሙ የትርፍ ጊዜ ሥራዎችን፣ የፍሪላንስ ሥራዎችን ወይም አዲስ ንግድ ለመጀመር የባለሙያ ምክር ያግኙ።',
   },
   {
     icon: 'bi-calendar-check',
-    title: 'Attendance Records',
-    description: 'Track employee attendance and availability efficiently.',
+    title: 'የጤና እና ደህንነት ስልጠና',
+    description: 'የአካል እና የአእምሮ ጤንነትዎን ለመጠበቅ የሚያስችሉ ስልቶችን ይማሩ፣ ይህም የአካል ብቃት እንቅስቃሴዎችን፣ የአመጋገብ ምክሮችን እና የጭንቀት መቆጣጠሪያ ዘዴዎችን ያካትታል።',
   },
   {
     icon: 'bi-award',
-    title: 'Achievements',
-    description: 'Highlight employee awards, recognitions, and milestones.',
+    title: 'የሥራ ፈጠራ ሥልጠና',
+    description: 'ጡረተኞችን ታሳቢ በማድረግ በተዘጋጁት የሥራ ፈጠራ አውደ ጥናቶች አማካኝነት ፍላጎቶችዎን ትርፋማ ወደሆኑ ሥራዎች እንዴት መቀየር እንደሚችሉ ይወቁ።',
   },
   {
     icon: 'bi-people',
-    title: 'Team Structure',
-    description: 'Understand the organization’s hierarchy and team roles.',
+    title: 'ማኅበራዊ እና ማኅበረሰብ ተሳትፎ',
+    description: 'ከማኅበረሰብዎ ጋር የተገናኙ እና ንቁ ሆነው እንዲቆዩ የሚያስችሉ የበጎ ፈቃደኝነት እና ማኅበራዊ እንቅስቃሴዎች ዕድሎችን ያስሱ።',
   },
   {
     icon: 'bi-envelope',
-    title: 'Contact Info',
-    description: 'Access direct contact information for internal communication.',
+    title: 'ግላዊ የምክር አገልግሎት',
+    description: 'ልዩ የጡረታ ግቦችዎን እና ተግዳሮቶችዎን ለመፍታት አንድ ለአንድ ድጋፍ ያግኙ፣ ይህም ከጡረታ በኋላ አርኪ ሕይወት እንዲፈጥሩ ይረዳዎታል።',
   },
 ];
 
@@ -60,7 +60,7 @@ const Service = () => {
                 display: 'inline-block',
               }}
             ></span>
-            Our Service
+           አገልግሎቶቻችን
           </h2>
         </div>
 

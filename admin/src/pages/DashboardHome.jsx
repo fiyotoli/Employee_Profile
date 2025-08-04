@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import { FaBriefcase } from 'react-icons/fa';
 
 import {
   MdArticle,
@@ -29,11 +29,12 @@ const DashboardHome = () => {
   const fetchStats = async () => {
     setLoading(true);
     try {
-      const [blogRes, empRes, feedRes, testiRes] = await Promise.all([
+      const [blogRes, empRes, feedRes, jobsRes,testiRes] = await Promise.all([
         axios.get(`${API_BASE_URL}/api/blog/stats`),
         axios.get(`${API_BASE_URL}/api/profile/stats`),
         axios.get(`${API_BASE_URL}/api/feedback/stats`),
         axios.get(`${API_BASE_URL}/api/testimonials/stats`),
+        axios.get(`${API_BASE_URL}/api/jobs/stats`),
       ]);
 
       setStats({
@@ -41,6 +42,7 @@ const DashboardHome = () => {
         employee: empRes.data.count || 0,
         feedback: feedRes.data.count || 0,
         testimonial: testiRes.data.count || 0,
+        jobs: jobsRes.data.count || 0,
         latestEmployees: empRes.data.latest || [],
       });
     } catch (err) {
@@ -66,6 +68,7 @@ const DashboardHome = () => {
   const cardInfo = [
     { title: 'Blogs', icon: <MdArticle size={40} />, key: 'blog' },
     { title: 'Employees', icon: <MdPeople size={40} />, key: 'employee' },
+    { title: 'Jobs', icon: <FaBriefcase size={40} />, key: 'jobs' },
     { title: 'Feedbacks', icon: <MdFeedback size={40} />, key: 'feedback' },
     { title: 'Testimonials', icon: <MdRateReview size={40} />, key: 'testimonial' },
   ];
@@ -75,7 +78,7 @@ const DashboardHome = () => {
   }
 
   return (
-    <div className="container my-4">
+    <div className="container my-4 pt-3">
       <h2 className="mb-4 text-primary-custom d-flex align-items-center">
         <MdDashboard size={30} className="me-2" />
         Dashboard Overview
@@ -154,7 +157,7 @@ const DashboardHome = () => {
         }
 
         .card-hover:hover {
-          background-color: #2ca8a6 !important;
+          background-color: #814516 !important;
           color: white !important;
         }
 

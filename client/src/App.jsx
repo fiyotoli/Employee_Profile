@@ -4,6 +4,9 @@ import Home from './pages/Home';
 
 import AboutUs from './pages/About';
 import Contact from './pages/Contact';
+import JobCard from './pages/JobCard';
+
+
 
 
 import ProfileDetail from './pages/ProfileDetail';
@@ -18,6 +21,7 @@ import Footer from './components/Footer';
 import EmployeeList from './components/EmployeeList';
 import BlogList from './pages/BlogList';
 import SingleBlog from './pages/SingleBlog';
+import SingleJob from './pages/SingleJob.JSX';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -64,6 +68,8 @@ function App() {
             <Route path='/about' element={<AboutUs />} />
               <Route path='/profile' element={<EmployeeList/>} />
               <Route path='/blog' element={<BlogList/>} />
+              <Route path='/job' element={<JobCard/>} />
+              <Route path='/job/:id' element={<SingleJob/>} />
                <Route path='/contact' element={<Contact/>} />
             <Route path='/profile/:profileId' element={<ProfileDetail />} />
            <Route path="/blog/:id" element={<SingleBlog />} />

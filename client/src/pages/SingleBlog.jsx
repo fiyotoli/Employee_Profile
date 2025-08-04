@@ -74,14 +74,14 @@ const SingleBlog = () => {
 
   return (
     <div className="container mb-2 mt-5 pt-5">
-      <Link to="/blog" className="btn bg-primary-custom text-white mb-4 mt-2">&larr; Back to Blogs</Link>
+      <Link to="/blog" className="btn  view-detail-button mb-4 mt-2">&larr; ወደ ብሎግ ተመለስ</Link>
 
       {/* Blog Main Section */}
       <div className="row mb-5">
         {/* Left: Image and Link */}
         <div className="col-md-4">
           {blog.image && (
-            <div className="p-2 rounded mb-3" style={{ boxShadow: '0 0 20px rgba(44, 168, 166,.6)' }}>
+            <div className="p-2 rounded mb-3" style={{ boxShadow: '0 0 20px rgba(25, 45, 61,.8)' }}>
               <img
                 src={blog.image}
                 alt={blog.title}
@@ -95,14 +95,14 @@ const SingleBlog = () => {
 
           {blog.socialMediaLink && (
             <div className="mt-3">
-              <h6 className="fw-bold">Follow or learn more:</h6>
+              <h6 className="fw-bold">ለበለጠ ዝርዝር</h6>
               <a
                 href={blog.socialMediaLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn custom-outline-primary mt-2 w-100"
+                className="btn  view-detail-button mt-2 w-100"
               >
-                Social Media Link <FaExternalLinkAlt className="ms-2 text-primary-custom" />
+               ለበለጠ ሊንኩን ተጭነው ይመልከቱ<FaExternalLinkAlt className="ms-2 text-primary-custom" />
               </a>
             </div>
           )}
@@ -130,11 +130,11 @@ const SingleBlog = () => {
         <div className="col-md-12">
           <h5 className="fw-bold mb-3 d-flex align-items-center gap-2">
             <FaBlog className="text-primary-custom" />
-            <span>Other Blogs</span>
+            <span>ሌሎች ብሎጎች</span>
           </h5>
           <div className="row">
             {relatedBlogs.length === 0 && (
-              <p className="text-muted">No related blogs</p>
+              <p className="text-muted">ምንም ተዛማጅ ብሎጎች የሉም</p>
             )}
             {relatedBlogs.map((item) => (
               <div key={item._id} className="col-md-6 col-lg-4 mb-3">
@@ -154,9 +154,9 @@ const SingleBlog = () => {
                     </h6>
                     <button
                       onClick={() => handleExploreClick(item._id)}
-                      className="btn btn-sm custom-outline-primary w-100 mt-auto"
+                      className="btn btn-sm  view-detail-button w-100 mt-auto"
                     >
-                      Explore
+                       ዝርዝሮችን ይመልከቱ
                     </button>
                   </div>
                 </div>

@@ -6,6 +6,7 @@ import ListEmployee from './pages/ListEmployee';
 import ListTestimonials from './pages/ListTestimonials';
 import AddTestimonial from './pages/AddTestimonial';
 import AddBlog from './pages/AddBlog';
+import AddJob from './pages/AddJob';
 import DashboardHome from './pages/DashboardHome';
 import BlogList from './pages/BlogList';
 import SingleBlog from './pages/SingleBlog';
@@ -15,6 +16,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AdminFeedbackList from './pages/AdminFeedbackList';
 import Login from './components/Login';
+import JobList from './pages/JobList';
 
 
 
@@ -44,6 +46,8 @@ function App() {
               <Routes>
                 <Route path='/' element={<DashboardHome  />} /> */
                 <Route path='/add' element={<AddEmployee  token={token} />} /> */
+                <Route path='/add_job' element={<AddJob  token={token} />} /> */
+                <Route path='/job_list' element={<JobList  token={token} />} /> */
                 <Route path='/list' element={<ListEmployee token={token} />} />
                 <Route path='/list_testimonial' element={<ListTestimonials token={token} />} />
                 <Route path='/feedback_list' element={<AdminFeedbackList token={token}/>} />

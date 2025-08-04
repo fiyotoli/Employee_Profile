@@ -37,7 +37,7 @@ const BlogList = () => {
   return (
     <div className="container my-5 pt-5">
      <h2 className="text-center mt-4 mb-2 text-primary-custom d-flex justify-content-center align-items-center gap-2">
-  <FaBlog /> Latest Blogs
+  <FaBlog /> የቅርብ ጊዜ ብሎጎች
 </h2>
 <p className="text-center text-muted mb-4" style={{ maxWidth: '800px', margin: '0 auto' }}>
   Explore our most recent insights, stories, and updates from the community. Stay informed and inspired by the latest content!
@@ -70,10 +70,10 @@ const BlogList = () => {
                 <div className="d-flex justify-content-between align-items-center mt-1">
                   <Link
                     to={`/blog/${blog._id}`}
-                    className="btn bg-primary-custom text-white btn-sm"
+                    className="btn  view-detail-button btn-sm"
                     style={{ transition: 'all 0.3s' }}
                   >
-                    Read More
+                    ዝርዝሮችን ይመልከቱ
                   </Link>
                 </div>
               </div>

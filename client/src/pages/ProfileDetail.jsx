@@ -12,7 +12,7 @@ import {
 } from 'react-icons/fa';
 
 const iconCircleStyle = {
-  backgroundColor: '#2ca8a6',
+  backgroundColor: '#814516',
   borderRadius: '50%',
   color: 'white',
   borderColor:'white',
@@ -24,7 +24,7 @@ const iconCircleStyle = {
   alignItems: 'center',
 };
 const primaryIconCircleStyle = {
-  backgroundColor: '#2ca8a6',
+  backgroundColor: '#814516',
   borderRadius: '50%',
   borderColor:'white',
    border: '1px solid white',  // added this line
@@ -53,7 +53,7 @@ const shadowRowStyle = {
 // You can alternate bg-primary and white cards using array index % 2, or manually:
 const cardPrimaryStyle = {
   ...cardShadowStyle,
-  backgroundColor: '#2ca8a6', // Bootstrap primary
+  backgroundColor: '#814516', // Bootstrap primary
   color: 'white',
 };
 
@@ -123,7 +123,7 @@ const ProfileDetail = () => {
 
    return (
     <div className="container mt-5 pt-5">
-      <Link to="/profile" className="btn bg-primary-custom text-white mb-4 mt-2">&larr; Back to Profile</Link>
+      <Link to="/profile" className="btn  view-detail-button mb-4 mt-2">&larr; ወደ ፕሮፋይል ገጽ ይመለሱ</Link>
 
       <div className="row align-items-start mb-5">
         <div className="col-md-3 text-center mt-3">
@@ -131,7 +131,7 @@ const ProfileDetail = () => {
            <div
         className="position-relative d-inline-block"
         style={{
-          boxShadow: '0 0 15px 4px rgba(44, 168, 166,.7)',
+          boxShadow: '0 0 15px 4px #192d3d',
           borderRadius: '8px',
           maxWidth: '100%',
         }}
@@ -150,7 +150,7 @@ const ProfileDetail = () => {
           }}
         />
       </div>
-      <hr style={{ borderTop: '2px solid #2ca8a6', width: '80%', margin: '20px auto' }} />
+      <hr style={{ borderTop: '2px solid #814516', width: '80%', margin: '20px auto' }} />
       <h2 className="fw-bold text-capitalize">
         {profileData.firstName} {profileData.lastName}
       </h2>

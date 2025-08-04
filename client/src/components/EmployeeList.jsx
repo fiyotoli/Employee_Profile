@@ -78,7 +78,7 @@ function EmployeeList() {
   <input
     type="text"
     className="form-control rounded-start-pill ps-4 py-2 shadow-sm bg-white"
-    placeholder="Search by Job Type..."
+    placeholder="በስራ አይነት መፈለግ..."
     value={jobTypeSearch}
     onChange={(e) => setJobTypeSearch(e.target.value)}
   />
@@ -95,18 +95,18 @@ function EmployeeList() {
         <div className="col-md-3 shadow-sm bg-light py-4">
           <div className="mb-4">
             <h5 className="mb-3 lead d-flex align-items-center gap-2">
-              <FiFilter className="text-primary-custom" /> Filter
+              <FiFilter className="text-primary-custom" /> ፈልግ 
             </h5>
 
             {/* Education Level */}
             <div className="mb-3">
-              <label className="form-label fw-bold">Education Level</label>
+              <label className="form-label fw-bold">የትምህርት ደረጃ</label>
               <select
                 className="form-select"
                 value={educationFilter}
                 onChange={(e) => setEducationFilter(e.target.value)}
               >
-                <option value="">All</option>
+                <option value="">ሁሉም</option>
                 <option value="High School">High School</option>
                 <option value="Diploma">Diploma</option>
                 <option value="Degree">Degree</option>
@@ -117,7 +117,7 @@ function EmployeeList() {
 
             {/* Work Experience Range */}
 <div className="mb-3">
-  <label className="form-label fw-semibold">Work Experience</label>
+  <label className="form-label fw-semibold">የሥራ ልምድ</label>
   <div className="d-flex flex-wrap gap-3">
     {["", "0-6", "6-18", "18+"].map((range, i) => (
       <div className="form-check" key={range || 'all'}>
@@ -131,7 +131,7 @@ function EmployeeList() {
           onChange={(e) => setExpRange(e.target.value)}
         />
         <label className="form-check-label" htmlFor={`exp${i}`}>
-          {range === "" ? "All" : range === "0-6" ? "0–6 Yrs" : range === "6-18" ? "6–18 Yrs" : "18+ Yrs"}
+          {range === "" ? "ሁሉም" : range === "0-6" ? "0–6 አመት" : range === "6-18" ? "6–18 አመት" : "18+ አመት"}
         </label>
       </div>
     ))}
@@ -147,9 +147,9 @@ function EmployeeList() {
         <div className="col-md-9">
           <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-5 gap-3">
             <div className="text-center mt-1 mb-0 display-block">
-              <h2 className="d-inline-flex align-items-center justify-content-center gap-2">
+              <h2 className="d-inline-flex align-items-center fw-bold justify-content-center gap-2">
                 <FaUsers className="text-primary-custom" />
-                Employee Profiles
+              የሥራ ፈላጊዎች ፕሮፋይል 
               </h2>
             </div>
           </div>

@@ -40,7 +40,7 @@ const FeaturedEmployeesSection = () => {
                 display: 'inline-block',
               }}
             ></span>
-           Featured Employees
+         የተመረጡ ሰራተኞች
           </h2>
         </div>
 

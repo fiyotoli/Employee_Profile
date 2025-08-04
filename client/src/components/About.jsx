@@ -27,41 +27,38 @@ const About = () => {
 
         {/* Text Section */}
         <div className="col-md-6 order-sm-2 order-1" data-aos="fade-left">
-          <h2 className="mb-4">Who We Are</h2>
+          <h2 className="mb-4">ስለ እኛ</h2>
 
           {/* Mission */}
           <div className="mb-4">
             <h5 className="d-flex align-items-center">
-              <FaBullseye className="me-2 text-primary-custom" /> Our Mission
+              <FaBullseye className="me-2 text-primary-custom fw-bold" />ተልዕኮ 
             </h5>
             <p className="text-muted mb-0">
-              To provide exceptional e-commerce experiences by offering top-quality products, reliable service, and customer satisfaction.
-            </p>
+             ከጡረታ በፊትና በኋላ ለሚገኙ ዜጎች ሙያዊ ክህሎቶችንና የአኗኗር ዘይቤ ምክሮችን በመስጠት፣ ቀጣይነት ያለው የሥራ ተሳትፎና ግላዊ እርካታ እንዲያገኙ መርዳት፤ ይህንም በዘመናዊ የኦንላይን ሥልጠናና በውጤታማ የሥራ ማገናኛ አገልግሎት ማሳካት።   </p>
           </div>
 
           {/* Vision */}
           <div className="mb-4">
             <h5 className="d-flex align-items-center">
-              <FaLightbulb className="me-2 text-primary-custom" /> Our Vision
+              <FaLightbulb className="me-2 text-primary-custom fw-bold"  />ራዕይ 
             </h5>
             <p className="text-muted mb-0">
-              To become a leading online store known for innovation, trust, and excellence in service.
-            </p>
+              ጡረታን የዕድገትና የፈጠራ ምዕራፍ በማድረግ፣ የእያንዳንዱን ዜጋ ልምድና እውቀት ለሀገር ልማት የሚውልበትን ምቹ ሥነ-ምህዳር መፍጠር።  </p>
           </div>
 
           {/* Values */}
           <div className="mb-4">
             <h5 className="d-flex align-items-center">
-              <FaHandshake className="me-2 text-primary-custom" /> Our Values
+              <FaHandshake className="me-2 text-primary-custom" />እሴቶች 
             </h5>
             <p className="text-muted mb-0">
-              We value integrity, innovation, and building long-lasting relationships with our customers and partners.
-            </p>
+             የእያንዳንዱን ግለሰብ የረጅም ዓመታት ልምድና እውቀት ከፍ ያለ ግምት በመስጠት፣ ለቀጣይ ትውልድ እንዲተላለፍ እና ለሀገር ዕድገት እንዲውል ማገዝ።      </p>
           </div>
 
           {/* CTA Button */}
           <Link to="/about" className="btn bg-primary-custom text-white mt-3">
-            Explore Our Team
+           ቡድናችንን ያግኙ
           </Link>
         </div>
       </div>

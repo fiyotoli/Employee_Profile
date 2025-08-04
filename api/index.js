@@ -8,6 +8,7 @@ import feedbackRoutes from './routes/FeedbackRoutes.js';
 import userRouter from './routes/userRoutes.js';
 import router from './routes/EmployeeRoutes.js';
 import blogRouter from './routes/BlogRoutes.js';
+import jobRoutes from './routes/jobRoutes.js'; // Import job routes
 
 import newsletterRoute from './routes/newsletterRoute.js';
 // App Config
@@ -25,7 +26,7 @@ app.use(cors());
 // API Endpoints
 app.use('/api/user', userRouter)
 app.use('/api/profile', router )
-
+app.use('/api/jobs', jobRoutes);
 app.use('/api/feedback', feedbackRoutes);
 // Routes
 app.use('/api/testimonials', testimonialRoutes);

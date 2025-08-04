@@ -43,7 +43,7 @@ const FeaturedEmployeeCard = ({ employee }) => {
             width: '100px',
             height: '100px',
             objectFit: 'cover',
-            border: '3px solid #2ca8a6',
+            border: '3px solid #814516',
             transition: 'border-color 0.3s ease',
           }}
         />
@@ -63,8 +63,8 @@ const FeaturedEmployeeCard = ({ employee }) => {
     className="d-inline-flex px-2 my-2 py-1 bg-yellow-custom-opacity exp-bg  text-nowrap justify-content-center text-black align-items-center text-center rounded mb-2 card-info"
     style={{ fontSize: '13px', maxWidth: '100%' }}
   >
-    <FaBriefcase className="me-2 text-primary-custom card-icon" />
-    <span className="card-info-text">
+    <FaBriefcase className="me-2 text-white text-primary-custom card-icon" />
+    <span className="card-info-text text-white">
       Total Experience: {experience || 'Unknown'}
     </span>
   </div>
@@ -74,7 +74,7 @@ const FeaturedEmployeeCard = ({ employee }) => {
         {/* View Detail Button */}
         <div className="text-center w-100">
           <button className="btn btn-primary view-btn px-4 employee-card">
-            View Detail
+           ዝርዝሮችን ይመልከቱ
           </button>
         </div>
       </div>
@@ -83,7 +83,7 @@ const FeaturedEmployeeCard = ({ employee }) => {
       <style>
   {`
     .employee-card:hover {
-      background-color: #2ca8a6;
+      background-color: #814516;
       transform: scale(1.02);
     }
 

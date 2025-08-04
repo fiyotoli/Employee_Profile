@@ -30,16 +30,16 @@ html, body {
     transition: all 0.3s ease;
   }
 .sidebar-link:hover {
-    background-color: #0d6efd; /* Light gray hover */
+    background-color: #814516; /* Light gray hover */
     border-radius: 5px;
     color: rgb(255, 255, 255) !important;
     padding: 5px;
   }
   .text-primary-custom {
-  color: #2ca8a6 !important; /* your custom color */
+  color: #814516 !important; /* your custom color */
 }
   .bg-primary-custom {
-  background-color: #2ca8a6 !important; /* your custom color */
+  background-color: #814516 !important; /* your custom color */
 }
   .text-yellow-custom {
   color: #fdcf31 !important; /* your custom color */
@@ -58,15 +58,23 @@ html, body {
 }
 /* Change radio button color when checked */
 .form-check-input:checked {
-  background-color: #2ca8a6 !important;   /* Replace with your custom color */
-  border-color: #2ca8a6 important;
+  background-color: #814516 !important;   /* Replace with your custom color */
+  border-color: #814516 important;
 }
 
 /* Optional: ensure the dot inside is also visible */
 .form-check-input:checked::before {
-  background-color: #2ca8a6 important;
+  background-color: #814516 important;
 }
 .custom-outline-primary{
- border: 1px solid #2ca8a6 !important;
+ border: 1px solid #814516 !important;
 }
 
+/* Optional: Custom scrollbar for sidebar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #814516;
+  border-radius: 4px;
+}

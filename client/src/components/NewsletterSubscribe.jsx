@@ -35,7 +35,7 @@ const NewsletterSubscribe = () => {
   return (
     <div className="container my-5">
       <div className="bg-light p-5 rounded shadow-sm text-center">
-        <h4 className="fw-bold mb-3 text-primary-custom">Subscribe to Our Newsletter</h4>
+        <h4 className="fw-bold mb-3 text-primary-custom">የቅርብ ጊዜ ዜናዎችን ለማግኘት</h4>
         <p className="text-muted mb-4">Get the latest updates, offers, and news directly to your inbox.</p>
 
         <form
@@ -45,7 +45,7 @@ const NewsletterSubscribe = () => {
           <input
             type="email"
             className="form-control form-control-lg w-100 w-sm-50"
-            placeholder="Enter your email"
+            placeholder="ኢሜልዎን ያስገቡ"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required

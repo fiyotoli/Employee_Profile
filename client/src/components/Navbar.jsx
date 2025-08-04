@@ -56,7 +56,16 @@ function NavbarComponent() {
                 `nav-link px-3 ${isActive ? 'fw-bold text-primary-custom' : ''}`
               }
             >
-              Profile
+              የሥራ ፈላጊዎች ፕሮፋይል
+            </NavLink>
+            <NavLink
+              to="/job"
+              onClick={handleNavClick}
+              className={({ isActive }) =>
+                `nav-link px-3 ${isActive ? 'fw-bold text-primary-custom' : ''}`
+              }
+            >
+             ክፍት የሥራ ቦታ
             </NavLink>
             <NavLink
               to="/blog"
@@ -65,7 +74,7 @@ function NavbarComponent() {
                 `nav-link px-3 ${isActive ? 'fw-bold text-primary-custom' : ''}`
               }
             >
-              Blog
+              ብሎግ
             </NavLink>
             <NavLink
               to="/about"
@@ -74,14 +83,14 @@ function NavbarComponent() {
                 `nav-link px-3 ${isActive ? 'fw-bold text-primary-custom' : ''}`
               }
             >
-              About
+              ስለ እኛ
             </NavLink>
           </Nav>
 
           {/* Right-side Button */}
           <div className="d-flex align-items-center justify-content-center mt-3 mt-lg-0">
             <Link to="/contact">
-              <button className="btn bg-primary-custom text-white">Contact</button>
+              <button className="btn bg-primary-custom text-white">የመገናኛ መረጃ</button>
             </Link>
           </div>
         </Navbar.Collapse>

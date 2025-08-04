@@ -46,7 +46,7 @@ const TestimonialCarousel = () => {
               display: 'inline-block',
             }}
           ></span>
-          Testimonials
+        የሥልጠናው ተሳታፊዎች አስተያየት
         </h2>
       </div>
 

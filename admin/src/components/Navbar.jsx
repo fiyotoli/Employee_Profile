@@ -10,6 +10,10 @@ import {
   MdListAlt,
   MdFeedback,
 } from 'react-icons/md';
+import {
+FaBriefcase
+
+} from 'react-icons/fa';
 import logo from '../assets/logo.png';
 
 function Navbar({ setToken }) {
@@ -17,11 +21,9 @@ function Navbar({ setToken }) {
   const [isSmallOrMedium, setIsSmallOrMedium] = useState(window.innerWidth < 992);
   const location = useLocation();
 
-  // Track selected path locally to manage active styles immediately on click
   const [selectedPath, setSelectedPath] = useState(location.pathname);
 
   useEffect(() => {
-    // Sync local selectedPath when URL changes (e.g. via back/forward navigation)
     setSelectedPath(location.pathname);
   }, [location.pathname]);
 
@@ -43,7 +45,6 @@ function Navbar({ setToken }) {
 
   const closeSidebar = () => setSidebarOpen(false);
 
-  // Custom function to determine if this navlink is active by comparing its 'to' with selectedPath state
   const navLinkClass = (to) => {
     const isActive = selectedPath === to;
     return `sidebar-link text-decoration-none d-flex align-items-center gap-2 mb-3 small fw-semibold ${
@@ -51,10 +52,8 @@ function Navbar({ setToken }) {
     }`;
   };
 
-  // On NavLink click handler - update selectedPath only (DO NOT close sidebar automatically)
   const onNavLinkClick = (to) => {
-    setSelectedPath(to); // immediately set active style locally
-    // sidebar stays open — no closeSidebar() here
+    setSelectedPath(to);
   };
 
   return (
@@ -62,8 +61,7 @@ function Navbar({ setToken }) {
       {/* Top Navbar */}
       <div className="bg-white d-flex align-items-center justify-content-between py-3 px-5 fixed-top shadow-sm">
         <Link className="navbar-brand" to="/" onClick={handleLogoClick}>
-          {/* Replace text logo with image */}
-                   <img src={logo} alt="Tesfa PRTC Logo" style={{ height: '60px' }} />
+          <img src={logo} alt="Tesfa PRTC Logo" style={{ height: '60px' }} />
         </Link>
         <button onClick={() => setToken('')} className="btn btn-danger">
           Logout
@@ -80,11 +78,10 @@ function Navbar({ setToken }) {
           transition: 'transform 0.3s ease-in-out',
         }}
       >
-        {/* Header: logo and close icon in one row */}
+        {/* Header */}
         <div className="d-flex align-items-center justify-content-between mb-0">
           <Link to="/" className="text-decoration-none" onClick={() => onNavLinkClick('/')}>
-             {/* Replace text logo with image */}
-                      <img src={logo} alt="Tesfa PRTC Logo" style={{ height: '60px' }} />
+            <img src={logo} alt="Tesfa PRTC Logo" style={{ height: '60px' }} />
           </Link>
           <MdClose
             size={20}
@@ -93,75 +90,64 @@ function Navbar({ setToken }) {
           />
         </div>
 
-        {/* Dashboard label below header */}
-        <p className="text-muted small mb-3 text-start">Admin Dashboard</p>
+        <p className="text-muted small mb-3 mt-2 text-start">Admin Dashboard</p>
         <hr className="border border-black opacity-100 my-3" />
 
-        {/* Sidebar Links */}
-        <div className="d-flex flex-column">
+        {/* Sidebar Links Scrollable */}
+        <div
+          className="d-flex flex-column overflow-auto"
+          style={{
+            maxHeight: 'calc(100vh - 150px)',
+            paddingRight: '4px',
+          }}
+        >
           {/* Section 1 */}
           <div className="pb-3 border-bottom border-black">
-            <NavLink
-              to="/add"
-              className={() => navLinkClass('/add')}
-              onClick={() => onNavLinkClick('/add')}
-            >
+            <NavLink to="/add" className={() => navLinkClass('/add')} onClick={() => onNavLinkClick('/add')}>
               <MdAddCircleOutline className="sidebar-icon" size={18} />
               <span>Add Employee</span>
             </NavLink>
-            <NavLink
-              to="/list"
-              className={() => navLinkClass('/list')}
-              onClick={() => onNavLinkClick('/list')}
-            >
+            <NavLink to="/list" className={() => navLinkClass('/list')} onClick={() => onNavLinkClick('/list')}>
               <MdFormatListBulleted className="sidebar-icon" size={18} />
               <span>List Employee</span>
             </NavLink>
           </div>
 
-          {/* Section 2 */}
+          {/* Jobs Section */}
           <div className="py-3 border-bottom border-black">
-            <NavLink
-              to="/add_testimonial"
-              className={() => navLinkClass('/add_testimonial')}
-              onClick={() => onNavLinkClick('/add_testimonial')}
-            >
+            <NavLink to="/add_job" className={() => navLinkClass('/add_job')} onClick={() => onNavLinkClick('/add_job')}>
+              <FaBriefcase className="sidebar-icon" size={18} />
+              <span>Add Job</span>
+            </NavLink>
+            <NavLink to="/job_list" className={() => navLinkClass('/job_list')} onClick={() => onNavLinkClick('/job_list')}>
+              <MdFormatListBulleted className="sidebar-icon" size={18} />
+              <span>List Job</span>
+            </NavLink>
+          </div>
+
+          {/* Testimonials Section */}
+          <div className="py-3 border-bottom border-black">
+            <NavLink to="/add_testimonial" className={() => navLinkClass('/add_testimonial')} onClick={() => onNavLinkClick('/add_testimonial')}>
               <MdCreate className="sidebar-icon" size={18} />
               <span>Add Testimonial</span>
             </NavLink>
-            <NavLink
-              to="/list_testimonial"
-              className={() => navLinkClass('/list_testimonial')}
-              onClick={() => onNavLinkClick('/list_testimonial')}
-            >
+            <NavLink to="/list_testimonial" className={() => navLinkClass('/list_testimonial')} onClick={() => onNavLinkClick('/list_testimonial')}>
               <MdRateReview className="sidebar-icon" size={18} />
               <span>List Testimonial</span>
             </NavLink>
           </div>
 
-          {/* Section 3 */}
+          {/* Blogs & Feedback */}
           <div className="py-3">
-            <NavLink
-              to="/add_blog"
-              className={() => navLinkClass('/add_blog')}
-              onClick={() => onNavLinkClick('/add_blog')}
-            >
+            <NavLink to="/add_blog" className={() => navLinkClass('/add_blog')} onClick={() => onNavLinkClick('/add_blog')}>
               <MdLibraryBooks className="sidebar-icon" size={18} />
               <span>Add Blog</span>
             </NavLink>
-            <NavLink
-              to="/blog_list"
-              className={() => navLinkClass('/blog_list')}
-              onClick={() => onNavLinkClick('/blog_list')}
-            >
+            <NavLink to="/blog_list" className={() => navLinkClass('/blog_list')} onClick={() => onNavLinkClick('/blog_list')}>
               <MdListAlt className="sidebar-icon" size={18} />
               <span>List Blog</span>
             </NavLink>
-            <NavLink
-              to="/feedback_list"
-              className={() => navLinkClass('/feedback_list')}
-              onClick={() => onNavLinkClick('/feedback_list')}
-            >
+            <NavLink to="/feedback_list" className={() => navLinkClass('/feedback_list')} onClick={() => onNavLinkClick('/feedback_list')}>
               <MdFeedback className="sidebar-icon" size={18} />
               <span>User Feedback</span>
             </NavLink>
@@ -169,7 +155,7 @@ function Navbar({ setToken }) {
         </div>
       </div>
 
-      {/* Page Content Offset */}
+      {/* Content Offset */}
       <div className={`container-fluid pt-5 px-4 ms-0 ${sidebarOpen ? 'ms-250' : ''}`}></div>
 
       {/* Styles */}
@@ -181,12 +167,12 @@ function Navbar({ setToken }) {
         }
 
         .sidebar-icon {
-          color: #2ca8a6;
+          color: #814516;
           transition: color 0.3s ease;
         }
 
         .sidebar-link:hover {
-          background-color: #2ca8a6 !important;
+          background-color: #814516 !important;
           color: white !important;
         }
 
@@ -195,12 +181,22 @@ function Navbar({ setToken }) {
         }
 
         .active-link {
-          background-color: #2ca8a6 !important;
+          background-color: #814516 !important;
           color: white !important;
         }
 
         .active-link .sidebar-icon {
           color: white !important;
+        }
+
+        /* Optional custom scrollbar */
+        ::-webkit-scrollbar {
+          width: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background-color: #814516;
+          border-radius: 3px;
         }
       `}</style>
     </>

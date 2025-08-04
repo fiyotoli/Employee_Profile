@@ -21,24 +21,29 @@ const Faq = () => {
 
 const faqItems = [
   {
-    question: "How can I view employee profiles?",
-    answer: "Navigate to the 'Profiles' section from the main menu. You can browse or search by job title, skill, or department.",
+    question: "ቅድመ ጠረታ ስልጠና ምንድን ነው?",
+    answer: "ከጡረታ በፊት የሚሰጠው ስልጠና ዕድሜያቸው ወደ ጡረታ ለተቃረቡና ከ5-10 ዓመት ለሚቀራቸው ሰራተኞች የገንዘብ፣ የአኗኗር ዘይቤ እና የሙያ አማራጮቻቸውን እንዲያቅዱ ለመርዳት የተነደፈ ፕሮግራም ሲሆን፣ ወደ ጡረታ የሚያደርጉት ሽግግር በተቀላጠፈና በሚያስደስት መልኩ እንዲሆን ያግዛል።",
     eventKey: "0",
   },
   {
-    question: "Can I filter employee profiles by department or skills?",
-    answer: "Yes, the platform allows you to filter profiles by department, skills, region, and other criteria for easier exploration.",
+    question: "ከጡረታ በፊት በሚሰጠው ስልጠና ላይ መገኘት ምን ጥቅም አለው?",
+    answer: "ከጡረታ በፊት መዘጋጀት ጭንቀትን ሊቀንስ፣ ገንዘብዎን በጥበብ እንዲያስተዳድሩ ሊረዳዎት፣ አዳዲስ የሥራ ወይም የመዝናኛ ዕድሎችን እንዲያስሱ እና ከጡረታ በኋላ አጠቃላይ የኑሮ ጥራትዎን እንዲሻሻል የሚያግዝ በመሆኑ በቅድመ ጡረታ ስልጠና ላይ መገኘት ጠቃሚ ነው።",
     eventKey: "1",
   },
   {
-    question: "Is the information in the employee profiles verified?",
-    answer: "Yes, all profile data is either submitted by the employee and approved by HR or directly managed by the HR department.",
+    question: "በስንት ዓመቴ ነው ለጡረታ ማቀድ መጀመር ያለብኝ?",
+    answer: "ከሚጠበቀው የጡረታ ዕድሜዎ (በኢትዮጵያ ከ60 ዓመት) በፊት ብዙ ዓመታት ቀደም ብሎ ማቀድ መጀመር በጣም ጥሩ ነው፡፡ ከ3 እስከ 5 ዓመታት ቀደም ብሎ መዘጋጀት መጀመር ለገንዘብ እና ለግል ዝግጅቶች የተሻለ ጊዜ እንዲኖርዎት ይረዳዎታል።",
     eventKey: "2",
   },
   {
-    question: "Can I download or print an employee's profile?",
-    answer: "Currently, the platform supports viewing profiles online. For official use, please contact the HR department for downloadable versions.",
+    question: "ከጡረታ በኋላ ምን ዓይነት ሥራዎች መሥራት እችላለሁ?",
+    answer: "ብዙ አማራጮች አሉ፣ ከፊል ጊዜ ሥራ፣ በነፃ ሙያተኝነት (freelancing)፣ አማካሪነት (consulting)፣ በፈቃደኝነት አገልግሎት መስጠት (volunteering)፣ አነስተኛ ንግድ መጀመር፣ ወይም እንደ የማስተማር አገልግሎት (tutoring) ወይም ምናባዊ ረዳትነት (virtual assistance) ያሉ የመስመር ላይ ሥራዎችን መስራት ይችላሉ።",
     eventKey: "3",
+  },
+  {
+    question: "ከጡረታ በፊት የሚሰጠው ስልጠና ገንዘቤን እንዳስተዳድር ይረዳኛል?",
+    answer: "አዎ! ስልጠናው የጡረታ ፈንድዎ ረዘም ላለ ጊዜ እንዲቆይ ለማድረግ ስለ በጀት ማውጣት፣ መቆጠብ፣ ኢንቨስት ማድረግ እና ገቢዎን ማስተዳደርን በተመለከተ ምክሮችን ያካትታል።",
+    eventKey: "4",
   },
 ];
 
@@ -65,7 +70,7 @@ const faqItems = [
                   display: 'inline-block',
                 }}
               ></span>
-              Faq
+              ተደጋግሞ የሚጠየቁ ጥያቄዎች 
             </h2>
           </div>
 

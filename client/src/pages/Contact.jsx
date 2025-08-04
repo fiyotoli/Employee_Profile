@@ -27,13 +27,13 @@ const Contact = () => {
   return (
     <div className="container my-5 pt-5">
       {/* Section Header */}
-      <div className="text-center my-4">
+      <div className="text-center mb-2 mt-4">
         <h2 className="d-inline-flex align-items-center justify-content-center">
           <span
             className="bg-primary-custom me-2"
             style={{ borderRadius: '50px', width: '30px', height: '3px', display: 'inline-block' }}
           ></span>
-          Contact HR & Support
+          የመገናኛ መረጃ
         </h2>
       </div>
 
@@ -41,9 +41,8 @@ const Contact = () => {
         className="mb-2 text-muted"
         style={{ fontSize: '18px', lineHeight: '1.7', textAlign: 'center', display: 'block' }}
       >
-      If you need assistance with your employee profile, submitting new data, or general inquiries, we’re here to help.
-Our HR and technical teams are ready to support you.
-You can reach out to us through the contact form, phone, or email, and we’ll get back to you as soon as possible.   </Text>
+  እርስዎን ለመርዳት እዚህ እንገኛለን! ስለ ቅድመ-ጡረታ ሥልጠና ፕሮግራሞቻችን ማንኛውም አይነት ጥያቄ ካሎት፣ 
+  ድጋፍ ከፈለጉ፣ ወይም አስተያየትዎን ለማጋራት ከፈለጉ፣ እባክዎ እኛን ለማግኘት አያመንቱ።   </Text>
 
       <Row gutter={[32, 32]} className="pt-5">
         {/* Left: Contact Form */}
@@ -55,7 +54,7 @@ You can reach out to us through the contact form, phone, or email, and we’ll g
                 name="name"
                 rules={[{ required: true, message: 'Please enter your name' }]}
               >
-                <Input placeholder="Enter your full name" />
+                <Input placeholder="ሙሉ ስምዎን ያስገቡ" />
               </Form.Item>
               <Form.Item
                 label="Email"
@@ -65,22 +64,22 @@ You can reach out to us through the contact form, phone, or email, and we’ll g
                   { type: 'email', message: 'Please enter a valid email address' },
                 ]}
               >
-                <Input placeholder="Enter your email" />
+                <Input placeholder="ኢሜልዎን ያስገቡ" />
               </Form.Item>
               <Form.Item
                 label="Message"
                 name="message"
                 rules={[{ required: true, message: 'Please enter your message' }]}
               >
-                <Input.TextArea rows={4} placeholder="Write your message or inquiry here" />
+                <Input.TextArea rows={4} placeholder="ጥያቄዎን ወይም መልእክትዎን እዚህ ላይ ይፃፉ" />
               </Form.Item>
               <Form.Item>
                 <Button
                   type="primary"
                   htmlType="submit"
-                  style={{ backgroundColor: '#2ca8a6', borderColor: '#2ca8a6' }}
+                  style={{ backgroundColor: '#814516', borderColor: '#814516' }}
                 >
-                  Send Message
+                 መልእክት ይላኩ
                 </Button>
               </Form.Item>
             </Form>
@@ -89,13 +88,12 @@ You can reach out to us through the contact form, phone, or email, and we’ll g
 
         {/* Right: Contact Info */}
         <Col xs={24} md={12} className="d-flex flex-column justify-content-center">
-          <Title level={2} style={{ color: '#2ca8a6' }}>HR & Support Contact</Title>
+          <Title level={2} style={{ color: '#814516' }}>የእውቂያ መረጃ</Title>
           <Text className="mb-4 text-muted" style={{ fontSize: '16px', lineHeight: '1.7' }}>
-            If you need assistance with your employee profile, submitting new data, or general inquiries, we’re here to help.
-            Our HR and technical teams are ready to support you.
+           ለአርኪ እና ስኬታማ የጡረታ ዘመን በሚዘጋጁበት ጊዜ ቡድናችን በእያንዳንዱ እርምጃ እርስዎን ለመርዳት ዝግጁ ነው። 
           </Text>
           <Text className="mb-4 text-muted" style={{ fontSize: '16px', lineHeight: '1.7' }}>
-            Feel free to contact us via the form or use the details below to reach out directly.
+           ከዚህ በታች ያለውን ቅጽ ይሙሉ ወይም ከኛ ጋር ለመገናኘት የተሰጡትን የመገኛ ዝርዝሮች ይጠቀሙ።
           </Text>
 
           <ul style={{ padding: 0, listStyle: 'none', fontSize: '16px' }}>
@@ -109,7 +107,7 @@ You can reach out to us through the contact form, phone, or email, and we’ll g
             </li>
             <li className="mb-3">
               <FaMapMarkerAlt className="text-primary-custom me-2" />
-              <span>Addis Ketema, Addis Ababa, Ethiopia</span>
+              <span>ሜክሲኮ፣ አዲስ አበባ፣ ኢትዮጵያ</span>
             </li>
           </ul>
         </Col>
@@ -117,13 +115,13 @@ You can reach out to us through the contact form, phone, or email, and we’ll g
 
       {/* Google Map */}
       <div className="mt-5 text-center">
-        <h3 className="mb-3">Visit Our Office</h3>
+        <h3 className="mb-3">ቢሮአችንን ይጎብኙ</h3>
         <p className="text-muted mb-4" style={{ fontSize: '16px' }}>
-          You can find us at the HR department office in Addis Ketema, Addis Ababa.
+         ከካሬ ህንፃ አጠገብ በሚገኘው ሀይማን ህንፃ ሜክሲኮ፣ አዲስ አበባ ያገኙናል።
         </p>
         <iframe
           title="Google Map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3931.3154022262454!2d38.74273951460182!3d9.01079369351781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b853bf29c9c69%3A0xb5b4b13dfeb52d94!2sAddis%20Ketema%2C%20Addis%20Ababa%2C%20Ethiopia!5e0!3m2!1sen!2set!4v1689938467081!5m2!1sen!2set"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.6106836895965!2d38.74407000818875!3d9.007923589286115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85d0181f146d%3A0xbe3dcdd55e6fe2c6!2zS0thcmUgQnVpbGRpbmcgfCBNZXhpY28gfCDhiqzhiqzhiK0g4YiF4YqV4Y2DIHwg4Yic4Yqt4Yiy4Yqu!5e0!3m2!1sam!2set!4v1753242748466!5m2!1sam!2set"
           width="100%"
           height="400"
           style={{ border: 0 }}

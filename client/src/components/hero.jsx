@@ -23,10 +23,10 @@ const Hero = () => {
             data-aos="fade-up"
           >
             <h3 className="display-3 fw-bold ">
-              <span className="text-dark ">Welcome to the </span>
+              <span className="text-dark ">ተስፋ የቅድመ ጡረታ </span>
               <span className="text-primary-custom ">
                 <Typewriter
-                  words={['Employee Portal']}
+                  words={['ማዕከል ድረ-ገጽ!']}
                   loop={false}
                   cursor
                   cursorStyle="."
@@ -38,10 +38,9 @@ const Hero = () => {
             </h3>
 
             <p className="lead mt-3">
-              Get to know our dedicated team members. View employee profiles, roles, and contact information.
-            </p>
-            <Link to="/profile" className="btn btn-lg text-white bg-primary-custom mt-2">
-              View Profiles
+             ጡረታ ማለት የሕይወት ምዕራፍ መቀየር እንጂ ስራ ማቆም አይደለም! እንኳን ወደ ተስፋ ቅድመ ጡረታ ስልጠና ማዕከል የሥራ ማገናኛ ድረ-ገጽ በደህና መጡ!        </p>
+            <Link to="/about" className="btn btn-lg text-white bg-primary-custom mt-2">
+           ታሪካችን
             </Link>
           </div>
 

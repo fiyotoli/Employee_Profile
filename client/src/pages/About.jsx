@@ -23,13 +23,11 @@ const AboutUs = () => {
               />
             </Col>
             <Col md={6} className="text-md-start mt-4 mt-md-0">
-              <h1 className="fw-bold display-5 text-primary-custom">About Our Company</h1>
+              <h1 className="fw-bold display-5 text-primary-custom">ስለ ድርጅታችን</h1>
               <p className="mt-3">
-                We connect top talent with opportunities to grow and succeed through a transparent employee profile system.
-              </p>
+              በተስፋ የቅድመ ጡረታ ሥልጠና ማዕከላችን ፣ ጡረታን ለሚቃረቡ ግለሰቦች የወደፊት ሕይወታቸውን በብቃት እንዲያዘጋጁ ለማብቃት ቆርጠን ተነስተናል። ተሳታፊዎቻችን ወደ አርኪና ንቁ የጡረታ ሕይወት በተቀላጠፈ ሁኔታ እንዲሸጋገሩ ለመርዳት በገንዘብ እቅድ፣ በሥራ ዕድሎች፣ በጤና እና በግል ልማት ላይ ተግባራዊ ድጋፍ እንሰጣለን።   </p>
               <p>
-                Our platform empowers individuals by showcasing their skills, experience, and aspirations — giving employers clear insight into what each candidate brings to the table.
-              </p>
+               ግባችን እያንዳንዱን የሥልጠና ተሳታፊ ጡረታ ከወጣ በኋላ አስተማማኝና ትርጉም ያለው ሕይወት እንዲፈጥር መደገፍ ነው።       </p>
             </Col>
           </Row>
         </Container>
@@ -38,11 +36,12 @@ const AboutUs = () => {
       {/* Our Story - moved just below hero */}
       <section className="bg-light OurStory py-5">
         <Container>
-          <h2 className="text-center mb-4 text-primary-custom">Our Story</h2>
+          <h2 className="text-center mb-4 text-primary-custom">ታሪካችን</h2>
           <p className="lead text-center mx-auto" style={{ maxWidth: '800px' }}>
-            Born out of the need for clarity in talent management, our Employee Profile Platform helps organizations stay organized, build culture, and highlight the value every individual brings to the team.
-            Since our inception, we've helped businesses transform their HR processes, making employee data accessible, useful, and beautifully presented.
-          </p>
+           የተስፋ ቅድመ ጡረታ ስልጠና ማዕከል እንደ ኢትዮጵያውያን አቆጣጠር በ2016 የተመሰረተ ሲሆን፣ አጫጭር ጊዜ ስልጠናዎችን ለመስጠት ህጋዊ ፈቃድ ያለው ተቋም ነው። ማዕከላችን የተመሰረተው ጡረታ ላይ በሚገኙና የጡረታ ልምድና ተሞክሮ ባላቸው በአቶ ተስፋዬ ደሳለኝ ጥልቅ እምነትና ከግል ልምዳቸው በመነሳት ነው።   
+           </p>
+          <p className="lead text-center mx-auto" style={{ maxWidth: '800px' }}>
+           አቶ ተስፋዬ ከረጅም ዓመታት አገልግሎት በኋላ ጡረታ ሲወጡ ያጋጠሟቸውን ተግዳሮቶች መነሻ በማድረግ፣ መሰል ችግሮች ሌሎች ወገኖቻችን ላይ እንዳይደርሱ ለመከላከልና የተሻለ ምዕራፍ እንዲገቡ ለማስቻል ይህንን ማዕከል አቋቋሙ። እስካሁን ድረስም ለ200 ለሚጠጉ ሰራተኞች ስልጠና በመስጠት ወደ ጡረታ ህይወታቸው በተሟላ ዝግጅት እንዲገቡ አግዘናል።  </p>
         </Container>
       </section>
 
@@ -55,8 +54,9 @@ const AboutUs = () => {
         <div className="mx-auto mb-3 d-flex justify-content-center align-items-center rounded-circle bg-primary-custom text-white" style={{ width: '60px', height: '60px' }}>
           <FaBullseye size={30} />
         </div>
-        <h4>Our Mission</h4>
-        <p>To bridge the gap between talent and opportunity through clarity, visibility, and fairness.</p>
+        <h4 className='fw-bold'>ተልዕኮአችን</h4>
+        <p>ጡረታ ለሚቃረቡና ጡረታ ለወጡ ዜጎች ሁሉን አቀፍ ሥልጠናዎችንና የምክር አገልግሎቶችን በመስጠት፣ ለለውጥ ምዕራፉ በአእምሮአዊ፣ ፋይናንሳዊና ማኅበራዊ ጉዳዮች እንዲዘጋጁ ማስቻል።
+        </p>
       </Card>
     </Col>
 
@@ -66,8 +66,8 @@ const AboutUs = () => {
         <div className="mx-auto mb-3 d-flex justify-content-center align-items-center rounded-circle bg-primary-custom text-white" style={{ width: '60px', height: '60px' }}>
           <FaHandshake size={30} />
         </div>
-        <h4>Our Vision</h4>
-        <p>A world where every employee's skills and story are valued globally.</p>
+        <h4 className='fw-bold'>ራዕያችን</h4>
+        <p>ራዕያችን: በኢትዮጵያ ውስጥ የቅድመ ጡረታ ዝግጅትና ከጡረታ በኋላ የሥራ ተሳትፎን በማጎልበት ረገድ ግንባር ቀደም ማዕከል መሆን።</p>
       </Card>
     </Col>
 
@@ -77,24 +77,32 @@ const AboutUs = () => {
         <div className="mx-auto mb-3 d-flex justify-content-center align-items-center rounded-circle bg-primary-custom text-white" style={{ width: '60px', height: '60px' }}>
           <FaUsers size={30} />
         </div>
-        <h4>Our Culture</h4>
-        <p>We foster innovation, collaboration, and authenticity in everything we do.</p>
+        <h4 className='fw-bold'>የእኛ ባህል</h4>
+        <p>በሁሉም ስልጠናዎቻችንና አገልግሎቶቻችን፣ ለተሳታፊዎቻችን ብሩህ ተስፋን እና አዎንታዊ አመለካከትን እናሰንቃለን። ጡረታ የገደብ ሳይሆን የዕድሎች በር መሆኑን እናሳያለን። </p>
       </Card>
     </Col>
   </Row>
 </Container>
 
 
-      {/* CTA Section */}
-      <div className="cta-section d-flex align-items-center justify-content-center text-white text-center">
-        <div className='Container'>
-          <h2 className="mb-1">Ready to Explore Our Profiles?</h2>
-          <p className='mb-2'>Get to know our dedicated team members. View employee profiles, roles, and contact information.</p>
-          <Link to="/profile" className=" btn-profile btn btn-light btn-lg mt-2">
-            View Employee Profiles
-          </Link>
-        </div>
+     {/* CTA Section */}
+<div className="cta-section d-flex align-items-center justify-content-center text-white text-center">
+  <div className="container">
+    <div className="row justify-content-center">
+      <div className="col-md-10">
+        <h2 className="mb-1">ልምድ ያላቸውና ታማኝ ባለሙያዎችን መቅጠር ይፈልጋሉ?</h2>
+        <p className="mb-2">
+          ተስፋ የቅድመ ጡረታ ሥልጠና በቂ ልምድ ያላቸውንና ለድርጅትዎ የበኩላቸውን አስተዋጽኦ ለማድረግ 
+          የተዘጋጁ ጡረተኞችን ያገናኝዎታል። ክፍት የሥራ ቦታዎችዎን ያስታውቁንና ትክክለኛውን የሰው ኃይል ዛሬውኑ ያግኙ።
+        </p>
+        <Link to="/profile" className="btn-profile btn btn-light btn-lg mt-2">
+          የሥራ ፈላጊዎች ፕሮፋይል
+        </Link>
       </div>
+    </div>
+  </div>
+</div>
+
     </>
   );
 };
