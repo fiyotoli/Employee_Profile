@@ -31,7 +31,7 @@ const Login = ({setToken}) => {
       <div className="card shadow p-4" style={{ width: '400px' }}>
       <div className="text-center my-4">
   <h2 className="d-inline-flex align-items-center justify-content-center">
-    <span className="bg-primary me-2" style={{  borderRadius: '50px',width: '30px', height: '3px', display: 'inline-block' }}></span>
+    <span className="bg-primary-custom me-2" style={{  borderRadius: '50px',width: '30px', height: '3px', display: 'inline-block' }}></span>
   Admin Login
   </h2>
 </div>
@@ -60,7 +60,7 @@ const Login = ({setToken}) => {
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary w-100">Login</button>
+          <button type="submit" className="btn view-detail-button w-100">Login</button>
         </form>
       </div>
     </div>
