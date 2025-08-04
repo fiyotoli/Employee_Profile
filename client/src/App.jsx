@@ -21,7 +21,7 @@ import Footer from './components/Footer';
 import EmployeeList from './components/EmployeeList';
 import BlogList from './pages/BlogList';
 import SingleBlog from './pages/SingleBlog';
-import SingleJob from './pages/SingleJob.JSX';
+import SingleJob from './pages/SingleJob';
 
 function App() {
   const [loading, setLoading] = useState(true);
