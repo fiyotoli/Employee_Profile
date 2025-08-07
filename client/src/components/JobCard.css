@@ -11,6 +11,7 @@
   transition: background 0.3s, color 0.3s;
 }
 
+
 .view-detail-button:hover,
 .view-detail-button:active {
   background: #814516 !important;
@@ -19,4 +20,18 @@
   outline: none;
 }
 
-
+.view-detail-button-register{
+background: rgb(129, 69, 22);
+  color: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+.view-detail-button-register:hover,
+.view-detail-button-register:active {
+ background: rgb(99, 45, 3);
+  color: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}

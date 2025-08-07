@@ -77,7 +77,7 @@ const Footer = () => {
 
         <hr className="my-4" />
         <p className="text-center mb-0 text-black">
-          © {new Date().getFullYear()} 2025 ተስፋ የቅድመ ጡረታ ማሰልጠኛ ማዕከል. ሁሉም መብቶች የተጠበቁ ናቸው።
+          ©{new Date().getFullYear()} ተስፋ የቅድመ ጡረታ ማሰልጠኛ ማዕከል. ሁሉም መብቶች የተጠበቁ ናቸው።
         </p>
       </div>
     </footer>

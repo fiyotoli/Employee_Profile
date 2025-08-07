@@ -134,8 +134,8 @@ const SingleJob = () => {
                   <FaBookmark />
                 </div>
                 <div style={isOdd(2) ? { color: whiteColor } : {}}>
-                  <h6 className="fw-bold mb-1 text-capitalize">Job Title</h6>
-                  <p className="text-muted mb-0" style={isOdd(2) ? { color: whiteColor } : {}}>
+                  <h6 className="fw-bold mb-1 text-capitalize">Job Title|የስራ መደብ</h6>
+                  <p className="text-muted mb-0 text-capitalize" style={isOdd(2) ? { color: whiteColor } : {}}>
                     {Array.isArray(job.jobTitle) ? job.jobTitle.join(', ') : job.jobTitle}
                   </p>
                 </div>
@@ -145,7 +145,7 @@ const SingleJob = () => {
                   <FaClock />
                 </div>
                 <div style={isOdd(2) ? { color: whiteColor } : {}}>
-                  <h6 className="fw-bold mb-1 text-capitalize">Job Type</h6>
+                  <h6 className="fw-bold mb-1 text-capitalize">Job Type|የሥራ አይነት</h6>
                   <p className="text-muted mb-0" style={isOdd(2) ? { color: whiteColor } : {}}>
                     {job.jobType}
                     {job.jobType === 'Other' && job.jobTypeOther
@@ -163,7 +163,7 @@ const SingleJob = () => {
       <div className="row mb-4">
         <div className="col-lg-8 mb-3">
           <div style={isOdd(3) ? cardStylePrimary : {}} className="card p-3 shadow-sm h-100">
-            <h6 className="fw-bold mb-2 text-capitalize" style={isOdd(3) ? { color: whiteColor } : {}}>Job Description</h6>
+            <h6 className="fw-bold mb-2 text-capitalize" style={isOdd(3) ? { color: whiteColor } : {}}>Job Description|የሥራ መግለጫ</h6>
            <p className={`mb-0 ${isOdd(3) ? 'text-white' : 'text-muted'}`}>
   {job.jobDescription}
 </p>
@@ -177,7 +177,7 @@ const SingleJob = () => {
                 <FaGraduationCap />
               </div>
               <div style={isOdd(4) ? { color: whiteColor } : {}}>
-                <h6 className="fw-bold mb-1 text-capitalize">Educational Level</h6>
+                <h6 className="fw-bold mb-1 text-capitalize">Educational Level|የትምህርት ደረጃ</h6>
                 <p className="text-muted mb-0" style={isOdd(4) ? { color: whiteColor } : {}}>
                   {job.educationLevel}
                   {job.educationLevel === 'Other' && job.educationLevelOther
@@ -191,7 +191,7 @@ const SingleJob = () => {
                 <FaTools />
               </div>
               <div style={isOdd(4) ? { color: whiteColor } : {}}>
-                <h6 className="fw-bold mb-1 text-capitalize">Work Experience</h6>
+                <h6 className="fw-bold mb-1 text-capitalize">Work Experience|የሥራ ልምድ</h6>
                 <p className="text-muted mb-0" style={isOdd(4) ? { color: whiteColor } : {}}>{job.workExperience} yrs</p>
               </div>
             </div>
@@ -204,12 +204,14 @@ const SingleJob = () => {
         <div className="col-md-7 col-lg-8 mb-3">
           <div style={isOdd(5) ? cardStylePrimary : {}} className="card p-3 shadow-sm h-100">
            <h6 className={`fw-bold mb-2 text-capitalize ${isOdd(5) ? 'text-white' : ''}`}>
-  Skills Required
+  Skills Required|የሚፈለጉ ክህሎቶች
 </h6>
-
-<p className={`mb-0 ${isOdd(5) ? 'text-white' : 'text-muted'}`}>
+<p className='text-capitalize'>
+  <p className={`mb-0 ${isOdd(5) ? 'text-white' : 'text-muted'}`} >
   {job.requiredSkills?.join(', ')}
 </p>
+</p>
+
     </div>
         </div>
         <div className="col-md-5 col-lg-4 d-flex align-items-center" style={isOdd(6) ? cardStylePrimary : {}}>
@@ -217,8 +219,8 @@ const SingleJob = () => {
             <FaMapMarkerAlt />
           </div>
           <div style={isOdd(6) ? { color: whiteColor } : {}}>
-            <h6 className="fw-bold mb-1 text-capitalize">Location</h6>
-            <p className="text-muted mb-0" style={isOdd(6) ? { color: whiteColor } : {}}>{job.jobLocation}</p>
+            <h6 className="fw-bold mb-1 text-capitalize">Location|የሥራ ቦታ</h6>
+            <p className="text-muted mb-0 text-capitalize" style={isOdd(6) ? { color: whiteColor } : {}}>{job.jobLocation}</p>
           </div>
         </div>
       </div>
@@ -240,8 +242,8 @@ const SingleJob = () => {
         <FaEnvelope />
       </div>
       <div style={isOdd(7) ? primaryTextStyle : {}}>
-        <h6 className="fw-bold mb-1 text-capitalize">Contact Email</h6>
-        <p className="mb-0" style={isOdd(7) ? primaryTextStyle : { color: 'inherit' }}>
+        <h6 className="fw-bold mb-1 text-capitalize">Contact Email|ኢሜይል</h6>
+        <p className="mb-0 " style={isOdd(7) ? primaryTextStyle : { color: 'inherit' }}>
           {job.contactEmail}
         </p>
       </div>
@@ -263,7 +265,7 @@ const SingleJob = () => {
         <FaPhone />
       </div>
       <div style={isOdd(8) ? primaryTextStyle : {}}>
-        <h6 className="fw-bold mb-1 text-capitalize">Phone Number</h6>
+        <h6 className="fw-bold mb-1 text-capitalize">Phone Number|ስልክ ቁጥር</h6>
         <p className="mb-0" style={isOdd(8) ? primaryTextStyle : { color: 'inherit' }}>
           {job.phoneNumber || '-'}
         </p>
@@ -286,7 +288,7 @@ const SingleJob = () => {
         <FaClock />
       </div>
       <div style={isOdd(9) ? primaryTextStyle : {}}>
-        <h6 className="fw-bold mb-1 text-capitalize">Application Deadline</h6>
+        <h6 className="fw-bold mb-1 text-capitalize">Application Deadline|የማመልከቻ የመጨረሻ ቀን</h6>
         <p className="mb-0" style={isOdd(9) ? primaryTextStyle : { color: 'inherit' }}>
           {job.applicationDeadline ? job.applicationDeadline.slice(0, 10) : '-'}
         </p>

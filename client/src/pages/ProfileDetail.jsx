@@ -171,14 +171,14 @@ const ProfileDetail = () => {
       <div className="col-md-6 mb-3 d-flex align-items-center gap-3">
         <div style={iconCircleStyle}><FaGraduationCap /></div>
         <div>
-          <h6 className="fw-bold mb-1">Education Level</h6>
+          <h6 className="fw-bold mb-1">Education Level|የትምህርት ደረጃ</h6>
           <p className="mb-0">{profileData.educationLevel || 'N/A'}</p>
         </div>
       </div>
       <div className="col-md-6 mb-3 d-flex align-items-center gap-3">
         <div style={iconCircleStyle}><FaBriefcase /></div>
         <div>
-          <h6 className="fw-bold mb-1">Total Experience</h6>
+          <h6 className="fw-bold mb-1">Total Experience|ጠቅላላ የሥራ ልምድ</h6>
           <p className="mb-0">{formatExperience(profileData.totalWorkExperience)}</p>
         </div>
       </div>
@@ -188,14 +188,14 @@ const ProfileDetail = () => {
       <div className="col-md-6 mb-3 d-flex align-items-center gap-3">
         <div style={iconCircleStyle}><FaBriefcase /></div>
         <div>
-          <h6 className="fw-bold mb-1">Self Experience</h6>
+          <h6 className="fw-bold mb-1">Self Experience|የግል ሥራ ልምድ </h6>
           <p className="mb-0">{formatExperience(profileData.workExperienceSelf)}</p>
         </div>
       </div>
       <div className="col-md-6 mb-3 d-flex align-items-center gap-3">
         <div style={iconCircleStyle}><FaBriefcase /></div>
         <div>
-          <h6 className="fw-bold mb-1">Govt Experience</h6>
+          <h6 className="fw-bold mb-1">Govt Experience|የመንግስት የሥራ ልምድ</h6>
           <p className="mb-0">{formatExperience(profileData.workExperienceGovernment)}</p>
         </div>
       </div>
@@ -211,8 +211,8 @@ const ProfileDetail = () => {
       <div className="d-flex align-items-start gap-3">
         <div style={primaryIconCircleStyle}><FaTools /></div>
         <div>
-          <h6 className="fw-bold mb-1">Skills</h6>
-          <ul className="mb-0">
+          <h6 className="fw-bold mb-1">Skills|ክህሎቶች</h6>
+          <ul className="mb-0 text-capitalize">
             {(() => {
               try {
                 if (Array.isArray(profileData.additionalSkills) && profileData.additionalSkills.length === 1) {
@@ -237,8 +237,8 @@ const ProfileDetail = () => {
       <div className="d-flex align-items-start gap-3">
         <div style={primaryIconCircleStyle}><FaSuitcase /></div>
         <div>
-          <h6 className="fw-bold mb-1">Job Type</h6>
-          <ul className="mb-0">
+          <h6 className="fw-bold mb-1">Job Type|የስራ መደብ</h6>
+          <ul className="mb-0 text-capitalize">
             {(() => {
               try {
                 if (Array.isArray(profileData.neededJobType) && profileData.neededJobType.length === 1) {
@@ -270,11 +270,11 @@ const ProfileDetail = () => {
             <>
               <div className="d-flex align-items-center mb-3 gap-3">
                 <div style={primaryIconCircleStyle}><FaBriefcase size={20} /></div>
-                <h5 className="mb-0">Work Experience</h5>
+                <h5 className="mb-0">Work Experience|የሥራ ልምድ</h5>
               </div>
               {profileData.workExperience && profileData.workExperience.length > 0 ? (
                 profileData.workExperience.map((work, i) => (
-                  <div key={i} style={{ marginBottom: '1rem' }}>
+                  <div key={i} style={{ marginBottom: '1rem' }} className='text-capitalize'>
                     <strong>Company Name:</strong> {work.companyName}<br />
                     <strong>Job Title:</strong> {work.jobTitle}<br />
                     <strong>Start Date:</strong> {work.startDate?.slice(0, 10)}<br />
@@ -301,9 +301,9 @@ const ProfileDetail = () => {
     <div className="col-md-6 mb-3">
       <div className="d-flex align-items-center mb-3 gap-3">
         <div style={primaryIconCircleStyle}><FaMapMarkerAlt size={20} /></div>
-        <h5 className="mb-0">Current Location</h5>
+        <h5 className="mb-0">Current Location|መኖሪያ ቦታ</h5>
       </div>
-      <p>
+      <p className='text-capitalize'>
         {profileData.currentLocation
           ? `${profileData.currentLocation.city || ''}, ${profileData.currentLocation.region || ''}, ${profileData.currentLocation.country || ''}`
           : '-'}
@@ -314,11 +314,11 @@ const ProfileDetail = () => {
     <div className="col-md-6 mb-3">
       <div className="d-flex align-items-center mb-3 gap-3">
         <div style={primaryIconCircleStyle}><FaGraduationCap size={20} /></div>
-        <h5 className="mb-0">Education</h5>
+        <h5 className="mb-0">Education|የትምህርት ተቋም</h5>
       </div>
       {profileData.education && profileData.education.length > 0 ? (
         profileData.education.map((edu, i) => (
-          <div key={i} style={{ marginBottom: '0.5rem' }}>
+          <div key={i} style={{ marginBottom: '0.5rem' }} className='text-capitalize'>
             <strong>Institution:</strong> {edu.institution}<br />
             <strong>Graduation Year:</strong> {edu.graduationYear}
             {i !== profileData.education.length - 1 && <hr className="my-1" style={{ borderColor: '#ccc' }} />}
@@ -339,14 +339,14 @@ const ProfileDetail = () => {
           {renderCard((
   <div className="row">
     {/* Languages Column */}
-    <div className="col-md-6">
+    <div className="col-md-6 mb-3"> 
       <div className="d-flex align-items-center mb-3 gap-3">
         <div style={primaryIconCircleStyle}><FaLanguage size={20} /></div>
-        <h5 className="mb-0">Languages</h5>
+        <h5 className="mb-0">Languages|ቋንቋ</h5>
       </div>
       {Array.isArray(profileData.language) && profileData.language.length > 0 ? (
         profileData.language.map((lang, i) => (
-          <div key={i} style={{ marginBottom: '0.5rem' }}>
+          <div key={i} style={{ marginBottom: '0.5rem' }} className='text-capitalize'>
             <strong>Language:</strong> {lang.language}<br />
             <strong>Proficiency:</strong> {lang.proficiency}
             {i !== profileData.language.length - 1 && <hr className="my-1" style={{ borderColor: '#ccc' }} />}
@@ -356,16 +356,16 @@ const ProfileDetail = () => {
         <p className={cardPrimaryStyle.color === 'white' ? 'text-white' : 'text-muted'}>-</p>
       )}
     </div>
-
+<hr />
     {/* Projects and language Column */}
     <div className="col-md-6">
       <div className="d-flex align-items-center mb-3 gap-3">
         <div style={primaryIconCircleStyle}><FaProjectDiagram size={20} /></div>
-        <h5 className="mb-0">Projects</h5>
+        <h5 className="mb-0">Projects|ፕሮጀክቶች</h5>
       </div>
       {Array.isArray(profileData.projects) && profileData.projects.length > 0 ? (
         profileData.projects.map((proj, i) => (
-          <div key={i} style={{ marginBottom: '0.5rem' }}>
+          <div key={i} style={{ marginBottom: '0.5rem' }} className='text-capitalize'>
             <p className="mb-1"><strong>Title:</strong> {proj.projectTitle}</p>
             <p className="mb-1"><strong>Description:</strong> {proj.description}</p>
             <p className="mb-1"><strong>Role:</strong> {proj.role}</p>
@@ -385,12 +385,12 @@ const ProfileDetail = () => {
             <div className="col-md-6 mb-3">
               <label htmlFor="email" className="form-label fw-bold">
                 <FaEnvelope className="me-2 text-primary-custom" />
-                Email
+                Email|ኢሜይል
               </label>
               <input
                 type="text"
                 readOnly
-                className="form-control bg-light"
+                className="form-control bg-light "
                 id="email"
                 value={profileData.email || 'N/A'}
               />
@@ -399,7 +399,7 @@ const ProfileDetail = () => {
             <div className="col-md-6 mb-3">
               <label htmlFor="phone" className="form-label fw-bold">
                 <FaPhone className="me-2 text-primary-custom" />
-                Phone
+                Phone|ስልክ ቁጥር
               </label>
               <input
                 type="text"

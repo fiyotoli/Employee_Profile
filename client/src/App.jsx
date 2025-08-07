@@ -22,6 +22,7 @@ import EmployeeList from './components/EmployeeList';
 import BlogList from './pages/BlogList';
 import SingleBlog from './pages/SingleBlog';
 import SingleJob from './pages/SingleJob';
+import Register from './pages/Register';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -67,6 +68,7 @@ function App() {
             
             <Route path='/about' element={<AboutUs />} />
               <Route path='/profile' element={<EmployeeList/>} />
+              <Route path='/register' element={<Register/>} />
               <Route path='/blog' element={<BlogList/>} />
               <Route path='/job' element={<JobCard/>} />
               <Route path='/job/:id' element={<SingleJob/>} />

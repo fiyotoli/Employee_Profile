@@ -2,11 +2,14 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FaBriefcase } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import '../components/JobCard.css'; // You can still use this for custom styles
+import '../components/JobCard.css'; // Custom styles
 
 const JobCard = () => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState('');
+  const [jobType, setJobType] = useState('');
+  const [organizationType, setOrganizationType] = useState('');
 
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
@@ -32,77 +35,131 @@ const JobCard = () => {
     return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
   };
 
+  const filteredJobs = jobs.filter((job) => {
+    const jobTitle = Array.isArray(job.jobTitle) ? job.jobTitle.join(' ') : job.jobTitle;
+    const matchesSearch = typeof jobTitle === 'string' && jobTitle.toLowerCase().includes(search.toLowerCase());
+    const matchesJobType = jobType === '' || job.jobType === jobType;
+    const matchesOrgType = organizationType === '' || job.organizationType === organizationType;
+    return matchesSearch && matchesJobType && matchesOrgType;
+  });
+
   if (loading) return <p className="text-center my-5">Loading jobs...</p>;
 
   return (
     <div className="container py-4 mt-5">
-      <h2 className="mb-4 mt-5 text-center  d-flex justify-content-center align-items-center gap-2">
+      <h2 className="mb-4 mt-5 text-center d-flex justify-content-center align-items-center gap-2">
         <FaBriefcase className='text-primary-custom' />ክፍት የሥራ ቦታዎች
       </h2>
-      <div className="row g-4">
-        {jobs.length === 0 && (
-          <p className="text-center text-muted">ክፍት የሥራ ቦታ የለም.</p>
-        )}
 
-        {jobs.map((job) => (
-          <div key={job._id} className="col-md-6 col-lg-4">
-            <div
-              className="card h-100 border-0 shadow-sm hover-shadow job-card"
-              style={{ cursor: 'pointer', transition: '0.3s' }}
-            >
-              <div className="card-body">
-
-                {/* First Row - Icon & Info */}
-                <div className="d-flex align-items-center mb-3">
-                  <div
-                    className="bg-primary-custom text-white rounded-circle d-flex align-items-center justify-content-center me-3"
-                    style={{ width: '50px', height: '50px' }}
-                  >
-                    <FaBriefcase size={20} />
-                  </div>
-                  <div>
-                    <h5 className="mb-0 fw-bold text-capitalize">{job.organizationName}</h5>
-                    <small className="text-muted">
-                      {job.organizationType}
-                      {job.organizationType === 'Other' && job.organizationTypeOther
-                        ? ` (${job.organizationTypeOther})`
-                        : ''}
-                    </small>
-                  </div>
-                </div>
-
-                {/* Second Row - Job Title & Description */}
-                <div className="mb-3 border-bottom pb-2">
-                  <h6 className="fw-bold text-capitalize">
-                    {Array.isArray(job.jobTitle)
-                      ? job.jobTitle.join(', ')
-                      : job.jobTitle}
-                  </h6>
-                  <p className="text-muted mb-0">
-                    {truncateText(job.jobDescription)}
-                  </p>
-                </div>
-
-                {/* Third Row - Location & Experience */}
-                <div className="d-flex justify-content-between text-muted small mb-3">
-                  <div>📍 {job.jobLocation}</div>
-                  {/* <div>🧠 {job.workExperience}</div> */}
-                </div>
-
-                {/* View Details */}
-                <div className="d-flex justify-content-start">
-                  <Link
-                    to={`/job/${job._id}`}
-                    className="btn  view-detail-button  btn-sm"
-                  >
-                    ዝርዝሮችን ይመልከቱ
-                  </Link>
-                </div>
-
-              </div>
+      {/* Search & Filters */}
+      <div className="row justify-content-center mb-4">
+        <div className="col-md-9">
+          <div className="row g-2">
+            <div className="col-md-6">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Search by Job Title"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+            </div>
+            <div className="col-md-3">
+              <select
+                className="form-select"
+                value={jobType}
+                onChange={(e) => setJobType(e.target.value)}
+              >
+                <option value="">All Job Types</option>
+                <option value="Full-time">Full-time</option>
+                <option value="Part-time">Part-time</option>
+                <option value="Contract">Contract</option>
+              </select>
+            </div>
+            <div className="col-md-3">
+              <select
+                className="form-select"
+                value={organizationType}
+                onChange={(e) => setOrganizationType(e.target.value)}
+              >
+                <option value="">All Organization Types</option>
+                <option value="Government">Government</option>
+                <option value="Private">Private</option>
+                <option value="NGO">NGO</option>
+                <option value="Other">Other</option>
+              </select>
             </div>
           </div>
-        ))}
+        </div>
+      </div>
+
+      <div className="row">
+        {/* Job Cards Section */}
+        <div className="col-12">
+          <div className="row g-4">
+            {filteredJobs.length === 0 && (
+              <p className="text-center text-muted">ክፍት የሥራ ቦታ የለም.</p>
+            )}
+
+            {filteredJobs.map((job) => (
+              <div key={job._id} className="col-md-6 col-lg-4">
+                <div
+                  className="card h-100 border-0 shadow-sm hover-shadow job-card"
+                  style={{ cursor: 'pointer', transition: '0.3s' }}
+                >
+                  <div className="card-body">
+                    {/* Icon & Org Info */}
+                    <div className="d-flex align-items-center mb-3">
+                      <div
+                        className="bg-primary-custom text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+                        style={{ width: '50px', height: '50px' }}
+                      >
+                        <FaBriefcase size={20} />
+                      </div>
+                      <div>
+                        <h5 className="mb-0 fw-bold text-capitalize">{job.organizationName}</h5>
+                        <small className="text-muted">
+                          {job.organizationType}
+                          {job.organizationType === 'Other' && job.organizationTypeOther
+                            ? ` (${job.organizationTypeOther})`
+                            : ''}
+                        </small>
+                      </div>
+                    </div>
+
+                    {/* Job Title & Description */}
+                    <div className="mb-3 border-bottom pb-2">
+                      <h6 className="fw-bold text-capitalize">
+                        {Array.isArray(job.jobTitle)
+                          ? job.jobTitle.join(', ')
+                          : job.jobTitle}
+                      </h6>
+                      <p className="text-muted mb-0">
+                        {truncateText(job.jobDescription)}
+                      </p>
+                    </div>
+
+                    {/* Location */}
+                    <div className="d-flex justify-content-between text-muted small mb-3">
+                      <div className='text-capitalize'>📍 {job.jobLocation}</div>
+                    </div>
+
+                    {/* View Details */}
+                    <div className="d-flex justify-content-start">
+                      <Link
+                        to={`/job/${job._id}`}
+                        className="btn view-detail-button btn-sm"
+                      >
+                        ዝርዝሮችን ይመልከቱ
+                      </Link>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

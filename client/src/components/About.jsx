@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBullseye, FaLightbulb, FaHandshake } from 'react-icons/fa';
-import about from '../assets/about1.jpg';
+import about from '../assets/hero2.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 

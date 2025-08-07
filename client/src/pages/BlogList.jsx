@@ -40,8 +40,8 @@ const BlogList = () => {
   <FaBlog /> የቅርብ ጊዜ ብሎጎች
 </h2>
 <p className="text-center text-muted mb-4" style={{ maxWidth: '800px', margin: '0 auto' }}>
-  Explore our most recent insights, stories, and updates from the community. Stay informed and inspired by the latest content!
-</p>
+  ከስፋ የቅድመ ጡረታ ማሰልጠኛ ማዕከል ሥልጠና ፕሮግራሞች አዳዲስ ዜናዎችን ፣ እውቀቶችንና ዝማኔዎችን ያግኙ።
+  </p>
 
       <div className="row">
         {blogs.slice(0, 6).map((blog) => (

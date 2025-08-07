@@ -1,0 +1,68 @@
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+const Register = () => {
+  const handleRedirect = () => {
+    // Direct to Telegram username
+    window.location.href = 'https://t.me/sabelatt';
+  };
+
+  return (
+    <div className="container mt-5 pt-5 mb-4">
+    <div className="text-center mb-4 mt-4">
+        <h2 className="d-inline-flex align-items-center justify-content-center">
+          <span
+            className="bg-primary-custom me-2"
+            style={{ borderRadius: '50px', width: '30px', height: '3px', display: 'inline-block' }}
+          ></span>
+          ለመመዝገብ
+        </h2>
+      </div>
+      <div className="row justify-content-center">
+        {/* Employee Card */}
+        <div className="col-md-6 col-lg-5 mb-4">
+          <div className="card h-100 d-flex flex-column shadow p-4 text-center">
+            <h4>እንደ ሰራተኛ ይመዝገቡ</h4>
+            <p>የቴሌግራም አካውንትዎን ተጠቅመው ለመመዝገብ እዚህ ይጫኑ</p>
+            <hr />
+            <h6>ጥቅሞች:</h6>
+            <ul className="text-start flex-grow-1">
+              <li>ከጡረታ በፊት ለሚሰጡ ስልጠናዎች በቀላሉ ይቀላቀላሉ።</li>
+              <li>ከስልጠና በኋላ፣ የፕሮፋይልዎ መረጃ በድህረ ገጹ ላይ ይታያል።</li>
+              <li>ልምድ ያላቸው ባለሙያዎችን ለሚፈልጉ ድርጅቶች የመቀጠር እድልዎ ይጨምራል።</li>
+            </ul>
+            <button
+              className="btn view-detail-button-register mt-auto"
+              onClick={handleRedirect}
+            >
+              ይመዝገቡ
+            </button>
+          </div>
+        </div>
+
+        {/* Company Card */}
+        <div className="col-md-6 col-lg-5 mb-4">
+          <div className="card h-100 d-flex flex-column shadow p-4 text-center">
+            <h4 className=''>እንደ ድርጅት ይመዝገቡ</h4>
+            <p>የቴሌግራም አካውንትዎን ተጠቅመው ለመመዝገብ እዚህ ይጫኑ</p>
+            <hr />
+            <h6>ጥቅሞች:</h6>
+            <ul className="text-start flex-grow-1">
+              <li>ለከፍተኛ የስራ መደቦች የስራ ማስታወቂያዎችን ይለጥፋሉ።</li>
+              <li>ልምድ ካላቸው እና የሰለጠኑ ባለሙያዎች ጋር በቀጥታ ይገናኛሉ።</li>
+              <li>ብቃት ያላቸው እና አስቀድመው የተመረጡ እጩዎችን ማግኘት ይችላሉ።</li>
+            </ul>
+            <button
+              className="btn view-detail-button-register mt-auto"
+              onClick={handleRedirect}
+            >
+              ይመዝገቡ
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Register;

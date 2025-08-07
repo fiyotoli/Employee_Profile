@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import hero from '../assets/hero1.jpg';
+import hero from '../assets/hero.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Typewriter } from 'react-simple-typewriter';
@@ -26,7 +26,7 @@ const Hero = () => {
               <span className="text-dark ">ተስፋ የቅድመ ጡረታ </span>
               <span className="text-primary-custom ">
                 <Typewriter
-                  words={['ማዕከል ድረ-ገጽ!']}
+                  words={['ማሰልጠኛ ማዕከል!']}
                   loop={false}
                   cursor
                   cursorStyle="."
@@ -39,8 +39,8 @@ const Hero = () => {
 
             <p className="lead mt-3">
              ጡረታ ማለት የሕይወት ምዕራፍ መቀየር እንጂ ስራ ማቆም አይደለም! እንኳን ወደ ተስፋ ቅድመ ጡረታ ስልጠና ማዕከል የሥራ ማገናኛ ድረ-ገጽ በደህና መጡ!        </p>
-            <Link to="/about" className="btn btn-lg text-white bg-primary-custom mt-2">
-           ታሪካችን
+            <Link to="/register" className="btn btn-lg text-white bg-primary-custom mt-2">
+            ይመዝገቡ
             </Link>
           </div>
 

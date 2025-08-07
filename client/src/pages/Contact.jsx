@@ -47,7 +47,7 @@ const Contact = () => {
       <Row gutter={[32, 32]} className="pt-5">
         {/* Left: Contact Form */}
         <Col xs={24} md={12}>
-          <div className="p-5 bg-primary bg-opacity-10" style={{ borderRadius: '8px' }}>
+          <div className="p-5 bg-primary-custom-opacity" style={{ borderRadius: '8px' }}>
             <Form layout="vertical" form={form} onFinish={onFinish}>
               <Form.Item
                 label="Full Name"

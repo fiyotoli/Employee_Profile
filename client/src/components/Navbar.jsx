@@ -68,6 +68,15 @@ function NavbarComponent() {
              ክፍት የሥራ ቦታ
             </NavLink>
             <NavLink
+              to="/register"
+              onClick={handleNavClick}
+              className={({ isActive }) =>
+                `nav-link px-3 ${isActive ? 'fw-bold text-primary-custom' : ''}`
+              }
+            >
+             ለመመዝገብ
+            </NavLink>
+            <NavLink
               to="/blog"
               onClick={handleNavClick}
               className={({ isActive }) =>
