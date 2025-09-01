@@ -112,11 +112,19 @@ const JobCard = () => {
                     {/* Icon & Org Info */}
                     <div className="d-flex align-items-center mb-3">
                       <div
-                        className="bg-primary-custom text-white rounded-circle d-flex align-items-center justify-content-center me-3"
-                        style={{ width: '50px', height: '50px' }}
-                      >
-                        <FaBriefcase size={20} />
-                      </div>
+  className="d-flex align-items-center justify-content-center me-3"
+  style={{
+    width: '50px',
+    height: '50px',
+    borderRadius: '50%',
+    backgroundColor: '#814516', // same as bg-primary-custom
+    color: '#fff',
+    flexShrink: 0,
+  }}
+>
+  <FaBriefcase size={20} />
+</div>
+
                       <div>
                         <h5 className="mb-0 fw-bold text-capitalize">{job.organizationName}</h5>
                         <small className="text-muted">
