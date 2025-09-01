@@ -36,17 +36,17 @@ const BlogList = () => {
 
   return (
     <div className="container my-5 pt-5">
-     <h2 className="text-center mt-4 mb-2 text-primary-custom d-flex justify-content-center align-items-center gap-2">
-  <FaBlog /> የቅርብ ጊዜ ብሎጎች
-</h2>
-<p className="text-center text-muted mb-4" style={{ maxWidth: '800px', margin: '0 auto' }}>
-  ከስፋ የቅድመ ጡረታ ማሰልጠኛ ማዕከል ሥልጠና ፕሮግራሞች አዳዲስ ዜናዎችን ፣ እውቀቶችንና ዝማኔዎችን ያግኙ።
-  </p>
+      <h2 className="text-center mt-4 mb-2 text-primary-custom d-flex justify-content-center align-items-center gap-2">
+        <FaBlog /> የቅርብ ጊዜ ብሎጎች
+      </h2>
+      <p className="text-center text-muted mb-4" style={{ maxWidth: '800px', margin: '0 auto' }}>
+        ከስፋ የቅድመ ጡረታ ማሰልጠኛ ማዕከል ሥልጠና ፕሮግራሞች አዳዲስ ዜናዎችን ፣ እውቀቶችንና ዝማኔዎችን ያግኙ።
+      </p>
 
-      <div className="row">
+      <div className="row g-4">
         {blogs.slice(0, 6).map((blog) => (
-          <div key={blog._id} className="col-md-6 col-lg-4 mb-4">
-            <div className="card h-100 shadow-sm border border-light-subtle">
+          <div key={blog._id} className="col-md-6 col-lg-4 d-flex">
+            <div className="card h-100 shadow-sm border border-light-subtle d-flex flex-column">
               {blog.image && (
                 <img
                   src={blog.image}
@@ -67,10 +67,10 @@ const BlogList = () => {
                     ? `${blog.content.substring(0, 100)}...`
                     : blog.content}
                 </p>
-                <div className="d-flex justify-content-between align-items-center mt-1">
+                <div className="d-flex justify-content-start mt-auto">
                   <Link
                     to={`/blog/${blog._id}`}
-                    className="btn  view-detail-button btn-sm"
+                    className="btn view-detail-button btn-sm"
                     style={{ transition: 'all 0.3s' }}
                   >
                     ዝርዝሮችን ይመልከቱ
