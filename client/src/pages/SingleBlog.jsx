@@ -77,16 +77,16 @@ const SingleBlog = () => {
       <Link to="/blog" className="btn  view-detail-button mb-4 mt-2">&larr; ወደ ብሎግ ተመለስ</Link>
 
       {/* Blog Main Section */}
-      <div className="row mb-5">
+     
         {/* Left: Image and Link */}
-        <div className="col-md-4">
+        <div className=" mb-5">
           {blog.image && (
             <div className="p-2 rounded mb-3" style={{ boxShadow: '0 0 20px rgba(25, 45, 61,.8)' }}>
               <img
                 src={blog.image}
                 alt={blog.title}
                 className="img-fluid rounded"
-                style={{ objectFit: 'cover', width: '100%', maxHeight: '300px' }}
+                style={{ objectFit: 'contain', width: '100%', height: 'auto' }}
               />
             </div>
           )}
@@ -95,21 +95,23 @@ const SingleBlog = () => {
 
           {blog.socialMediaLink && (
             <div className="mt-3">
-              <h6 className="fw-bold">ለበለጠ ዝርዝር</h6>
-              <a
-                href={blog.socialMediaLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn  view-detail-button mt-2 w-100"
-              >
-               ለበለጠ ሊንኩን ተጭነው ይመልከቱ<FaExternalLinkAlt className="ms-2 text-primary-custom" />
-              </a>
-            </div>
+  <h6 className="fw-bold">ለበለጠ ዝርዝር</h6>
+  <a
+    href={blog.socialMediaLink}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn view-detail-button mt-2 d-inline-block"
+  >
+    ለበለጠ ሊንኩን ተጭነው ይመልከቱ
+    <FaExternalLinkAlt className="ms-2 text-primary-custom" />
+  </a>
+</div>
+
           )}
         </div>
 
         {/* Right: Text Content */}
-        <div className="col-md-8">
+        <div className="col-md-10 mb-5">
           <h2 className="fw-bold mb-3 text-capitalize">{blog.title}</h2>
 
           <div className="text-muted mb-4 d-flex align-items-center gap-2">
@@ -123,7 +125,7 @@ const SingleBlog = () => {
             ))}
           </div>
         </div>
-      </div>
+     
 
       {/* Other Blogs */}
       <div className="row">

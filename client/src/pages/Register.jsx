@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Register = () => {
   const handleRedirect = () => {
     // Direct to Telegram username
-    window.location.href = 'https://t.me/sabelatt';
+    window.location.href = 'https://t.me/tesfa_des';
   };
 
   return (
@@ -22,7 +22,7 @@ const Register = () => {
         {/* Employee Card */}
         <div className="col-md-6 col-lg-5 mb-4">
           <div className="card h-100 d-flex flex-column shadow p-4 text-center">
-            <h4>እንደ ሰራተኛ ይመዝገቡ</h4>
+            <h4>እንደ ሰልጣኝ ይመዝገቡ</h4>
             <p>የቴሌግራም አካውንትዎን ተጠቅመው ለመመዝገብ እዚህ ይጫኑ</p>
             <hr />
             <h6>ጥቅሞች:</h6>

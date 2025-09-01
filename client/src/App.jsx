@@ -50,7 +50,7 @@ function App() {
             {/* First Spinner Button */}
             <button className="btn bg-primary-custom text-white" type="button" disabled>
               <span className="spinner-grow spinner-grow-sm text-white" aria-hidden="true"></span>
-              <span className="visually-hidden text-white" role="status">Loading...</span>
+              <span className="visually-hidden text-white " role="status">Loading...</span>
             </button>
             {/* Second Spinner Button */}
             <button className="btn bg-primary-custom text-white" type="button" disabled>

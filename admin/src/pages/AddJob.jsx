@@ -107,7 +107,7 @@ const AddJob = ({ token }) => {
 
   return (
     <form onSubmit={onSubmitHandler} className="container px-5 py-2 my-3">
-      <h2 className="mb-4 text-primary-custom d-flex align-items-center gap-2">
+      <h2 className="mb-4 text-primary-custom d-flex align-items-center mt-3 gap-2">
         <FaBriefcase /> Add New Job
       </h2>
 
@@ -232,7 +232,7 @@ const AddJob = ({ token }) => {
         )}
       </div>
 
-      {/* Work Experience */}
+     {/* Work Experience */}
 <div className="mb-3">
   <label className="form-label">Required Work Experience (years)</label>
   <select
@@ -242,17 +242,15 @@ const AddJob = ({ token }) => {
     required
   >
     <option value="">Select experience</option>
+    <option value="0">0 year</option> {/* Added zero experience */}
     <option value="1">1 year</option>
-<option value="1">1+ year</option>
-<option value="2">2 year</option>
-<option value="2">2+ year</option>
-<option value="3">3 year</option>
-<option value="3">3+ year</option>
-<option value="5">5+ year</option>
-<option value="10">10+ year</option>
-
+    <option value="2">2 year</option>
+    <option value="3">3 year</option>
+    <option value="5">5 year</option>
+    <option value="10">10 year</option>
   </select>
 </div>
+
 
 
       {/* Required Skills */}
@@ -317,7 +315,7 @@ const AddJob = ({ token }) => {
         />
       </div>
 
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className="btn bg-primary-custom text-white">
         Submit Job
       </button>
     </form>

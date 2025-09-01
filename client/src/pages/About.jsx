@@ -3,9 +3,7 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import { FaUsers, FaBullseye, FaHandshake } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import aboutBanner from '../assets/team.jpg';
-import employee2 from '../assets/employee2.jpg';
-import employee3 from '../assets/employee3.jpg';
-import employee4 from '../assets/employee4.jpg';
+;
 import './AboutUs.css';
 
 const AboutUs = () => {

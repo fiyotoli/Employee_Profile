@@ -36,19 +36,23 @@ const TestimonialCarousel = () => {
   return (
     <div className="container my-5">
       <div className="text-center mb-4" data-aos="fade-left">
-        <h2 className="d-inline-flex align-items-center justify-content-center">
-          <span
-            className="bg-primary-custom me-2"
-            style={{
-              borderRadius: '50px',
-              width: '30px',
-              height: '3px',
-              display: 'inline-block',
-            }}
-          ></span>
-        የሥልጠናው ተሳታፊዎች አስተያየት
-        </h2>
-      </div>
+  <h2
+    className="d-inline-flex align-items-center justify-content-center"
+    style={{ whiteSpace: 'nowrap' }} // prevent wrapping
+  >
+    <span
+      className="bg-primary-custom me-2"
+      style={{
+        borderRadius: '50px',
+        width: '30px',
+        height: '3px',
+        display: 'inline-block',
+      }}
+    ></span>
+    የሥልጠናው ተሳታፊዎች አስተያየት
+  </h2>
+</div>
+
 
       <Carousel
         ref={carouselRef}
@@ -73,19 +77,22 @@ const TestimonialCarousel = () => {
                       <div>
                         <FaQuoteLeft className="text-primary-custom display-5 mb-3" />
                         {/* Equal-height feedback section */}
-                        <p
-                          className="card-text mb-3 text-capitalize"
-                          style={{
-                            minHeight: '120px',
-                            overflow: 'hidden',
-                            textOverflow: 'ellipsis',
-                            display: '-webkit-box',
-                            WebkitLineClamp: 5,
-                            WebkitBoxOrient: 'vertical',
-                          }}
-                        >
-                          {testimonial.feedback}
-                        </p>
+                     <p
+  className="card-text mb-3 text-capitalize"
+  style={{
+    minHeight: '120px',          // ensures equal height for all cards
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    display: '-webkit-box',
+    WebkitLineClamp: 5,
+    WebkitBoxOrient: 'vertical',
+  }}
+>
+  {testimonial.feedback.length > 150
+    ? testimonial.feedback.substring(0, 150) + '…'
+    : testimonial.feedback}
+</p>
+
                       </div>
 
                       <div>

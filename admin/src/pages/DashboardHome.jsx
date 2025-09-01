@@ -24,7 +24,7 @@ const DashboardHome = () => {
   const API_BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
   // Debug: Log the API base URL to verify env variable is loaded
-  console.log('API_BASE_URL:', API_BASE_URL);
+ 
 
   const fetchStats = async () => {
     setLoading(true);
@@ -46,16 +46,7 @@ const DashboardHome = () => {
         latestEmployees: empRes.data.latest || [],
       });
     } catch (err) {
-      // Log detailed error info to console
-      console.error("Error loading dashboard stats", err);
-      if (err.response) {
-        console.error('Response data:', err.response.data);
-        console.error('Response status:', err.response.status);
-      } else if (err.request) {
-        console.error('No response received:', err.request);
-      } else {
-        console.error('Error message:', err.message);
-      }
+      
     } finally {
       setLoading(false);
     }

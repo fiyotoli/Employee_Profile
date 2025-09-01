@@ -199,31 +199,34 @@ const SingleJob = () => {
         </div>
       </div>
 
-      {/* Third row: skills required and location */}
-      <div className="row mb-4">
-        <div className="col-md-7 col-lg-8 mb-3">
-          <div style={isOdd(5) ? cardStylePrimary : {}} className="card p-3 shadow-sm h-100">
-           <h6 className={`fw-bold mb-2 text-capitalize ${isOdd(5) ? 'text-white' : ''}`}>
-  Skills Required|የሚፈለጉ ክህሎቶች
-</h6>
-<p className='text-capitalize'>
-  <p className={`mb-0 ${isOdd(5) ? 'text-white' : 'text-muted'}`} >
-  {job.requiredSkills?.join(', ')}
-</p>
-</p>
-
-    </div>
-        </div>
-        <div className="col-md-5 col-lg-4 d-flex align-items-center" style={isOdd(6) ? cardStylePrimary : {}}>
-          <div style={isOdd(6) ? iconInvertedStyle : iconDefaultStyle}>
-            <FaMapMarkerAlt />
-          </div>
-          <div style={isOdd(6) ? { color: whiteColor } : {}}>
-            <h6 className="fw-bold mb-1 text-capitalize">Location|የሥራ ቦታ</h6>
-            <p className="text-muted mb-0 text-capitalize" style={isOdd(6) ? { color: whiteColor } : {}}>{job.jobLocation}</p>
-          </div>
-        </div>
+     {/* Third row: skills required and location */}
+<div className="row mb-4">
+  <div className="col-md-7 col-lg-8 mb-3">
+    <div style={isOdd(5) ? cardStylePrimary : {}} className="card p-3 shadow-sm h-100">
+      <h6 className={`fw-bold mb-2 text-capitalize ${isOdd(5) ? 'text-white' : ''}`}>
+        Skills Required | የሚፈለጉ ክህሎቶች
+      </h6>
+      <div className='text-capitalize'>
+        <p className={`mb-0 ${isOdd(5) ? 'text-white' : 'text-muted'}`}>
+          {job.requiredSkills?.join(', ')}
+        </p>
       </div>
+    </div>
+  </div>
+
+  <div className="col-md-5 col-lg-4 d-flex align-items-center" style={isOdd(6) ? cardStylePrimary : {}}>
+    <div style={isOdd(6) ? iconInvertedStyle : iconDefaultStyle}>
+      <FaMapMarkerAlt />
+    </div>
+    <div style={isOdd(6) ? { color: whiteColor } : {}}>
+      <h6 className="fw-bold mb-1 text-capitalize">Location|የሥራ ቦታ</h6>
+      <p className="text-muted mb-0 text-capitalize" style={isOdd(6) ? { color: whiteColor } : {}}>
+        {job.jobLocation}
+      </p>
+    </div>
+  </div>
+</div>
+
 
      {/* Fourth row: email, phone, deadline */}
 <div className="row mb-4">

@@ -149,21 +149,21 @@ const JobList = ({ token }) => {
             )}
             {jobs.map((job) => (
               <tr key={job._id}>
-                <td>{job.organizationName}</td>
-                <td>
+                <td className='text-capitalize'>{job.organizationName}</td>
+                <td >
                   {job.organizationType}
                   {job.organizationType === 'Other' && job.organizationTypeOther
                     ? ` (${job.organizationTypeOther})`
                     : ''}
                 </td>
-                <td>{job.jobTitle}</td>
+                <td className='text-capitalize'>{job.jobTitle}</td>
                 <td>
                   {job.jobType}
                   {job.jobType === 'Other' && job.jobTypeOther
                     ? ` (${job.jobTypeOther})`
                     : ''}
                 </td>
-                <td className='text-wrap'>
+                <td className='text-wrap text-capitalize'>
                   {job.jobDescription}
                 </td>
                 <td>
@@ -173,8 +173,8 @@ const JobList = ({ token }) => {
                     : ''}
                 </td>
                 <td>{job.workExperience}</td>
-                <td>{job.requiredSkills?.join(', ')}</td>
-                <td>{job.jobLocation}</td>
+                <td className='text-capitalize'>{job.requiredSkills?.join(', ')}</td>
+                <td className='text-capitalize'>{job.jobLocation}</td>
                 <td>{job.applicationDeadline ? job.applicationDeadline.slice(0, 10) : ''}</td>
                 <td>{job.contactEmail}</td>
                 <td>{job.phoneNumber}</td>

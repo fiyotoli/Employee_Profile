@@ -10,7 +10,7 @@ import {
   FaPhone,FaLanguage, FaMapMarkerAlt, FaProjectDiagram 
 
 } from 'react-icons/fa';
-
+console
 const iconCircleStyle = {
   backgroundColor: '#814516',
   borderRadius: '50%',
@@ -81,7 +81,6 @@ const ProfileDetail = () => {
             const parsed = JSON.parse(field);
             return Array.isArray(parsed) ? parsed : [parsed];
           } catch (err) {
-            console.error(`Error parsing ${name}:`, err, field);
             return [];
           }
         }
@@ -96,12 +95,8 @@ const ProfileDetail = () => {
         projects: parseJsonField(profile.projects, 'projects'),
       };
 
-      console.log('🟢 Profile found and parsed:', parsedProfile);
-
       setProfileData(parsedProfile);
       setImage(parsedProfile.image?.[0] || '');
-    } else {
-      console.warn('Profile not found for id:', profileId);
     }
 
     window.scrollTo(0, 0);
@@ -115,7 +110,8 @@ const ProfileDetail = () => {
     if (exp === undefined || exp === null) return 'N/A';
     return `${exp} years`;
   };
- // Helper for alternating cards background
+
+  // Helper for alternating cards background
   const renderCard = (children, index) => {
     const style = index % 2 === 0 ? cardWhiteStyle : cardPrimaryStyle;
     return <div style={style}>{children}</div>;

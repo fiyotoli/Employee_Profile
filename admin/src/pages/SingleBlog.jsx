@@ -71,8 +71,8 @@ const SingleBlog = () => {
   };
 
   return (
-    <div className="container my-2">
-      <Link to="/blog_list" className="btn bg-primary-custom mb-4">&larr; Back to Blogs</Link>
+    <div className="container mt-5 mb-2">
+      <Link to="/blog_list" className="btn text-white bg-primary-custom mb-4">&larr; Back to Blogs</Link>
 
       {/* Blog Main Section */}
       <div className="row mb-5">

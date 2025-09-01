@@ -59,7 +59,7 @@ const JobCard = () => {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Search by Job Title"
+                placeholder="በስራ አይነት መፈለግ"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
@@ -70,25 +70,26 @@ const JobCard = () => {
                 value={jobType}
                 onChange={(e) => setJobType(e.target.value)}
               >
-                <option value="">All Job Types</option>
+                <option value="">ሁሉም የሥራ ዓይነቶች</option>
                 <option value="Full-time">Full-time</option>
                 <option value="Part-time">Part-time</option>
                 <option value="Contract">Contract</option>
               </select>
             </div>
             <div className="col-md-3">
-              <select
-                className="form-select"
-                value={organizationType}
-                onChange={(e) => setOrganizationType(e.target.value)}
-              >
-                <option value="">All Organization Types</option>
-                <option value="Government">Government</option>
-                <option value="Private">Private</option>
-                <option value="NGO">NGO</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
+  <select
+    className="form-select"
+    value={organizationType}
+    onChange={(e) => setOrganizationType(e.target.value)}
+  >
+    <option value="">ሁሉም ድርጅቶች</option> {/* This is the default visible text */}
+    <option value="Government">Government</option>
+    <option value="Private">Private</option>
+    <option value="NGO">NGO</option>
+    <option value="Other">Other</option>
+  </select>
+</div>
+
           </div>
         </div>
       </div>
