@@ -2,14 +2,24 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Register = () => {
-  const handleRedirect = () => {
-    // Direct to Telegram username
-    window.location.href = 'https://t.me/tesfa_des';
+  // Redirect functions
+  const handleEmployeeRedirect = () => {
+    window.open(
+      'https://docs.google.com/forms/d/e/1FAIpQLSdJ5sYs4RcJyWMkiFEzvrQLaQ38n9RasZojqwBDZ4hXFOAuKQ/viewform?usp=header', 
+      '_blank'
+    );
+  };
+
+  const handleCompanyRedirect = () => {
+    window.open(
+      'https://docs.google.com/forms/d/e/1FAIpQLSeiPLQ6YLcZ6uCYN0LI8Di-xWk9SiHGR6ijn1ZGRvBTb3q4HQ/viewform?usp=header', 
+      '_blank'
+    );
   };
 
   return (
     <div className="container mt-5 pt-5 mb-4">
-    <div className="text-center mb-4 mt-4">
+      <div className="text-center mb-4 mt-4">
         <h2 className="d-inline-flex align-items-center justify-content-center">
           <span
             className="bg-primary-custom me-2"
@@ -23,7 +33,7 @@ const Register = () => {
         <div className="col-md-6 col-lg-5 mb-4">
           <div className="card h-100 d-flex flex-column shadow p-4 text-center">
             <h4>እንደ ሰልጣኝ ይመዝገቡ</h4>
-            <p>የቴሌግራም አካውንትዎን ተጠቅመው ለመመዝገብ እዚህ ይጫኑ</p>
+            <p>የGoogle ቅጽ በመሙላት ይመዝገቡ</p>
             <hr />
             <h6>ጥቅሞች:</h6>
             <ul className="text-start flex-grow-1">
@@ -33,7 +43,7 @@ const Register = () => {
             </ul>
             <button
               className="btn view-detail-button-register mt-auto"
-              onClick={handleRedirect}
+              onClick={handleEmployeeRedirect}
             >
               ይመዝገቡ
             </button>
@@ -43,8 +53,8 @@ const Register = () => {
         {/* Company Card */}
         <div className="col-md-6 col-lg-5 mb-4">
           <div className="card h-100 d-flex flex-column shadow p-4 text-center">
-            <h4 className=''>እንደ ድርጅት ይመዝገቡ</h4>
-            <p>የቴሌግራም አካውንትዎን ተጠቅመው ለመመዝገብ እዚህ ይጫኑ</p>
+            <h4>እንደ ድርጅት ይመዝገቡ</h4>
+            <p>የGoogle ቅጽ በመሙላት ይመዝገቡ</p>
             <hr />
             <h6>ጥቅሞች:</h6>
             <ul className="text-start flex-grow-1">
@@ -54,7 +64,7 @@ const Register = () => {
             </ul>
             <button
               className="btn view-detail-button-register mt-auto"
-              onClick={handleRedirect}
+              onClick={handleCompanyRedirect}
             >
               ይመዝገቡ
             </button>
