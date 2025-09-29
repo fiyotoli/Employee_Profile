@@ -4,7 +4,7 @@ import { v2 as cloudinary } from "cloudinary";
 // Add Blog Controller
 const AddBlog = async (req, res) => {
   try {
-    const { title, content, date, socialMediaLink } = req.body;
+    const { title, content, date, socialMediaLink,googleDriveLink } = req.body;
     const image1 = req.files?.image1?.[0];
 
     let imagesUrl = [];
@@ -20,6 +20,7 @@ const AddBlog = async (req, res) => {
       content,
       date: date || new Date(),
       socialMediaLink,
+      googleDriveLink,
       image: imagesUrl[0], // assuming single image
     };
 
@@ -35,7 +36,7 @@ const AddBlog = async (req, res) => {
 
 const EditBlog = async (req, res) => {
   try {
-    const { id, title, content, date, socialMediaLink } = req.body;
+    const { id, title, content, date, socialMediaLink,googleDriveLink } = req.body;
     const image1 = req.files?.image1?.[0];
 
     let imagesUrl = [];
@@ -51,6 +52,7 @@ const EditBlog = async (req, res) => {
       content,
       date: date || new Date(),
       socialMediaLink,
+      googleDriveLink,
     };
 
     if (imagesUrl.length > 0) {
